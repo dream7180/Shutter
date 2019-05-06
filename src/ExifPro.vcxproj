@@ -1419,7 +1419,7 @@
     <Image Include="res\browser.ico" />
     <Image Include="res\browser_tbar.bmp" />
     <Image Include="res\BrowserToolBar.png" />
-    <Image Include="res\BrowserToolBar30.png" />
+    <!--<Image Include="res\BrowserToolBar30.png" />-->
     <Image Include="res\BrowserTools.png" />
     <Image Include="res\camera.ico" />
     <Image Include="res\cancel-filter.png" />
@@ -1480,7 +1480,7 @@
     <Image Include="res\funnel.png" />
     <Image Include="res\grid_pattern.bmp" />
     <Image Include="res\grip.bmp" />
-    <Image Include="res\group_header_icons.bmp" />
+    <!--<Image Include="res\group_header_icons.bmp" />-->
     <Image Include="res\GroupHeaderIcons.png" />
     <Image Include="res\HeaderImages.png" />
     <Image Include="res\HelpBtn.bmp" />
@@ -1556,7 +1556,7 @@
     <Image Include="res\photos_dis_tb.png" />
     <Image Include="res\photos_tb.bmp" />
     <Image Include="res\photos_tb.png" />
-    <Image Include="res\PhotosToolbarBig.png" />
+    <!--<Image Include="res\PhotosToolbarBig.png" />-->
     <Image Include="res\placeholder.bmp" />
     <Image Include="res\placeholder3.bmp" />
     <Image Include="res\placeholder_2.bmp" />
@@ -1632,8 +1632,8 @@
     <Image Include="res\ViewerToolbar.bmp" />
     <Image Include="res\ViewerToolbar.png" />
     <Image Include="res\ViewerToolbarBig.png" />
-    <Image Include="res\ViewerToolbarDis.bmp" />
-    <Image Include="res\ViewerToolbarDis.png" />
+    <!--<Image Include="res\ViewerToolbarDis.bmp" />
+    <Image Include="res\ViewerToolbarDis.png" />-->
     <Image Include="res\warning.ico" />
     <Image Include="res\warning_2.ico" />
     <Image Include="res\zoombar.bmp" />
