@@ -2544,9 +2544,9 @@
     <Image Include="res\BrowserToolBar.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\BrowserToolBar30.png">
+    <!--<Image Include="res\BrowserToolBar30.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image>-->
     <Image Include="res\BrowserTools.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2727,9 +2727,9 @@
     <Image Include="res\grip.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\group_header_icons.bmp">
+    <!--<Image Include="res\group_header_icons.bmp">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image>-->
     <Image Include="res\GroupHeaderIcons.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2955,9 +2955,9 @@
     <Image Include="res\photos_tb.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\PhotosToolbarBig.png">
+    <!--<Image Include="res\PhotosToolbarBig.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image>-->
     <Image Include="res\placeholder.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -3183,12 +3183,12 @@
     <Image Include="res\ViewerToolbarBig.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\ViewerToolbarDis.bmp">
+    <!--<Image Include="res\ViewerToolbarDis.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\ViewerToolbarDis.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image>-->
     <Image Include="res\warning.ico">
       <Filter>Resource Files</Filter>
     </Image>
