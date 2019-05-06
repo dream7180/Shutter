@@ -61,7 +61,7 @@ Config::Config()
 #endif
 	image_blending_ = 0;					// always
 	read_thumbs_from_db_ = false;			// by default keep jpeg thumbs in memory
-	allow_magnifying_above100_ = true;
+	allow_magnifying_above100_ = false;
 	allow_zoom_to_fill_ = false;
 	percent_of_image_to_hide_ = 30;
 	close_app_when_viewer_exits_ = true;
