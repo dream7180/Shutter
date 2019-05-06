@@ -50,7 +50,7 @@ AdvancedOptions::AdvancedOptions() : RPropertyPage(AdvancedOptions::IDD)
 
 	thumb_access_ = 0;
 	delete_cache_file_ = false;
-	allow_magnifying_above100_ = true;
+	allow_magnifying_above100_ = false;
 	allow_zoom_to_fill_ = false;
 	percent_of_image_to_hide_ = 30;
 	close_app_ = true;
