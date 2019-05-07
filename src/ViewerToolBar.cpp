@@ -24,7 +24,7 @@ static char THIS_FILE[] = __FILE__;
 
 ViewerToolBar::ViewerToolBar()
 {
-	small_icons_ = true;
+	small_icons_ = false;
 //	rebar_band_id_ = 0;
 }
 
