@@ -795,7 +795,7 @@ ViewerDlg::Impl::Impl(PhotoInfoStorage& storage, PhotoCache* cache, VectPhotoInf
 	previewPaneHeight_ = 80;
 	tag_text_color_ = tag_backgnd_color_ = 0;
 	timer_wnd_ = 0;
-	view_layout_ = ViewPanes::Horizontal;
+	view_layout_ = ViewPanes::Vertical;
 
 	PrepareZoomTable(pow(2.0, 1.0 / 3.0));
 
@@ -4010,7 +4010,7 @@ void ViewPanes::Create(CWnd* parent, const boost::function<void (ViewPane*)>& vi
 
 void ViewerDlg::OnChangeMultiPaneLayout(UINT cmd)
 {
-	ViewPanes::Layout layout= ViewPanes::Horizontal;
+	ViewPanes::Layout layout= ViewPanes::Vertical;
 
 	switch (cmd)
 	{
