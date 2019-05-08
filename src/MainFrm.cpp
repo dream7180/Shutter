@@ -378,8 +378,8 @@ BOOL MainFrame::OnEraseBkgnd(CDC* dc)
 	dc->FillSolidRect(rect, backgnd);
 
 	// close bar separator line--it's safe to draw it even when close bar is invisible
-	CRect line(CPoint(rect.right - CloseBar::CLOSE_BAR_WIDTH, rect.top), CSize(4, 199));
-	DrawVertLineSeparator(*dc, line, &backgnd);
+	//CRect line(CPoint(rect.right - CloseBar::CLOSE_BAR_WIDTH, rect.top), CSize(4, 199));
+	//DrawVertLineSeparator(*dc, line, &backgnd);
 
 	// give derived class chance to draw separator
 	DrawSeparator(*dc, rect);
