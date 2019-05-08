@@ -32,7 +32,7 @@ PhotoAttr::~PhotoAttr()
 {}
 
 
-static const char g_HEADER[4]= { 'M', 'i', 'K', '©' };
+static const char g_HEADER[4]= { 'M', 'i', 'K', '©'' };
 static const char g_MAGIC[4]= { '\xea', '\x0a', '\x01', '\x0a' };
 static const char g_UNICODE[4]= { 'U', 'n', 'i', 0 };
 
