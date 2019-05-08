@@ -78,7 +78,7 @@ bool ViewerToolBar::Create(CWnd* parent, UINT id)
 {
 //	rebar_band_id_ = rebar_band_id;
 
-	small_icons_ = AfxGetApp()->GetProfileInt(REGISTRY_SECTION_TOOLBAR, REG_ICONS, 0) == 0;
+	small_icons_ = AfxGetApp()->GetProfileInt(REGISTRY_SECTION_TOOLBAR, REG_ICONS, 1) == 0;
 
 	int bmp_id= small_icons_ ? IDB_VIEWER_TOOLBAR : IDB_VIEWER_TOOLBAR_BIG;
 
