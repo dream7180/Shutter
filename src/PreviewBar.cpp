@@ -29,7 +29,7 @@ static char THIS_FILE[] = __FILE__;
 PreviewBar::PreviewBar()
 {
 	parent_ = 0;
-	vertical_ = false;
+	vertical_ = true;
 }
 
 PreviewBar::~PreviewBar()
