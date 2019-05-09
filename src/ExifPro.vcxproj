@@ -1504,7 +1504,7 @@
     <Image Include="res\info_band_opt_hot.png" />
     <Image Include="res\info_bar.bmp" />
     <Image Include="res\info_toolbar.bmp" />
-    <Image Include="res\info_toolbar.png" />
+    <!--Image Include="res\info_toolbar.png" /-->
     <Image Include="res\infobar.bmp" />
     <Image Include="res\InfoToolbar.png" />
     <Image Include="res\InfoToolBarBig.png" />
@@ -1540,7 +1540,7 @@
     <Image Include="res\pane_toolbar.png" />
     <Image Include="res\pane_toolbar_big.bmp" />
     <Image Include="res\pane_toolbar_big_hot.bmp" />
-    <Image Include="res\pane_toolbar_hot.png" />
+    <!--Image Include="res\pane_toolbar_hot.png" /-->
     <Image Include="res\pattern.bmp" />
     <Image Include="res\photo.bmp" />
     <Image Include="res\photo.ico" />
@@ -1613,7 +1613,7 @@
     <Image Include="res\template_grid.bmp" />
     <Image Include="res\templates.bmp" />
     <Image Include="res\TimeLineTb.png" />
-    <Image Include="res\TimeLineTbDis.png" />
+    <!--Image Include="res\TimeLineTbDis.png" /-->
     <Image Include="res\toolbar_close.bmp" />
     <Image Include="res\toolbar_close_2.bmp" />
     <Image Include="res\TransferToolOper.png" />
