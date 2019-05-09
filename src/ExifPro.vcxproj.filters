@@ -2799,9 +2799,9 @@
     <Image Include="res\info_toolbar.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\info_toolbar.png">
+    <!--Image Include="res\info_toolbar.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\infobar.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2907,9 +2907,9 @@
     <Image Include="res\pane_toolbar_big_hot.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\pane_toolbar_hot.png">
+    <!--Image Include="res\pane_toolbar_hot.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\pattern.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -3126,9 +3126,9 @@
     <Image Include="res\TimeLineTb.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\TimeLineTbDis.png">
+    <!--Image Include="res\TimeLineTbDis.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\toolbar_close.bmp">
       <Filter>Resource Files</Filter>
     </Image>
