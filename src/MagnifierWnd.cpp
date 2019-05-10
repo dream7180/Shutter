@@ -45,7 +45,7 @@ MagnifierWnd::MagnifierWnd(DibPtr dibImage, const CRect& display_rect, CWnd* dis
 	if (dib_image_.get() == 0)
 		THROW_EXCEPTION(L"Magnifier window error", L"MagnifierWnd ctor - expected image");
 
-	magnification_factor_ = 3;
+	magnification_factor_ = 1;
 	magnifier_wnd_ = this;
 
 	const TCHAR* REG_MAGNIFIER= _T("MagnifierGlass");
