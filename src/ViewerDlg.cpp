@@ -816,7 +816,7 @@ ViewerDlg::Impl::Impl(PhotoInfoStorage& storage, PhotoCache* cache, VectPhotoInf
 	profileInfoBarNameField_.Register(REGISTRY_ENTRY_VIEWER, _T("InfoBandNameField"), true);
 	profileShowPhotoDescription_.Register(REGISTRY_ENTRY_VIEWER, _T("ShowPhotoDescription"), true);
 	profileUseScrollBars_.Register(REGISTRY_ENTRY_VIEWER, _T("UseScrollBars"), true);
-	profileHorzPreviewBar_.Register(REGISTRY_ENTRY_VIEWER, _T("HorzPreviewBar"), true);
+	profileHorzPreviewBar_.Register(REGISTRY_ENTRY_VIEWER, _T("HorzPreviewBar"), false);
 	profileTagsInPreviewBar_.Register(REGISTRY_ENTRY_VIEWER, _T("TagsInPreviewBar"), true);
 	profileSmoothScroll_.Register(REGISTRY_ENTRY_VIEWER, _T("SmoothScroll"), true);
 	profileMultiViewEnabled_.Register(REGISTRY_ENTRY_VIEWER, _T("MultiView"), false);
