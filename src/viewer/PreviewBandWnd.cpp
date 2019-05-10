@@ -46,7 +46,7 @@ struct PreviewBandWnd::Impl
 		current_item_ = NONE;
 		clicked_item_ = NONE;
 		valid_layout_ = false;
-		horz_layout_ = true;
+		horz_layout_ = false;
 		img_pos_range_ = 0;
 		aspect_ratios_ = make_pair(1.0, 1.0);
 		first_item_idx = 0;
