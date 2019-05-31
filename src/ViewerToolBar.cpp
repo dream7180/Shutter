@@ -67,7 +67,7 @@ namespace {
 		ID_ROTATE_90_CCW, ID_ROTATE_90_CW
 	};
 
-	const char* tb_buttons= "ppvpp|m|ppxx|p|xxv|pp|vx|pp";
+	const char* tb_buttons= "ppppp|m|ppxx|p|xxv|pp|vx|pp";
 
 	float saturation= -0.5f;
 	float lightness= +0.25f;
