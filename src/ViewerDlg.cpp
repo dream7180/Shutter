@@ -633,6 +633,7 @@ struct ViewerDlg::Impl : InfoBandNotification, ResizeWnd, ViewPaneNotifications
 	enum { BAND_TOOLBAR= 10, BAND_INFO }; //, BAND_CLOSE };
 	bool balloons_enabled_;				// display balloon photo info
 	bool toolbar_visible_;
+	bool act_open_brw_;
 	bool infobar_visible_;
 	bool preview_bar_visible_;
 	UINT_PTR slide_show_timer_;			// timer for delay between slide show photos
@@ -788,6 +789,7 @@ ViewerDlg::Impl::Impl(PhotoInfoStorage& storage, PhotoCache* cache, VectPhotoInf
 	//current_orientation_ = 0;
 //	orientation_ = PhotoInfo::ORIENT_NO_INFO;
 	timer_id_ = 0;
+	act_open_brw_ = false;
 	infobar_visible_ = toolbar_visible_ = true;
 	slide_show_timer_ = 0;
 	slideShowDelay_ = 0;
@@ -1714,10 +1716,12 @@ void ViewerDlg::OnUpdatePhotoPrev(CCmdUI* cmd_ui)
 //
 void ViewerDlg::OnPhotoList()
 {
-	pImpl_->PhotoList(this, true);
+	//pImpl_->PhotoList(this, true);
+	pImpl_->act_open_brw_ = true;
+	CFrameWnd::OnClose();
 }
 
-
+/*
 void ViewerDlg::Impl::PhotoList(CWnd* wnd, bool press_btn)
 {
 	if (!toolbar_visible_)
@@ -1742,7 +1746,7 @@ void ViewerDlg::Impl::PhotoList(CWnd* wnd, bool press_btn)
 	if (cmd >= 0)
 		LoadPhoto(cmd);
 }
-
+*/
 void ViewerDlg::OnUpdatePhotoList(CCmdUI* cmd_ui)
 {
 	cmd_ui->Enable(pImpl_->toolbar_visible_);
@@ -1754,9 +1758,9 @@ void ViewerDlg::OnTbDropDown(NMHDR* nmhdr, LRESULT* result)
 	NMTOOLBAR* info_tip= reinterpret_cast<NMTOOLBAR*>(nmhdr);
 	switch (info_tip->iItem)
 	{
-	case ID_PHOTO_LIST:
-		pImpl_->PhotoList(this, false);
-		break;
+	//case ID_PHOTO_LIST:
+	//	pImpl_->PhotoList(this, false);
+	//	break;
 
 	case ID_VIEWER_OPTIONS:
 		pImpl_->ViewerOptions(this, false);
@@ -2284,12 +2288,13 @@ void ViewerDlg::OnNcDestroy()
 		{
 			// main wnd is hidden
 
-			if (g_Settings.close_app_when_viewer_exits_)
+			if (g_Settings.close_app_when_viewer_exits_ && !pImpl_->act_open_brw_)
 				frame->DestroyWindow();
 			else
 			{
 				frame->EnableWindow();
 				frame->ShowWindow(SW_SHOW);
+				pImpl_->act_open_brw_ = false;
 
 				// enable saving setting...
 				if (BrowserFrame* browser= dynamic_cast<BrowserFrame*>(frame))
