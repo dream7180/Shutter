@@ -581,7 +581,7 @@ struct ViewerDlg::Impl : InfoBandNotification, ResizeWnd, ViewPaneNotifications
 	void ResetColors();
 	void Rotate(unsigned int rotation);
 	void RotatePhoto(CWnd* wnd, RotationTransformation transform);
-	void PhotoList(CWnd* wnd, bool press_btn);
+	//void PhotoList(CWnd* wnd, bool press_btn);
 	void OnTimer(CWnd* wnd, UINT_PTR id_event);
 	void StopSlideShow(CWnd* wnd);
 	void StartSlideShow(CWnd* wnd);
