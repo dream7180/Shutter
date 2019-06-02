@@ -605,8 +605,8 @@ BOOL LightTable::OnEraseBkgnd(CDC* dc)
 		COLORREF dark= CalcNewColor(RGB(57,59,74), pImpl_->ui_gamma_correction_);
 
 		//TODO: alpha transp. needed here
-		dc->FillSolidRect(rect.left + 9, rect.top + 21, rect.Width() - 18, 1, light);
-		dc->FillSolidRect(rect.left + 9, rect.top + 22, rect.Width() - 18, 1, dark);
+		//dc->FillSolidRect(rect.left + 9, rect.top + 21, rect.Width() - 18, 1, light);
+		//dc->FillSolidRect(rect.left + 9, rect.top + 22, rect.Width() - 18, 1, dark);
 		//DrawHorzSeparatorBar(Dib& dest, int x, int y, int width, float black_opacity, float white_opacity)
 
 		rect.top = rect.bottom;
