@@ -392,15 +392,15 @@ bool BrowserFrame::CreateWindows()
 
 	CRect rect;
 	toolbar_wnd_.GetWindowRect(rect);
-	rebar_wnd_.AddBand(&toolbar_wnd_, rect.Size(), 0, BAND_TOOLBAR, 50, true);
+	rebar_wnd_.AddBand(&toolbar_wnd_, rect.Size(), 0, BAND_TOOLBAR, 200, true);
 
 	bool underscore= WhistlerLook::IsAvailable(); //g_common_control_lib_version >= PACKVERSION(6,0);
+	
+	filter_bar_wnd_.GetWindowRect(rect);
+	rebar_wnd_.AddBand(&filter_bar_wnd_, CSize(300, rect.Height()), underscore ? _T("Fi&nd") : _T("Find"), BAND_FILTER, 100);
 
 	addr_box_wnd_.GetWindowRect(rect);
-	rebar_wnd_.AddBand(&addr_box_wnd_, CSize(300, rect.Height()), underscore ? _T("A&ddress") : _T("Address"), BAND_ADDRESS);
-
-	filter_bar_wnd_.GetWindowRect(rect);
-	rebar_wnd_.AddBand(&filter_bar_wnd_, CSize(250, rect.Height()), underscore ? _T("Fi&nd") : _T("Find"), BAND_FILTER, 80);
+	rebar_wnd_.AddBand(&addr_box_wnd_, CSize(300, rect.Height()), underscore ? _T("A&ddress") : _T("Address"), BAND_ADDRESS, 150);
 
 	rebar_wnd_.MaximizeBand(0);
 
