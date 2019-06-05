@@ -392,7 +392,7 @@ bool BrowserFrame::CreateWindows()
 
 	CRect rect;
 	toolbar_wnd_.GetWindowRect(rect);
-	rebar_wnd_.AddBand(&toolbar_wnd_, rect.Size(), 0, BAND_TOOLBAR, 200, true);
+	rebar_wnd_.AddBand(&toolbar_wnd_, rect.Size(), 0, BAND_TOOLBAR, rect.Width(), true);
 
 	bool underscore= WhistlerLook::IsAvailable(); //g_common_control_lib_version >= PACKVERSION(6,0);
 	
