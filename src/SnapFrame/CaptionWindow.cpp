@@ -320,7 +320,7 @@ bool CaptionWindow::Create(CWnd* parent, const TCHAR* title)
 //	if (parent_)
 //	{
 	static const int commands[]= { ID_PANE_MAXIMIZE, ID_PANE_RESTORE, ID_PANE_CLOSE };
-	tool_bar_wnd_.SetPadding(3, 8);
+	tool_bar_wnd_.SetPadding(3, 3);
 	tool_bar_wnd_.SetOnIdleUpdateState(false);
 	tool_bar_wnd_.Create("ppp", commands, big_ ? IDB_PANE_TOOLBAR_BIG : IDB_PANE_TOOLBAR, 0, this);
 	//tool_bar_wnd_.SetHotImageList(big_ ? IDB_PANE_TOOLBAR_BIG_HOT : IDB_PANE_TOOLBAR_HOT);
@@ -683,7 +683,7 @@ void CaptionWindow::Resize()
 	if (tool_bar_wnd_.m_hWnd)
 	{
 		int y= big_ ? 7 : 3;
-		y=0;
+		//y=0;
 		tool_bar_wnd_.SetWindowPos(0, rect.Width() - GetTollBarWidth() - 1, y, GetTollBarWidth(), GetHeight() - 1, SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE);
 	}
 
@@ -1127,7 +1127,7 @@ int CaptionWindow::GetHeight()
 	//CDC dc;
 	//dc.CreateIC(_T("DISPLAY"), 0, 0, 0);
 	//auto dpi = dc.GetDeviceCaps(LOGPIXELSY);
-	auto h = big_ ? 39 : 26;
+	auto h = big_ ? 38 : 28;
 	// caption window height
 	return Pixels(h);
 //	return h * dpi / 96;
