@@ -59,8 +59,8 @@ END_MESSAGE_MAP()
 
 // an area in a bitmap to print extra text info
 namespace {
-	const CPoint LEFTTOP(273, 144);
-	const CSize AREA_SIZE(140, 161);
+	const CPoint LEFTTOP(323, 194);//+50
+	const CSize AREA_SIZE(160, 181);//+20
 	const COLORREF TEXT_COLOR= RGB(211,221,255);
 }
 
@@ -115,7 +115,7 @@ BOOL AboutDlg::OnInitDialog()
 		CDialog::OnInitDialog();
 
 		LOGFONT lf;
-		lf.lfHeight = -Pixels(12);
+		lf.lfHeight = -Pixels(14);
 		lf.lfWidth = 0;
 		lf.lfEscapement = 0;
 		lf.lfOrientation = 0;
@@ -143,6 +143,10 @@ BOOL AboutDlg::OnInitDialog()
 		pos.y += Pixels(AREA_SIZE.cy - 12);
 		link_wnd_.Create(this, pos, _T("ExifPro Web Site"), _T("http://www.exifpro.com/"), &small_fnt_);
 		link_wnd_.rgb_text_color_ = TEXT_COLOR;
+		CPoint pos= CPoint(Pixels(LEFTTOP.x), Pixels(LEFTTOP.y));
+		pos.y += Pixels(AREA_SIZE.cy - 200);
+		pos.y += Pixels(AREA_SIZE.cy + 100);
+		link_wnd_.Create(this, pos, _T("Project Home at GitHub"), _T("https://github.com/dream7180/ExifPro-mod"), &small_fnt_);
 
 		libs_ =
 			_T("\n")
