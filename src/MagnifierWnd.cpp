@@ -49,14 +49,14 @@ MagnifierWnd::MagnifierWnd(DibPtr dibImage, const CRect& display_rect, CWnd* dis
 	magnifier_wnd_ = this;
 
 	const TCHAR* REG_MAGNIFIER= _T("MagnifierGlass");
-	profile_window_size_.Register(REG_MAGNIFIER, _T("WndSize"), SMALL);
+	profile_window_size_.Register(REG_MAGNIFIER, _T("WndSize"), MEDIUM);
 	profile_magnification_factor_.Register(REG_MAGNIFIER, _T("MagnifFactor"), magnification_factor_);
 
 	magnification_factor_ = profile_magnification_factor_;
 	CSize window_size;
 	window_size.cx = window_size.cy = profile_window_size_;
 	if (window_size.cx < SMALL || window_size.cx > BIG)
-		window_size.cx = window_size.cy = SMALL;
+		window_size.cx = window_size.cy = MEDIUM;
 
 	offset_ = CPoint(0, 0);
 
@@ -340,9 +340,9 @@ void MagnifierWnd::OnContextMenu(CWnd* wnd, CPoint pos)
 
 	CRect rect;
 	GetWindowRect(rect);
-	int check= ID_MAGNIFY_SMALL;
-	if (rect.Width() == MEDIUM)
-		check = ID_MAGNIFY_MEDIUM;
+	int check= ID_MAGNIFY_MEDIUM;
+	if (rect.Width() == SMALL)
+		check = ID_MAGNIFY_SMALL;
 	else if (rect.Width() == BIG)
 		check = ID_MAGNIFY_BIG;
 	popup->CheckMenuRadioItem(ID_MAGNIFY_SMALL, ID_MAGNIFY_BIG, check, MF_BYCOMMAND);
