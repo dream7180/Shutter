@@ -46,6 +46,9 @@ protected:
 	CString about_;
 	CString libs_;
 	CLinkWnd link_wnd_;
+	CLinkWnd link2_wnd_;
+	CLinkWnd link3_wnd_;
+	CLinkWnd link4_wnd_;
 	int scroll_pos_;
 	int stop_delay_;
 	int text_lines_;
