@@ -59,9 +59,10 @@ END_MESSAGE_MAP()
 
 // an area in a bitmap to print extra text info
 namespace {
-	const CPoint LEFTTOP(323, 194);//+50
-	const CSize AREA_SIZE(160, 181);//+20
+	const CPoint LEFTTOP(323, 194);
+	const CSize AREA_SIZE(180, 200);
 	const COLORREF TEXT_COLOR= RGB(211,221,255);
+	const CPoint LEFTTOP2(30, 228);
 }
 
 
@@ -140,13 +141,18 @@ BOOL AboutDlg::OnInitDialog()
 		SetWindowPos(0, 0, 0, rect.Width(), rect.Height(), SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
 
 		CPoint pos= CPoint(Pixels(LEFTTOP.x), Pixels(LEFTTOP.y));
-		pos.y += Pixels(AREA_SIZE.cy - 12);
+		pos.y += Pixels(AREA_SIZE.cy - 14);
 		link_wnd_.Create(this, pos, _T("ExifPro Web Site"), _T("http://www.exifpro.com/"), &small_fnt_);
 		link_wnd_.rgb_text_color_ = TEXT_COLOR;
-		CPoint pos= CPoint(Pixels(LEFTTOP.x), Pixels(LEFTTOP.y));
-		pos.y += Pixels(AREA_SIZE.cy - 200);
-		pos.y += Pixels(AREA_SIZE.cy + 100);
-		link_wnd_.Create(this, pos, _T("Project Home at GitHub"), _T("https://github.com/dream7180/ExifPro-mod"), &small_fnt_);
+		CPoint pos2= CPoint(Pixels(LEFTTOP2.x), Pixels(LEFTTOP2.y));
+		link2_wnd_.Create(this, pos2, _T("Project Home at GitHub"), _T("https://github.com/dream7180/ExifPro-mod"), &small_fnt_);
+		link2_wnd_.rgb_text_color_ = TEXT_COLOR;
+		CPoint pos4= CPoint(pos2.x, pos2.y + 50);
+		link4_wnd_.Create(this, pos4, _T("dreamawake's Blog"), _T("http://blog.sina.com.cn/dream7180"), &small_fnt_);
+		link4_wnd_.rgb_text_color_ = TEXT_COLOR;
+		CPoint pos3= CPoint(pos2.x, pos2.y + 160);
+		link3_wnd_.Create(this, pos3, _T("ExifPro V2.3 at GitHub"), _T("https://github.com/mikekov/ExifPro"), &small_fnt_);
+		link3_wnd_.rgb_text_color_ = TEXT_COLOR;
 
 		libs_ =
 			_T("\n")
@@ -228,7 +234,7 @@ void AboutDlg::OnTimer(UINT_PTR event_id)
 	CRect rect;
 	GetClientRect(rect);
 	rect.DeflateRect(Pixels(20), Pixels(1), Pixels(2), Pixels(1));
-	rect.top = rect.bottom - Pixels(16);
+	rect.top = rect.bottom - Pixels(19);
 
 	// prepare bmp to erase background behind text
 	if (scroll_bmp_.m_hObject == 0)
