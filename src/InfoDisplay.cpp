@@ -80,6 +80,8 @@ bool InfoDisplay::Create(CWnd* parent, const GetTextFn& get_text, COLORREF rgb_b
 	LOGFONT lf;
 	::GetObject(font, sizeof(lf), &lf);
 	lf.lfWeight = 700;
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 	bold_fnt_.CreateFontIndirect(&lf);
 #endif
 	if (!CListCtrl::Create(WS_CHILD | WS_VISIBLE | LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | LVS_OWNERDATA,
