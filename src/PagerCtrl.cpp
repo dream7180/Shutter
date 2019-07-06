@@ -51,7 +51,14 @@ bool PagerCtrlEx::Create(CWnd* parent, int id)
 		ASSERT(false);
 		return false;
 	}
-	SendMessage(WM_SETFONT, WPARAM(::GetStockObject(DEFAULT_GUI_FONT)));
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	hfont = CreateFontIndirectW(&lf);
+	SendMessage(WM_SETFONT, WPARAM(hfont));
+	//SendMessage(WM_SETFONT, WPARAM(::GetStockObject(DEFAULT_GUI_FONT)));
 
 	return true;
 }
