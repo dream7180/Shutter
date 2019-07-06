@@ -82,6 +82,7 @@ private:
 	void ColectTabs(std::vector<CTab>& tabs);
 	void CalcWidth(std::vector<CTab>& tabs, CDC& dc, CRect wnd_rect);
 	CFramePages* pages_;
+	CFont _font;
 };
 
 /////////////////////////////////////////////////////////////////////////////
