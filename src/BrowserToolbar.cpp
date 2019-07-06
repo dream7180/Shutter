@@ -53,7 +53,7 @@ static void RegisterWndClass(const TCHAR* class_name)
 BrowserToolbar::BrowserToolbar()
 {
 	background_ = ::GetSysColor(COLOR_3DFACE);
-	small_icons_ = true;
+	//small_icons_ = true;
 	rebar_band_id_ = 0;
 	RegisterWndClass(WND_CLASS);
 }
@@ -63,9 +63,9 @@ BrowserToolbar::~BrowserToolbar()
 
 
 BEGIN_MESSAGE_MAP(BrowserToolbar, CWnd)
-	ON_COMMAND(ID_TOOLBAR_CUSTOMIZE, OnToolbarCustomize)	//todo
-	ON_COMMAND(ID_SMALL_ICONS, OnSmallIcons)
-	ON_COMMAND(ID_LARGE_ICONS, OnLargeIcons)
+	//ON_COMMAND(ID_TOOLBAR_CUSTOMIZE, OnToolbarCustomize)	//todo
+	//ON_COMMAND(ID_SMALL_ICONS, OnSmallIcons)
+	//ON_COMMAND(ID_LARGE_ICONS, OnLargeIcons)
 	ON_WM_DESTROY()
 	ON_WM_INITMENUPOPUP()
 	ON_WM_CONTEXTMENU()
@@ -157,7 +157,7 @@ void BrowserToolbar::ResetToolBar(bool resize_to_fit)
 //	OnContextMenu(this, pos);
 //}
 
-
+/*
 void BrowserToolbar::OnContextMenu(CWnd* wnd, CPoint pos)
 {
 #if 0	// todo: big img
@@ -185,7 +185,7 @@ void BrowserToolbar::OnToolbarCustomize()
 	//todo: big icons, and proper customization
 //	main_bar_.Customize();
 }
-
+*/
 
 void BrowserToolbar::OnDestroy()
 {
@@ -196,7 +196,7 @@ void BrowserToolbar::OnDestroy()
 	CWnd::OnDestroy();
 }
 
-
+/*
 void BrowserToolbar::OnSmallIcons()
 {
 	//if (!small_icons_)
@@ -220,12 +220,11 @@ void BrowserToolbar::OnLargeIcons()
 	//	}
 }
 
-
 void BrowserToolbar::OnInitMenuPopup(CMenu* popup_menu, UINT index, BOOL sys_menu)
 {
 	popup_menu->CheckMenuRadioItem(ID_SMALL_ICONS, ID_LARGE_ICONS, small_icons_ ? ID_SMALL_ICONS : ID_LARGE_ICONS, MF_BYCOMMAND);
 }
-
+*/
 
 void BrowserToolbar::AdjustReBar()
 {
