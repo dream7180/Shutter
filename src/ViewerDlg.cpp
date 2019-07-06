@@ -17,7 +17,7 @@ ____________________________________________________________________________*/
 #include "SmoothScroll.h"
 #include "BrowserFrame.h"
 #include "SlideShowOptDlg.h"
-#include "PhotoList.h"
+//#include "PhotoList.h"
 #include "Logger.h"
 #include "Tasks.h"
 #include "CatchAll.h"
@@ -1011,10 +1011,10 @@ BEGIN_MESSAGE_MAP(ViewerDlg, CFrameWnd)
 	ON_COMMAND_RANGE(ID_VIEWER_BAR_DATE_TIME, ID_VIEWER_BAR_NO_LABELS, OnChangePreviewLabels)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_VIEWER_BAR_DATE_TIME, ID_VIEWER_BAR_NO_LABELS, OnUpdateEnableLabels)
 
-	ON_COMMAND(ID_SMALL_ICONS, OnSmallIcons)
-	ON_COMMAND(ID_LARGE_ICONS, OnLargeIcons)
-	ON_UPDATE_COMMAND_UI(ID_SMALL_ICONS, OnUpdateSmallIcons)
-	ON_UPDATE_COMMAND_UI(ID_LARGE_ICONS, OnUpdateLargeIcons)
+	//ON_COMMAND(ID_SMALL_ICONS, OnSmallIcons)
+	//ON_COMMAND(ID_LARGE_ICONS, OnLargeIcons)
+	//ON_UPDATE_COMMAND_UI(ID_SMALL_ICONS, OnUpdateSmallIcons)
+	//ON_UPDATE_COMMAND_UI(ID_LARGE_ICONS, OnUpdateLargeIcons)
 	ON_COMMAND(ID_HIDE_LIGHT_TABLE, OnHideLightTable)
 	ON_COMMAND(ID_HIDE_TAG_PANE, OnHideTagPane)
 	ON_COMMAND(ID_VIEWER_BAR_OVERLAY_TAGS, OnToggleTagsInPreviewBar)
@@ -1026,6 +1026,7 @@ BEGIN_MESSAGE_MAP(ViewerDlg, CFrameWnd)
 	ON_MESSAGE(WM_APPCOMMAND, OnAppCommand)
 	ON_COMMAND(ID_OPEN_PHOTO, OnOpenPhoto)
 	ON_COMMAND(ID_TOGGLE_MULTIPLE_PANES, OnToggleMultiView)
+	ON_COMMAND(ID_COMPARE_MULTIPLE, OnToggleMultiView)
 	ON_UPDATE_COMMAND_UI(ID_COMPARE_MULTIPLE, OnUpdateMultiView)
 	ON_COMMAND(ID_TOGGLE_VIEW_LAYOUT, OnToggleMultiViewLayout)
 	ON_COMMAND(ID_CLOSE_VIEW, OnToggleMultiView)
@@ -1454,8 +1455,15 @@ void ViewerDlg::Impl::DrawItem(CDC& dc, CRect rect, size_t item, AnyPointer key)
 			label = ::GetFormattedDateTime(photo->GetDateTime(), dc, rect.Width());
 			break;
 		}
-
-		dc.SelectStockObject(DEFAULT_GUI_FONT);
+		LOGFONT lf;
+		HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+		::GetObject(hfont, sizeof(lf), &lf);
+		lf.lfQuality = ANTIALIASED_QUALITY;
+		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+		CFont _font;
+		_font.CreateFontIndirect(&lf);
+		dc.SelectObject(&_font);
+		//dc.SelectStockObject(DEFAULT_GUI_FONT);
 		int fh= GetLineHeight(dc);
 		int space= 3;
 		CRect text(rect.left, rect.bottom + space, rect.right, rect.bottom + space + fh);
@@ -3505,7 +3513,7 @@ void ViewerDlg::OnUpdateVertPreviewBar(CCmdUI* cmd_ui)
 	cmd_ui->SetRadio(!pImpl_->preview_.IsHorizontalOrientation());
 }
 
-
+/*
 void ViewerDlg::OnSmallIcons()
 {
 	if (pImpl_->toolbar_.SmallIcons())
@@ -3535,7 +3543,7 @@ void ViewerDlg::OnUpdateLargeIcons(CCmdUI* cmd_ui)
 	cmd_ui->Enable();
 	cmd_ui->SetRadio(!pImpl_->toolbar_.IsSmallSet());
 }
-
+*/
 
 void ViewerDlg::OnToggleTagsInPreviewBar()
 {
@@ -3672,6 +3680,7 @@ void ViewerDlg::OnToggleMultiView()	// multi panes on/off
 void ViewerDlg::OnUpdateMultiView(CCmdUI* cmd_ui)	// update for a toolbar btn
 {
 	cmd_ui->Enable(pImpl_->toolbar_visible_);
+	cmd_ui->SetCheck(pImpl_->displays_.GetVisibleCount() > 1 ? 1 : 0);
 }
 
 
