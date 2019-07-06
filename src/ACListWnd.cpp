@@ -150,7 +150,8 @@ void AutoCompletePopup::OnPaint()
 		long width= rect.Width() - ScrollBarWidth();
 
 		dc.FillSolidRect(rect, ::GetSysColor(COLOR_WINDOW));
-		dc.SelectObject(GetStockObject(DEFAULT_GUI_FONT)); 
+		//dc.SelectObject(GetStockObject(DEFAULT_GUI_FONT)); 
+		dc.SelectObject(&fontDC);
 		dc.SetBkMode(OPAQUE);
 
 		for (int i= top_index_; i < display_list_.size(); i++)
@@ -220,7 +221,14 @@ void AutoCompletePopup::Init()
 	SetProp();
 
 	CClientDC dc(this);
-	dc.SelectObject(GetStockObject(DEFAULT_GUI_FONT));
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfWeight = FW_NORMAL;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	fontDC.CreateFontIndirect(&lf);
+	dc.SelectObject(&fontDC);
 	item_height_ = dc.GetOutputTextExtent("X").cy * 13 / 10;
 
 	if (last_size_.cy == 0)
