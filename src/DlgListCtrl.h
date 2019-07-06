@@ -111,6 +111,7 @@ private:
 	void MoveFocusToVisibleWindow(CWnd* start= 0);
 	void OnSetFocus(CWnd* focus);
 	UINT OnGetDlgCode();
+	CFont _font;
 
 	CSize range_size_;	// combined height of sub dialogs, max width
 	int header_height_;
