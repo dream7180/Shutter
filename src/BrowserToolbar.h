@@ -50,13 +50,13 @@ public:
 	// Generated message map functions
 protected:
 	//{{AFX_MSG(BrowserToolbar)
-	afx_msg void OnToolbarCustomize();
+	//afx_msg void OnToolbarCustomize();
 	afx_msg void OnDestroy();
 	//}}AFX_MSG
 
 	DECLARE_MESSAGE_MAP()
 
-	bool small_icons_;
+	//bool small_icons_;
 	UINT rebar_band_id_;
 	ToolBarWnd main_bar_;
 	ToolBarWnd panels_;
@@ -64,13 +64,13 @@ protected:
 
 	LRESULT OnSizeParent(WPARAM, LPARAM lParam);
 	void OnGetInfoTip(NMHDR*, LRESULT*);
-	void OnRightClick(NMHDR* notify_struct, LRESULT* result);
-	void OnContextMenu(CWnd* wnd, CPoint point);
-	void OnUpdateSmallIcons(CCmdUI* cmd_ui);
-	void OnSmallIcons();
-	void OnUpdateLargeIcons(CCmdUI* cmd_ui);
-	void OnLargeIcons();
-	void OnInitMenuPopup(CMenu* popup_menu, UINT index, BOOL sys_menu);
+	//void OnRightClick(NMHDR* notify_struct, LRESULT* result);
+	//void OnContextMenu(CWnd* wnd, CPoint point);
+	//void OnUpdateSmallIcons(CCmdUI* cmd_ui);
+	//void OnSmallIcons();
+	//void OnUpdateLargeIcons(CCmdUI* cmd_ui);
+	//void OnLargeIcons();
+	//void OnInitMenuPopup(CMenu* popup_menu, UINT index, BOOL sys_menu);
 	void AdjustReBar();
 	BOOL OnEraseBkgnd(CDC* dc);
 	void OnSize(UINT type, int cx, int cy);
