@@ -76,4 +76,7 @@ protected:
 	void OnPopup();
 
 	LRESULT OnPrintClient(WPARAM HDC, LPARAM flags);
+	
+private:
+	CFont _font;
 };
