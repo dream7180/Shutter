@@ -320,7 +320,7 @@ bool CaptionWindow::Create(CWnd* parent, const TCHAR* title)
 //	if (parent_)
 //	{
 	static const int commands[]= { ID_PANE_MAXIMIZE, ID_PANE_RESTORE, ID_PANE_CLOSE };
-	tool_bar_wnd_.SetPadding(3, 3);
+	tool_bar_wnd_.SetPadding(1, 1);
 	tool_bar_wnd_.SetOnIdleUpdateState(false);
 	tool_bar_wnd_.Create("ppp", commands, big_ ? IDB_PANE_TOOLBAR_BIG : IDB_PANE_TOOLBAR, 0, this);
 	//tool_bar_wnd_.SetHotImageList(big_ ? IDB_PANE_TOOLBAR_BIG_HOT : IDB_PANE_TOOLBAR_HOT);
