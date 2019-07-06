@@ -136,13 +136,13 @@ void TagBarView::AssignTag(int index)
 		tags_ctrl_->AssignTag(index);
 }
 
-
+/*
 void TagBarView::CaptionHeightChanged(bool big)
 {
 	tags_ctrl_->GetToolBar().ReplaceImageList(big ? IDB_TAGS_TOOLBAR_BIG : IDB_TAGS_TOOLBAR);
 	ResetBandsWidth();
 }
-
+*/
 
 BOOL TagBarView::OnSetCursor(CWnd* wnd, UINT hit_test, UINT message)
 {
