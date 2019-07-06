@@ -163,8 +163,17 @@ void DlgListCtrl::SelectFont(CDC& dc)
 {
 	if (CFont* font= GetFont())
 		dc.SelectObject(font);
-	else
-		dc.SelectStockObject(DEFAULT_GUI_FONT);
+	else{
+		LOGFONT lf;
+		HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+		::GetObject(hfont, sizeof(lf), &lf);
+		lf.lfWeight = FW_NORMAL;
+		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+		lf.lfQuality = ANTIALIASED_QUALITY;
+		_font.CreateFontIndirect(&lf);
+		dc.SelectObject(&_font);
+		//dc.SelectStockObject(DEFAULT_GUI_FONT);
+	}
 }
 
 
@@ -175,7 +184,8 @@ void DlgListCtrl::CalcHeaderHeight()
 	TEXTMETRIC tm;
 	if (dc.GetTextMetrics(&tm))
 		header_height_ = (tm.tmHeight + tm.tmExternalLeading) * IDEAL_HEIGHT / 13;
-	dc.SelectStockObject(DEFAULT_GUI_FONT);
+	//dc.SelectStockObject(DEFAULT_GUI_FONT);
+	dc.SelectObject(&_font);
 }
 
 
@@ -243,8 +253,8 @@ BOOL DlgListCtrl::OnEraseBkgnd(CDC* dc)
 
 	dc->SetViewportOrg(0, 0);
 
-	dc->SelectStockObject(DEFAULT_GUI_FONT);
-
+	//dc->SelectStockObject(DEFAULT_GUI_FONT);
+	dc->SelectObject(&_font);
 	return true;
 }
 
