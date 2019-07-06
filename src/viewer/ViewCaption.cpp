@@ -47,7 +47,14 @@ bool ViewCaption::Create(CWnd* parent, int toolbarBmp, const int commands[], int
 
 	CDC dc;
 	dc.CreateCompatibleDC(0);
-	dc.SelectStockObject(DEFAULT_GUI_FONT);
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	_font.CreateFontIndirect(&lf);
+	dc.SelectObject(&_font);
+	//dc.SelectStockObject(DEFAULT_GUI_FONT);
 	TEXTMETRIC tm;
 	dc.GetTextMetrics(&tm);
 	int h= tm.tmHeight + tm.tmInternalLeading + 2;	// yes, internal leading is already in tmHeight
@@ -98,7 +105,8 @@ BOOL ViewCaption::OnEraseBkgnd(CDC* dc)
 
 		dc.SetBkMode(TRANSPARENT);
 		dc.SetTextColor(::GetSysColor(COLOR_BTNTEXT));
-		dc.SelectStockObject(DEFAULT_GUI_FONT);
+		dc.SelectObject(&_font);
+		//dc.SelectStockObject(DEFAULT_GUI_FONT);
 
 		CString text;
 		GetWindowText(text);
