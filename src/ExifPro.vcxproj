@@ -343,9 +343,9 @@
       <HeaderFileName />
     </Midl>
     <ClCompile>
-      <AdditionalOptions>/Zm150 /MP %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/Zm1000 /MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MinSpace</Optimization>
-      <AdditionalIncludeDirectories>$(Libraries);$(Boost);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Libraries);D:\Softwares\DevTools\boost_1_70_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_SECURE_SCL=0;WIN64;USE_GDI_PLUS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -367,11 +367,11 @@
       <AdditionalDependencies>UAFXCW.LIB;LIBCMT.LIB;vfw32.lib;UxTheme.lib;gdiplus.lib;d2d1.lib;Imm32.lib;DbgHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(Bin)$(ProjectName).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>$(LibsRel);%(AdditionalLibraryDirectories);$(Boost)\stage\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(LibsRel);%(AdditionalLibraryDirectories);D:\Softwares\DevTools\boost_1_70_0\stage\lib</AdditionalLibraryDirectories>
       <EnableUAC>false</EnableUAC>
       <IgnoreSpecificDefaultLibraries>UAFXCW.LIB LIBCMT.LIB %(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <DelayLoadDLLs>d2d1.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <StripPrivateSymbols>$(TargetDir)$(TargetName)-sml.pdb</StripPrivateSymbols>
       <SubSystem>Windows</SubSystem>
       <StackReserveSize>4194304</StackReserveSize>
@@ -856,7 +856,7 @@
     <ClCompile Include="PagerCtrl.cpp" />
     <ClCompile Include="PathEdit.cpp" />
     <ClCompile Include="PhotoCtrl.cpp" />
-    <ClCompile Include="PhotoList.cpp" />
+    <!--ClCompile Include="PhotoList.cpp" /-->
     <ClCompile Include="PopupMenuCtrl.cpp" />
     <ClCompile Include="PreviewCtrl.cpp" />
     <ClCompile Include="RadioListBox.cpp" />
@@ -1267,7 +1267,7 @@
     <ClInclude Include="PhotoInfoStorage.h" />
     <ClInclude Include="PhotoInfoTIFF.h" />
     <ClInclude Include="PhotoInfoX3F.h" />
-    <ClInclude Include="PhotoList.h" />
+    <!--ClInclude Include="PhotoList.h" /-->
     <ClInclude Include="PhotoQueue.h" />
     <ClInclude Include="PhotoTags.h" />
     <ClInclude Include="PhotoTagsCollection.h" />
@@ -1482,7 +1482,7 @@
     <Image Include="res\grip.bmp" />
     <!--<Image Include="res\group_header_icons.bmp" />-->
     <Image Include="res\GroupHeaderIcons.png" />
-    <Image Include="res\HeaderImages.png" />
+    <!--Image Include="res\HeaderImages.png" /-->
     <Image Include="res\HelpBtn.bmp" />
     <Image Include="res\HelpBtn.png" />
     <Image Include="res\horz_scrollbar.bmp" />
@@ -1604,7 +1604,7 @@
     <Image Include="res\tags_ok_dis.bmp" />
     <Image Include="res\tags_toolbar.bmp" />
     <Image Include="res\TagsToolbar.png" />
-    <Image Include="res\TagsToolbarBig.png" />
+    <!--Image Include="res\TagsToolbarBig.png" />-->
     <Image Include="res\task_bar.bmp" />
     <Image Include="res\task_bar.png" />
     <Image Include="res\task_bar_tb.bmp" />
@@ -1631,7 +1631,7 @@
     <Image Include="res\viewer_toolbar.bmp" />
     <Image Include="res\ViewerToolbar.bmp" />
     <Image Include="res\ViewerToolbar.png" />
-    <Image Include="res\ViewerToolbarBig.png" />
+    <!--Image Include="res\ViewerToolbarBig.png" />-->
     <!--<Image Include="res\ViewerToolbarDis.bmp" />
     <Image Include="res\ViewerToolbarDis.png" />-->
     <Image Include="res\warning.ico" />
