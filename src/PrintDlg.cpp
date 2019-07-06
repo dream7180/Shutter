@@ -568,7 +568,15 @@ BOOL PrintDlg::InitDialog()
 	{
 		CDC dc;
 		dc.CreateIC(_T("DISPLAY"), 0, 0, 0);
-		dc.SelectStockObject(DEFAULT_GUI_FONT);
+		LOGFONT lf;
+		HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+		::GetObject(hfont, sizeof(lf), &lf);
+		lf.lfQuality = ANTIALIASED_QUALITY;
+		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+		CFont _font;
+		_font.CreateFontIndirect(&lf);
+		dc.SelectObject(&_font);
+		//dc.SelectStockObject(DEFAULT_GUI_FONT);
 		int extra_width= dc.GetTextExtent(_T("XXX"), 3).cx;
 
 		CString btn;
