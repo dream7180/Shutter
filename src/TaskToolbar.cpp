@@ -131,7 +131,15 @@ bool TaskToolbar::Create(CWnd* parent, UINT id, bool vertical)
 	int w= 0;
 	{
 		CClientDC dc(parent);
-		dc.SelectStockObject(DEFAULT_GUI_FONT);
+		LOGFONT lf;
+		HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+		::GetObject(hfont, sizeof(lf), &lf);
+		lf.lfQuality = ANTIALIASED_QUALITY;
+		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+		CFont _font;
+		_font.CreateFontIndirect(&lf);
+		dc.SelectObject(&_font);
+		//dc.SelectStockObject(DEFAULT_GUI_FONT);
 		w = dc.GetTextExtent(_T("NNNNNNa"), 7).cx;
 	}
 	// limit button width to make labels wrap
