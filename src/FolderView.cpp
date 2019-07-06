@@ -77,8 +77,16 @@ bool FolderView::Create(CWnd* parent, UINT id, FolderPathPtr path/*= 0*/, bool r
 #endif
 
 	TreeView_SetExtendedStyle(m_hWnd, TVS_EX_DOUBLEBUFFER, TVS_EX_DOUBLEBUFFER);
+	
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	hfont = CreateFontIndirectW(&lf);
+	SendMessage(WM_SETFONT, WPARAM(hfont));
 
-	SendMessage(WM_SETFONT, WPARAM(::GetStockObject(DEFAULT_GUI_FONT)));
+	//SendMessage(WM_SETFONT, WPARAM(::GetStockObject(DEFAULT_GUI_FONT)));
 
 	if (!SetImageList())
 	{
