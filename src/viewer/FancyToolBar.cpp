@@ -118,7 +118,8 @@ struct FancyToolBar::Impl
 	Impl() : layout_valid_(false), btn_padding_(5, 5, 5, 5), tb_size_(0), hot_btn_index_(~0), timer_id_(0),
 		pressed_btn_index_(~0), btn_tracking_(false), hot_tracking_disabled_(false), delayed_stop_btn_tracking_(false)
 	{
-		use_bevel_look_ = use_hot_tracing_ = use_btn_shifting_ = true;
+		use_bevel_look_ = false;
+		use_hot_tracing_ = use_btn_shifting_ = true;
 		cmd_wnd_ = 0;
 		on_idle_update_state_ = false;
 		normal_btn_count_ = 0;
@@ -603,8 +604,15 @@ static void SelectFont(CDC& dc)
 			dc.SelectObject(font);
 			return;
 		}
-
-	dc.SelectStockObject(DEFAULT_GUI_FONT);
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	CFont _font;
+	_font.CreateFontIndirect(&lf);
+	dc.SelectObject(&_font);
+	//dc.SelectStockObject(DEFAULT_GUI_FONT);
 }
 
 
