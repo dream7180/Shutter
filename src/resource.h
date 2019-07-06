@@ -70,7 +70,7 @@ ____________________________________________________________________________*/
 #define IDB_ZOOMBAR                     177
 #define IDD_OPTIONS_DESCRIPTION         178
 #define IDB_VIEWER_TOOLBAR              179
-#define IDB_VIEWER_TOOLBAR_BIG          180
+//#define IDB_VIEWER_TOOLBAR_BIG          180
 #define IDR_VIEWER_OPTIONS              181
 #define IDI_MOVE                        182
 #define IDI_COPY                        183
@@ -115,7 +115,7 @@ ____________________________________________________________________________*/
 #define IDB_HELP_BTN                    228
 #define IDB_TAGS_TOOLBAR                229
 #define IDB_LAYOUTS                     230
-#define IDB_TAGS_TOOLBAR_BIG            231
+//#define IDB_TAGS_TOOLBAR_BIG            231
 #define IDB_NO_EXIF                     232
 #define IDR_COPY_ANIM                   233
 #define IDB_TAGGED_SINGLE_DIR           234
@@ -209,7 +209,7 @@ ____________________________________________________________________________*/
 #define IDB_PREVIEW_SCRL_BAR_V          320
 #define IDR_ARROW_DOWN_IMG              321
 #define IDB_VIEW_CAPTION                324
-#define IDR_TOOLBAR_BIG                 325
+//#define IDR_TOOLBAR_BIG                 325
 #define IDB_HORZ_VERT_TB                326
 #define IDB_CLOSE_TB                    327
 #define IDB_ACTIVE_VIEW                 328
@@ -580,7 +580,7 @@ ____________________________________________________________________________*/
 #define IDC_LABEL_2                     1111
 #define IDR_TRANSFER_SYMBOLS            1112
 #define IDC_PAGES                       1112
-#define IDR_TOOLBAR_CONTEXT             1113
+//#define IDR_TOOLBAR_CONTEXT             1113
 #define IDC_LABEL_0                     1113
 #define IDC_LABEL_PAGE                  1113
 #define IDR_VIEWER_POPUP                1114
@@ -600,7 +600,7 @@ ____________________________________________________________________________*/
 #define IDR_SHOW_OPTIONS                1120
 #define IDR_ICM_DLG_POPUP               1121
 #define IDC_ROOT_DIR                    1122
-#define IDR_TOOLBAR_CONTEXT1            1122
+//#define IDR_TOOLBAR_CONTEXT1            1122
 #define IDR_CAPTION_CONTEXT             1122
 #define IDC_FIELDS                      1123
 #define IDR_FILE_PANE_POPUP             1123
@@ -616,7 +616,7 @@ ____________________________________________________________________________*/
 #define IDR_ATTRIBUTES1                 1127
 #define IDR_METADATA                    1127
 #define IDC_MARGIN_SELECT               1128
-#define IDR_TOOLBAR_CONTEXT2            1128
+//#define IDR_TOOLBAR_CONTEXT2            1128
 #define IDR_TASK_TOOLBAR_CONTEXT        1128
 #define IDC_MARGIN                      1129
 #define IDR_ATTRIBUTES2                 1129
