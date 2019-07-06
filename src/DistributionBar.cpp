@@ -536,7 +536,7 @@ extern int GetDefaultLineHeight();
 
 int DistributionBar::GetHeight() const
 {
-	return Pixels(40);
+	return Pixels(48);
 }
 
 
@@ -776,8 +776,8 @@ BOOL DistributionBar::OnEraseBkgnd(CDC* dc_ptr)
 
 	dc.SetBkMode(OPAQUE);
 
-	COLORREF rgbBARS = g_Settings.AppColors()[AppColors::DimText];//  RGB(105, 130, 191);
-	COLORREF rgbTICK = rgbBARS;// CalcShade(rgb_color, -30.0f);// RGB(105, 130, 191);
+	COLORREF rgbBARS = RGB(45, 200, 100);//g_Settings.AppColors()[AppColors::DimText];//  RGB(105, 130, 191);
+	COLORREF rgbTICK = g_Settings.AppColors()[AppColors::DimText];//rgbBARS;// CalcShade(rgb_color, -30.0f);// RGB(105, 130, 191);
 
 	::DrawPanelBackground(dc, rect);
 
