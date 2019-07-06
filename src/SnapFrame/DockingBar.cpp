@@ -63,7 +63,14 @@ bool CDockingBar::Create(CWnd* parent, CFramePages* pages, bool show)
 
 	CDC dc;
 	dc.CreateIC(_T("DISPLAY"), 0, 0, 0);
-	dc.SelectStockObject(DEFAULT_GUI_FONT);
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	_font.CreateFontIndirect(&lf);
+	dc.SelectObject(&_font);
+	//dc.SelectStockObject(DEFAULT_GUI_FONT);
 	TEXTMETRIC tm;
 	dc.GetTextMetrics(&tm);
 	int line_height= tm.tmHeight + tm.tmInternalLeading + tm.tmExternalLeading;
@@ -127,7 +134,8 @@ void CDockingBar::OnPaint()
 	COLORREF rgb_background= ::GetSysColor(COLOR_APPWORKSPACE);
 
 	CMemoryDC mem_dc(dc, this, rgb_background);
-	mem_dc.SelectStockObject(DEFAULT_GUI_FONT);
+	dc.SelectObject(&_font);
+	//mem_dc.SelectStockObject(DEFAULT_GUI_FONT);
 
 	CRect rect;
 	GetClientRect(rect);
