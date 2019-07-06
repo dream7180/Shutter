@@ -234,6 +234,8 @@ void ListViewCtrl::Impl::PreSubclassWindow()
 	normal_fnt_.CreateFontIndirect(&lf);
 
 	lf.lfUnderline = true;
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 	underlined_fnt_.CreateFontIndirect(&lf);
 }
 
