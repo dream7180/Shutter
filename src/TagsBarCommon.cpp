@@ -100,7 +100,7 @@ TagsBarCommon::TagsBarCommon(PhotoTagsCollection& tag_collection, const wchar_t*
 	in_update_ = false;
 	//tags_changed_ = false;		// if changed, save them on exit
 	tool_bar_at_top_ = true;
-	create_big_toolbar_ = false;
+	//create_big_toolbar_ = false;
 	create_toolbar_ = true;
 	create_status_bar_ = true;
 	create_rating_wnd_ = true;
@@ -196,7 +196,7 @@ void TagsBarCommon::TagCollectionChanged()
 
 bool TagsBarCommon::Create(CWnd* parent, bool big_toolbar)
 {
-	create_big_toolbar_ = big_toolbar;
+	//create_big_toolbar_ = big_toolbar;
 
 	if (!CWnd::Create(AfxRegisterWndClass(CS_VREDRAW | CS_HREDRAW, ::LoadCursor(NULL, IDC_ARROW),
 		reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1)), 0, WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN, CRect(0,0,0,0), parent, -1))
@@ -382,7 +382,7 @@ int TagsBarCommon::OnCreate(LPCREATESTRUCT create_struct)
 		tool_bar_wnd_.SetOwnerDraw(true);
 		static int cmds[]= { ID_TAGS_MANAGE, ID_TAGS_OPTIONS };
 		tool_bar_wnd_.SetOnIdleUpdateState(false);
-		int bmp_id= create_big_toolbar_ ? IDB_TAGS_TOOLBAR_BIG : IDB_TAGS_TOOLBAR;
+		int bmp_id= IDB_TAGS_TOOLBAR;//create_big_toolbar_ ? IDB_TAGS_TOOLBAR_BIG : IDB_TAGS_TOOLBAR;
 		VERIFY(tool_bar_wnd_.Create("pv", cmds, bmp_id, 0, this, ID_TOOLBAR));
 
 		WINDOWPLACEMENT wp;
