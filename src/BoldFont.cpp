@@ -11,7 +11,7 @@ ____________________________________________________________________________*/
 LOGFONT CreateBoldLogFont(CWnd* parent)
 {
 	LOGFONT lf;
-	bool useDefault= true;
+	bool useDefault= false;
 	if (parent)
 		if (CFont* font= parent->GetFont())
 		{
