@@ -28,21 +28,25 @@ void DrawPhotoTags(CDC& dc, const CRect& rect, const PhotoTags& tags, int rating
 	if (tags.empty() && rating == 0)
 		return;
 
-	HFONT hfont= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
-	LOGFONT logfont;
-	::GetObject(hfont, sizeof logfont, &logfont);
-
 	CRect img_rect= rect;
 
 	const int MARGIN= 0;
 	int tag_w= MARGIN + img_rect.Width();// * 2 / 3;
-
-	LOGFONT lf= logfont;
-	lf.lfWeight = FW_BOLD;
+	
 	CFont font;
-	font.CreateFontIndirect(&lf);
+	::CreateBoldFont(0, font);
+	dc.SelectObject(&font);
 
-	CFont* old_font= dc.SelectObject(&font);
+	//LOGFONT lf;//= logfont;
+	//HFONT hfont= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	//::GetObject(hfont, sizeof(lf), &lf);
+	//lf.lfWeight = FW_BOLD;
+	//lf.lfQuality = ANTIALIASED_QUALITY;
+	//_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	//CFont font;
+	//font.CreateFontIndirect(&lf);
+
+	//CFont* old_font= dc.SelectObject(&font);
 	CSize text_size= dc.GetTextExtent(_T("X"), 1);	// TODO: Msize here
 
 	dc.SetTextColor(text);
@@ -67,8 +71,11 @@ void DrawPhotoTags(CDC& dc, const CRect& rect, const PhotoTags& tags, int rating
 	if (rating > 0 && rating <= 5)	// draw stars for ratings > 0
 	{
 		CFont wingdings;
-		LOGFONT lf= logfont;
+		//LOGFONT lf= logfont;
 //		ctrl.default_fnt_.GetLogFont(&lf);
+		LOGFONT lf;
+		HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+		::GetObject(hfont, sizeof(lf), &lf);
 		_tcscpy(lf.lfFaceName, _T("WingDings"));
 		lf.lfCharSet = SYMBOL_CHARSET;
 		if (lf.lfHeight < 0)
@@ -127,7 +134,7 @@ void DrawPhotoTags(CDC& dc, const CRect& rect, const PhotoTags& tags, int rating
 
 	dc.SetBkColor(backgnd);
 	dc.SetBkMode(OPAQUE);
-	dc.SelectObject(&font);
+	//dc.SelectObject(&font);
 	{
 		const size_t tagsCount= tags.size();
 		for (size_t i= 0; i < tagsCount; ++i)
@@ -151,7 +158,7 @@ void DrawPhotoTags(CDC& dc, const CRect& rect, const PhotoTags& tags, int rating
 	}
 
 	dc.SelectObject(old_brush);
-	dc.SelectObject(old_font);
+	//dc.SelectObject(old_font);
 }
 
 
@@ -184,7 +191,7 @@ void DrawPaneIndicator(CDC& dc, const CRect& rect, COLORREF text_color, COLORREF
 	CBrush br(back_color);
 	dc.SelectStockObject(NULL_PEN);
 
-	CFont* old_font= dc.SelectObject(&font);
+	//CFont* old_font= dc.SelectObject(&font);
 	int size= dc.GetTextExtent(_T("X"), 1).cy + 1;
 
 	CRect r(CPoint(rect.right - size, rect.bottom - size), CSize(size, size));
@@ -203,7 +210,7 @@ void DrawPaneIndicator(CDC& dc, const CRect& rect, COLORREF text_color, COLORREF
 	dc.DrawText(buf, static_cast<int>(_tcslen(buf)), r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 
 	dc.SelectObject(old_brush);
-	dc.SelectObject(old_font);
+	dc.SelectObject(&font);
 }
 
 
