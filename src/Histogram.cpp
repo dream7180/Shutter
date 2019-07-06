@@ -365,8 +365,16 @@ void Histogram::Draw(CDC* dc, CRect rect, ChannelSel channels, UINT flags)
 {
 	if ((flags & NO_ERASE_BACKGND) == 0)
 		dc->FillSolidRect(rect, rgb_back_);
-
-	dc->SelectStockObject(DEFAULT_GUI_FONT);
+	
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	CFont _font;
+	_font.CreateFontIndirect(&lf);
+	dc->SelectObject(&_font);
+	//dc->SelectStockObject(DEFAULT_GUI_FONT);
 
 	CSize text_size= dc->GetTextExtent(_T("0.00%"), 5);
 	bool draw_arrows= (flags & DRAW_SLIDER_ARROWS) != 0;
