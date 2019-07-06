@@ -307,6 +307,8 @@ BOOL CTransferDlg::InitDlg()
 		{
 			HFONT hfont= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 			::GetObject(hfont, sizeof(lf), &lf);
+			lf.lfQuality = ANTIALIASED_QUALITY;
+			_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 		}
 		pImpl_->normal_font_.CreateFontIndirect(&lf);
 		lf.lfWeight = FW_BOLD;
