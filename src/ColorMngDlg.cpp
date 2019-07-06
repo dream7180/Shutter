@@ -455,7 +455,16 @@ void ColorMngDlg::ShowProfilesMenu(ExtTreeRow* item, CPoint pos)
 	// (lame) estimation of menu item height
 	CDC dc;
 	dc.CreateIC(_T("DISPLAY"), 0, 0, 0);
-	dc.SelectStockObject(DEFAULT_GUI_FONT);
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfWeight = FW_NORMAL;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	CFont _font;
+	_font.CreateFontIndirect(&lf);
+	dc.SelectObject(&_font);
+	//dc.SelectStockObject(DEFAULT_GUI_FONT);
 	TEXTMETRIC tm;
 	dc.GetTextMetrics(&tm);
 	int line_height= tm.tmHeight + tm.tmInternalLeading + tm.tmExternalLeading;
@@ -564,6 +573,8 @@ HBRUSH ColorMngDlg::OnCtlColor(CDC* dc, CWnd* wnd, UINT ctl_color)
 		{
 			HFONT font_handle= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 			::GetObject(font_handle, sizeof(lf), &lf);
+			_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+			lf.lfQuality = ANTIALIASED_QUALITY;
 		}
 		lf.lfWeight =  FW_BOLD;
 		bold_fnt_.CreateFontIndirect(&lf);
