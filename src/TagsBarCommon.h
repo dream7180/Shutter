@@ -152,7 +152,7 @@ private:
 	ToolBarWnd clear_rating_;
 	int top_;
 	bool in_update_;
-	bool create_big_toolbar_;
+	//bool create_big_toolbar_;
 	bool create_toolbar_;
 	bool create_status_bar_;
 	bool create_rating_wnd_;
