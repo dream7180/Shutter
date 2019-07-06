@@ -212,6 +212,8 @@ void FilePaneWnd::Impl::Init(CWnd* parent, bool showNew, bool showMask)
 		{
 			HFONT hfont= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 			::GetObject(hfont, sizeof(lf), &lf);
+			lf.lfQuality = ANTIALIASED_QUALITY;
+			_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 		}
 		lf.lfWeight =  FW_BOLD;
 		bold_fnt_.CreateFontIndirect(&lf);
