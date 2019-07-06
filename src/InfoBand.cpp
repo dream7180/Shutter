@@ -61,7 +61,15 @@ bool InfoBand::Create(CWnd* parent, InfoBandNotification* recipient)
 {
 	CDC dc;
 	dc.CreateIC(_T("DISPLAY"), 0, 0, 0);
-	dc.SelectStockObject(DEFAULT_GUI_FONT);
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfWeight = FW_NORMAL;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_font.CreateFontIndirect(&lf);
+	dc.SelectObject(&_font);
+	//dc.SelectStockObject(DEFAULT_GUI_FONT);
 	TEXTMETRIC tm;
 	dc.GetTextMetrics(&tm);
 	int h= tm.tmHeight + tm.tmInternalLeading + 3;	// yes, internal leading is already in tmHeight
@@ -112,7 +120,8 @@ BOOL InfoBand::OnEraseBkgnd(CDC* dc)
 
 		dc.SetBkMode(TRANSPARENT);
 		dc.SetTextColor(::GetSysColor(COLOR_BTNTEXT));
-		dc.SelectStockObject(DEFAULT_GUI_FONT);
+		//dc.SelectStockObject(DEFAULT_GUI_FONT);
+		dc.SelectObject(&_font);
 
 		CString text;
 		GetWindowText(text);
