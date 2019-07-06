@@ -58,7 +58,7 @@ private:
 
 	virtual void SelectionHasChanged(VectPhotoInfo& selected);
 	virtual void AssignTag(int index);
-	virtual void CaptionHeightChanged(bool big);
+	//virtual void CaptionHeightChanged(bool big);
 	virtual void OptionsChanged(OptionsDlg& dlg);
 	virtual void ActivatePane(bool active);
 };
