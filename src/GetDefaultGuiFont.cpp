@@ -27,7 +27,7 @@ CFont& GetDefaultGuiFont()
 		LOGFONT lf;
 		::GetObject(font, sizeof(lf), &lf);
 		lf.lfWeight = FW_NORMAL;
-		lf.lfHeight -= 2;
+		//lf.lfHeight -= 2;
 		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 		default_font.CreateFontIndirect(&lf);
 	}
@@ -47,7 +47,7 @@ CFont& GetDefaultGuiBoldFont()
 		LOGFONT lf;
 		::GetObject(font, sizeof(lf), &lf);
 		lf.lfWeight = FW_NORMAL;
-		lf.lfHeight -= 2;
+		//lf.lfHeight -= 2;
 		_tcscpy(lf.lfFaceName, _T("Segoe UI Semibold"));
 		default_bold_font.CreateFontIndirect(&lf);
 	}
