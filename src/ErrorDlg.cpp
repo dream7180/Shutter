@@ -164,6 +164,8 @@ HBRUSH ErrorDlg::OnCtlColor(CDC* dc, CWnd* ctrl, UINT code)
 				::GetObject(font_handle, sizeof(lf), &lf);
 			}
 			lf.lfWeight =  FW_BOLD;
+			lf.lfQuality = ANTIALIASED_QUALITY;
+			_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 			bold_fnt_.CreateFontIndirect(&lf);
 		}
 
@@ -182,7 +184,7 @@ HBRUSH ErrorDlg::OnCtlColor(CDC* dc, CWnd* ctrl, UINT code)
 				::GetObject(font_handle, sizeof(lf), &lf);
 			}
 			lf.lfPitchAndFamily = FIXED_PITCH;
-			wcscpy_s(lf.lfFaceName, LF_FACESIZE, L"Courier New");
+			wcscpy_s(lf.lfFaceName, LF_FACESIZE, L"Lucida Console");
 			mono_fnt_.CreateFontIndirect(&lf);
 
 			ctrl->SetFont(&mono_fnt_);
