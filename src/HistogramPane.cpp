@@ -61,8 +61,15 @@ bool HistogramPane::Create(CWnd* parent)
 		return false;
 
 	channels_ = profile_channel_;
-
-	channels_wnd_.SendMessage(WM_SETFONT, WPARAM(::GetStockObject(DEFAULT_GUI_FONT)));
+	
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	hfont = CreateFontIndirectW(&lf);
+	channels_wnd_.SendMessage(WM_SETFONT, WPARAM(hfont));
+	//channels_wnd_.SendMessage(WM_SETFONT, WPARAM(::GetStockObject(DEFAULT_GUI_FONT)));
 	channels_wnd_.InitStorage(5, 15);
 	channels_wnd_.AddString(_T("RGB"));
 	channels_wnd_.AddString(_T("RGB Overlaid"));
