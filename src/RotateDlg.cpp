@@ -118,7 +118,7 @@ void CRotateDlg::DoDataExchange(CDataExchange* DX)
 	DDX_Check(DX, IDC_HORZ_FLIP, mirror_);
 
 	DDX_Control(DX, IDOK, ok_button_);
-	DDX_Control(DX, IDC_SEPARATOR, separator_);
+	//DDX_Control(DX, IDC_SEPARATOR, separator_);
 	DDX_Control(DX, IDC_IMAGE_1, images_[0]);
 	DDX_Control(DX, IDC_IMAGE_2, images_[1]);
 	DDX_Control(DX, IDC_IMAGE_3, images_[2]);
