@@ -39,4 +39,5 @@ private:
 	LRESULT OnPrintClient(WPARAM HDC, LPARAM flags);
 	void OnSize(UINT type, int cx, int cy);
 	void OnLButtonDown(UINT flags, CPoint point);
+	CFont _font;
 };
