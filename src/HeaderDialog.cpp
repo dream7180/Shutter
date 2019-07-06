@@ -32,8 +32,8 @@ static char THIS_FILE[] = __FILE__;
 
 namespace {
 	static bool g_initialized = false;
-	static int g_HEADER= 45 + 3;
-	static int g_IMG_OFFSET= 12;
+	static int g_HEADER= 30 + 3;
+	//static int g_IMG_OFFSET= 12;
 	static COLORREF g_rgb_background_color= RGB(255,255,255);
 	static COLORREF g_rgb_text_color= RGB(0,0,0);
 }
@@ -66,7 +66,7 @@ void HeaderDialog::Init()
 	resizable_dlg_ = dlg_->IsResizable();
 //		IsResizable();
 	set_window_title_ = true;
-	has_header_ = true;
+	has_header_ = false;
 	if (resizable_dlg_)
 	{
 		m_lpszTemplateName = MAKEINTRESOURCE(IDD_HEADER_DLG_RESIZABLE);
@@ -111,25 +111,25 @@ BOOL HeaderDialog::OnInitDialog()
 	CDialog::OnInitDialog();
 
 //	if (!LoadImageList(image_list_, IDB_BROWSER_TOOLS, 50, RGB(255,255,255)))
-	if (!LoadImageList(image_list_, IDB_HEADER_IMAGES, 80, RGB(255,255,255)))
-	{
-		ASSERT(false);
-		EndDialog(IDCANCEL);
-		return true;
-	}
+	//if (!LoadImageList(image_list_, IDB_HEADER_IMAGES, 80, RGB(255,255,255)))
+	//{
+		//ASSERT(false);
+		//EndDialog(IDCANCEL);
+	//	return true;
+	//}
 
-	{ // create img list
+	//{ // create img list
 		//HINSTANCE inst= AfxFindResourceHandle(MAKEINTRESOURCE(IDB_HEADER_IMG), RT_BITMAP);
 		//HIMAGELIST img_list= ImageList_LoadImage(inst, MAKEINTRESOURCE(IDB_HEADER_IMG),
 		//		72, 0, RGB(255,0,255), IMAGE_BITMAP, LR_CREATEDIBSECTION);
 		//ASSERT(img_list != 0);
 		//if (img_list)
 		//	image_list_.Attach(img_list);
-		image_list_.SetBkColor(g_rgb_background_color);
-	}
+	//	image_list_.SetBkColor(g_rgb_background_color);
+	//}
 
 	// create font
-	font_.CreateFont(-Pixels(18), 0, 0, 0, FW_BOLD, false, false, false, DEFAULT_CHARSET,
+	font_.CreateFont(-Pixels(14), 0, 0, 0, FW_BOLD, false, false, false, DEFAULT_CHARSET,
 		OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, _T("Tahoma"));
 
 	struct xCDialog : public CDialog
@@ -242,7 +242,8 @@ BOOL HeaderDialog::OnInitDialog()
 
 CRect HeaderDialog::GetImgRect() const
 {
-	CPoint start(Pixels(g_IMG_OFFSET), 0);
+	//CPoint start(Pixels(g_IMG_OFFSET), 0);
+	CPoint start(20, 0);
 	CRect rect(start, CSize(HeaderHeight() + 2-3, HeaderHeight() - 5-3));
 	rect.OffsetRect(-1, 2);
 	return rect;
@@ -338,13 +339,13 @@ BOOL HeaderDialog::OnEraseBkgnd(CDC* dc)
 		else if (photo_image_)
 			photo_image_->Draw(dc, GetImgRect(), g_rgb_background_color);
 
-		CPoint start(Pixels(g_IMG_OFFSET), 0);
-
-		if (image_list_.m_hImageList)
-		{
-			image_list_.Draw(dc, image_, start, ILD_TRANSPARENT);
-			start.x += Pixels(image_ == IMG_COPY || image_ == IMG_MOVE || image_ == IMG_HISTOGRAM ? 80 : 56);
-		}
+		//CPoint start(Pixels(g_IMG_OFFSET), 0);
+		CPoint start(20, 0);
+		//if (image_list_.m_hImageList)
+		//{
+			//image_list_.Draw(dc, image_, start, ILD_TRANSPARENT);
+			//start.x += Pixels(image_ == IMG_COPY || image_ == IMG_MOVE || image_ == IMG_HISTOGRAM ? 80 : 56);
+		//}
 
 		if (font_.m_hObject)
 		{
