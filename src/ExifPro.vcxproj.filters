@@ -855,9 +855,9 @@
     <ClCompile Include="PhotoCtrl.cpp">
       <Filter>CommonUI</Filter>
     </ClCompile>
-    <ClCompile Include="PhotoList.cpp">
+    <!--ClCompile Include="PhotoList.cpp">
       <Filter>CommonUI</Filter>
-    </ClCompile>
+    </ClCompile-->
     <ClCompile Include="PopupMenuCtrl.cpp">
       <Filter>CommonUI</Filter>
     </ClCompile>
@@ -2089,9 +2089,9 @@
     <ClInclude Include="PhotoInfoX3F.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PhotoList.h">
+    <!--ClInclude Include="PhotoList.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </ClInclude-->
     <ClInclude Include="PhotoQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -2733,9 +2733,9 @@
     <Image Include="res\GroupHeaderIcons.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\HeaderImages.png">
+    <!--Image Include="res\HeaderImages.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\HelpBtn.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -3099,9 +3099,9 @@
     <Image Include="res\TagsToolbar.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\TagsToolbarBig.png">
+    <!--<Image Include="res\TagsToolbarBig.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image>-->
     <Image Include="res\task_bar.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -3180,9 +3180,9 @@
     <Image Include="res\ViewerToolbar.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\ViewerToolbarBig.png">
+    <!--<Image Include="res\ViewerToolbarBig.png">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image>-->
     <!--<Image Include="res\ViewerToolbarDis.bmp">
       <Filter>Resource Files</Filter>
     </Image>
