@@ -288,9 +288,10 @@ void Config::Restore()
 	preload_photos_		= !!app->GetProfileInt(REGISTRY_ENTRY_CONFIG, REG_PRELOAD, preload_photos_);
 
 	// description font
-	default_description_font_.lfHeight = -50;
+	default_description_font_.lfHeight = -40;
 	default_description_font_.lfWeight = 400;
-	default_description_font_.lfItalic = 1;
+	default_description_font_.lfQuality = ANTIALIASED_QUALITY;
+	default_description_font_.lfItalic = 0;
 	default_description_font_.lfUnderline = 0;
 	default_description_font_.lfStrikeOut = 0;
 	default_description_font_.lfCharSet = DEFAULT_CHARSET;
