@@ -852,7 +852,15 @@ void PreviewBandWnd::Impl::PaintToBmp(Dib& bmp, CRect rect, CPoint scrl, bool sc
 
 	if (!IsEmpty())
 	{
-		dc.SelectStockObject(DEFAULT_GUI_FONT);
+		LOGFONT lf;
+		HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+		::GetObject(hfont, sizeof(lf), &lf);
+		lf.lfQuality = ANTIALIASED_QUALITY;
+		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+		CFont _font;
+		_font.CreateFontIndirect(&lf);
+		dc.SelectObject(&_font);
+		//dc.SelectStockObject(DEFAULT_GUI_FONT);
 		dc.SetBkMode(TRANSPARENT);
 
 //		CPoint scrl= GetScrollOffset();
