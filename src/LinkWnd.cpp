@@ -87,6 +87,8 @@ bool CLinkWnd::Create(CWnd* parent, CPoint top_left, const TCHAR* display, const
 		{
 			HFONT font= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 			::GetObject(font, sizeof(lf), &lf);
+			lf.lfQuality = ANTIALIASED_QUALITY;
+			_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 		}
 		lf.lfUnderline = true;
 		underlined_fnt_.CreateFontIndirect(&lf);
@@ -124,6 +126,8 @@ void CLinkWnd::PreSubclassWindow()
 		{
 			HFONT hfont= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 			::GetObject(hfont, sizeof(lf), &lf);
+			lf.lfQuality = ANTIALIASED_QUALITY;
+			_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 		}
 		lf.lfUnderline = true;
 		underlined_fnt_.CreateFontIndirect(&lf);
