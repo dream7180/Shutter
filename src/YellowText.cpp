@@ -77,8 +77,8 @@ void YellowText::Prepare(CWnd* wnd)
 		if (scale < 1.0 && scale > 0.0)
 			scale = pow(scale, 0.6);	// non-linear scaling down: slower than linear
 		int font_height= static_cast<int>(scale * log_font_.lfHeight - 0.5);
-		if (font_height > -2)
-			font_height = -2;
+		if (font_height > -14)
+			font_height = -14;
 		ResetFont(log_font_, font_height);
 	}
 
