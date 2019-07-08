@@ -13,7 +13,7 @@ ____________________________________________________________________________*/
 #include "resource.h"
 #include "Config.h"
 #include "ProfileVector.h"
-#include "BoldFont.h"
+//#include "BoldFont.h"
 #include <shlwapi.h>
 #include "DefaultColors.h"
 #include "ImgDb.h"
@@ -288,21 +288,22 @@ void Config::Restore()
 	preload_photos_		= !!app->GetProfileInt(REGISTRY_ENTRY_CONFIG, REG_PRELOAD, preload_photos_);
 
 	// description font
-	default_description_font_.lfHeight = -40;
-	default_description_font_.lfWeight = 400;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(default_description_font_), &default_description_font_);
+	default_description_font_.lfHeight -= 14;
+	default_description_font_.lfWeight = FW_BOLD;
 	default_description_font_.lfQuality = ANTIALIASED_QUALITY;
-	default_description_font_.lfItalic = 0;
+	_tcscpy(default_description_font_.lfFaceName, _T("Segoe UI"));
+	/*default_description_font_.lfItalic = 0;
 	default_description_font_.lfUnderline = 0;
 	default_description_font_.lfStrikeOut = 0;
 	default_description_font_.lfCharSet = DEFAULT_CHARSET;
 	default_description_font_.lfPitchAndFamily = DEFAULT_PITCH;
-	_tcscpy(default_description_font_.lfFaceName, _T("Verdana"));
 	default_description_font_.lfEscapement = 0;
 	default_description_font_.lfOrientation = 0;
 	default_description_font_.lfOutPrecision = OUT_DEFAULT_PRECIS;
 	default_description_font_.lfClipPrecision = CLIP_DEFAULT_PRECIS;
-	default_description_font_.lfQuality = ANTIALIASED_QUALITY;
-	default_description_font_.lfWidth = 0;
+	default_description_font_.lfWidth = 0;*/
 
 	BYTE* data= 0;
 	UINT len;
@@ -316,12 +317,12 @@ void Config::Restore()
 	{
 		description_font_ = default_description_font_;
 	}
-	description_font_.lfEscapement = 0;
+	/*description_font_.lfEscapement = 0;
 	description_font_.lfOrientation = 0;
 	description_font_.lfOutPrecision = OUT_DEFAULT_PRECIS;
 	description_font_.lfClipPrecision = CLIP_DEFAULT_PRECIS;
 	description_font_.lfQuality = ANTIALIASED_QUALITY;
-	description_font_.lfWidth = 0;
+	description_font_.lfWidth = 0;*/
 
 //	rgb_description_ = app->GetProfileInt(REGISTRY_ENTRY_CONFIG, REG_DESC_COLOR, rgb_description_);
 
@@ -526,7 +527,13 @@ void Config::Restore()
 
 	smooth_scrolling_speed_ = app->GetProfileInt(REGISTRY_ENTRY_CONFIG, REG_SMOOTH_SPEED_VAL, smooth_scrolling_speed_);
 
-	img_default_tag_font_ = ::CreateBoldLogFont(0);
+	//HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(img_default_tag_font_), &img_default_tag_font_);
+	//img_default_tag_font_.lfHeight = -14;
+	_tcscpy(img_default_tag_font_.lfFaceName, _T("Segoe UI"));
+	img_default_tag_font_.lfQuality = ANTIALIASED_QUALITY;
+	img_default_tag_font_.lfWeight = FW_BOLD;
+	//img_default_tag_font_ = ::CreateBoldLogFont(0);
 	img_tag_font_ = img_default_tag_font_;
 
 	{
