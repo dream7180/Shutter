@@ -346,9 +346,9 @@ void CreateScriptEditingFont(CFont& font)
 	LOGFONT lf;
 	HFONT hfont= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	::GetObject(hfont, sizeof(lf), &lf);
-	_tcscpy(lf.lfFaceName, _T("Lucida Console"));
+	_tcscpy(lf.lfFaceName, _T("Consolas"));
 	lf.lfPitchAndFamily = FIXED_PITCH;
-	lf.lfHeight -= 2; // larger text
+	//lf.lfHeight -= 2; // larger text
 	font.DeleteObject();
 	font.CreateFontIndirect(&lf);
 }
