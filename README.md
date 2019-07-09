@@ -2,7 +2,7 @@
 
 ExifPro Mod is mod from ExifPro 2.3 at https://github.com/mikekov/ExifPro.
 
-Since here is no release for ExifPro project and it seems freezed from Feb 2019, this mod version is to make this software usable.
+Since there is no release for ExifPro project and it seems freezed from Feb 2019, this mod version is to make this software usable.
 
 Fix bugs and change UI to make it looks much better.
 Optimize the settings and other enhancement.
