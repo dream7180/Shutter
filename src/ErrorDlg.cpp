@@ -164,8 +164,9 @@ HBRUSH ErrorDlg::OnCtlColor(CDC* dc, CWnd* ctrl, UINT code)
 				::GetObject(font_handle, sizeof(lf), &lf);
 			}
 			lf.lfWeight =  FW_BOLD;
-			lf.lfQuality = ANTIALIASED_QUALITY;
-			_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+			//lf.lfQuality = ANTIALIASED_QUALITY;
+			lf.lfHeight += 1;
+			_tcscpy(lf.lfFaceName, _T("Tahoma"));
 			bold_fnt_.CreateFontIndirect(&lf);
 		}
 
