@@ -44,8 +44,9 @@ ExtTreeRow::ExtTreeRow(ExtTreeNode* Parent, ICMProfilePtr icm, UINT flags/*= REN
 		LOGFONT lf;
 		::GetObject(::GetStockObject(DEFAULT_GUI_FONT), sizeof lf, &lf);
 		lf.lfWeight = FW_BOLD;
-		lf.lfQuality = ANTIALIASED_QUALITY;
-		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+		//lf.lfQuality = ANTIALIASED_QUALITY;
+		lf.lfHeight += 1;
+		_tcscpy(lf.lfFaceName, _T("Tahoma"));
 		bold_fnt_.CreateFontIndirect(&lf);
 	}
 }
