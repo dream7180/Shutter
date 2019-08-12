@@ -157,7 +157,7 @@ static COLORREF CalcShade(COLORREF rgb_color, float shade)
 
 CSize SnapView::GetBarThickness()
 {
-	int n = Pixels(2);
+	int n = Pixels(1);
 	return CSize(n, n);
 }
 
