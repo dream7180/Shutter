@@ -2972,7 +2972,7 @@ END
 
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION 1,0,0,0
- PRODUCTVERSION 2,3,0,1000
+ PRODUCTVERSION 2,4,0,1000
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -2994,7 +2994,7 @@ BEGIN
             VALUE "LegalCopyright", "Copyright © 2000-2015 Michael Kowalski"
             VALUE "OriginalFilename", "ExifPro.EXE"
             VALUE "ProductName", "ExifPro Application"
-            VALUE "ProductVersion", "2.3.0.1000"
+            VALUE "ProductVersion", "2.4.0.1000"
         END
     END
     BLOCK "VarFileInfo"
