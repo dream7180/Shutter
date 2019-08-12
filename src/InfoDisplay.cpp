@@ -79,9 +79,10 @@ bool InfoDisplay::Create(CWnd* parent, const GetTextFn& get_text, COLORREF rgb_b
 	HFONT font= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	LOGFONT lf;
 	::GetObject(font, sizeof(lf), &lf);
-	lf.lfWeight = 700;
-	lf.lfQuality = ANTIALIASED_QUALITY;
-	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	//lf.lfWeight = 700;
+	//lf.lfQuality = ANTIALIASED_QUALITY;
+	lf.lfHeight += 1;
+	_tcscpy(lf.lfFaceName, _T("Tahoma"));
 	bold_fnt_.CreateFontIndirect(&lf);
 #endif
 	if (!CListCtrl::Create(WS_CHILD | WS_VISIBLE | LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | LVS_OWNERDATA,
@@ -381,9 +382,8 @@ void ResizeLastColumn(CListCtrl& list_wnd)
 	CRect cl_rect;
 	list_wnd.GetClientRect(cl_rect);
 
-	if ((list_wnd.GetStyle() & WS_VSCROLL) == 0)
+	/*if ((list_wnd.GetStyle() & WS_VSCROLL) == 0)
 		cl_rect.right -= ::GetSystemMetrics(SM_CXVSCROLL);
-
 	int right= cl_rect.right - 2;
 
 	if (rect.right != right)
@@ -394,6 +394,13 @@ void ResizeLastColumn(CListCtrl& list_wnd)
 			list_wnd.SetColumnWidth(last, rect.Width());
 			list_wnd.SetColumnWidth(last, rect.Width() + 1);	// stupid, but works; forces horz scrollbar to disappear
 		}
+	}*/
+
+	rect.right = cl_rect.right;
+	if (rect.Width() > 20)
+	{
+		//list_wnd.SetColumnWidth(last, rect.Width());
+		list_wnd.SetColumnWidth(last, rect.Width());	// stupid, but works; forces horz scrollbar to disappear
 	}
 }
 
