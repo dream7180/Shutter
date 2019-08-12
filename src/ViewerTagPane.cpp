@@ -246,9 +246,9 @@ BOOL ViewerTagPane::OnEraseBkgnd(CDC* dc)
 		LOGFONT lf;
 		::GetObject(hfont, sizeof(lf), &lf);
 		lf.lfWeight = FW_BOLD;
-		//lf.lfHeight -= 2;
-		lf.lfQuality = ANTIALIASED_QUALITY;
-		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+		lf.lfHeight += 1;
+		//lf.lfQuality = ANTIALIASED_QUALITY;
+		_tcscpy(lf.lfFaceName, _T("Tahoma"));
 		CFont font;
 		font.CreateFontIndirect(&lf);
 
