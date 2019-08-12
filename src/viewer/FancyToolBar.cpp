@@ -607,8 +607,9 @@ static void SelectFont(CDC& dc)
 	LOGFONT lf;
 	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	::GetObject(hfont, sizeof(lf), &lf);
-	lf.lfQuality = ANTIALIASED_QUALITY;
-	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	//lf.lfQuality = ANTIALIASED_QUALITY;
+	lf.lfHeight += 1;
+	_tcscpy(lf.lfFaceName, _T("tahoma"));
 	CFont _font;
 	_font.CreateFontIndirect(&lf);
 	dc.SelectObject(&_font);
