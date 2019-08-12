@@ -94,7 +94,7 @@ BOOL DescriptionPane::InitDlg()
 	edit_.SetDlgCtrlID(Pane::EDIT_ID);
 
 	LOGFONT lf= g_Settings.description_font_;
-	lf.lfHeight = -18;
+	//lf.lfHeight = -18;
 	fndEdit_.CreateFontIndirect(&lf);
 
 	edit_.SetFont(&fndEdit_);
