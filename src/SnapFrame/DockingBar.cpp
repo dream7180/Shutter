@@ -66,8 +66,9 @@ bool CDockingBar::Create(CWnd* parent, CFramePages* pages, bool show)
 	LOGFONT lf;
 	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	::GetObject(hfont, sizeof(lf), &lf);
-	lf.lfQuality = ANTIALIASED_QUALITY;
-	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	lf.lfHeight += 1;
+	//lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Tahoma"));
 	_font.CreateFontIndirect(&lf);
 	dc.SelectObject(&_font);
 	//dc.SelectStockObject(DEFAULT_GUI_FONT);
