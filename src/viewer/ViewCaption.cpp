@@ -50,8 +50,9 @@ bool ViewCaption::Create(CWnd* parent, int toolbarBmp, const int commands[], int
 	LOGFONT lf;
 	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	::GetObject(hfont, sizeof(lf), &lf);
-	lf.lfQuality = ANTIALIASED_QUALITY;
-	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	//lf.lfQuality = ANTIALIASED_QUALITY;
+	lf.lfHeight += 1;
+	_tcscpy(lf.lfFaceName, _T("Tahoma"));
 	_font.CreateFontIndirect(&lf);
 	dc.SelectObject(&_font);
 	//dc.SelectStockObject(DEFAULT_GUI_FONT);
