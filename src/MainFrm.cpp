@@ -104,7 +104,7 @@ MainFrame::MainFrame() : wnd_pos_(REGISTRY_SECTION_MAIN_WND), status_bar_wnd_(co
 	favorite_folders_ = new FavoriteFolders(MAX_FAVORITE_FOLDERS);
 	favorite_folders_->RetrieveFolders(REGISTRY_SECTION_FAVORITES);
 
-	recent_path_list_ = new CRecentFileList(0, REGISTRY_ENTRY_PATHS, REG_RECENT_PATH, 30);
+	recent_path_list_ = new CRecentFileList(0, REGISTRY_ENTRY_PATHS, REG_RECENT_PATH, 10);
 	recent_path_list_->ReadList();
 
 	scanning_bar_ = false;
@@ -509,8 +509,9 @@ BOOL MainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* context)
 	LOGFONT lf;
 	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	::GetObject(hfont, sizeof(lf), &lf);
-	lf.lfQuality = ANTIALIASED_QUALITY;
-	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	lf.lfHeight += 1;
+	//lf.lfQuality = ANTIALIASED_QUALITY;
+	_tcscpy(lf.lfFaceName, _T("Tahoma"));
 	hfont = CreateFontIndirectW(&lf);
 	status_bar_wnd_.SendMessage(WM_SETFONT, WPARAM(hfont));
 	//status_bar_wnd_.SendMessage(WM_SETFONT, WPARAM(::GetDefaultGuiHFont()));
