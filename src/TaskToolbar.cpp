@@ -135,7 +135,7 @@ bool TaskToolbar::Create(CWnd* parent, UINT id, bool vertical)
 		HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 		::GetObject(hfont, sizeof(lf), &lf);
 		lf.lfHeight += 2;
-		lf.lfQuality = ANTIALIASED_QUALITY;
+		//lf.lfQuality = ANTIALIASED_QUALITY;
 		_tcscpy(lf.lfFaceName, _T("Tahoma"));
 		CFont _font;
 		_font.CreateFontIndirect(&lf);
