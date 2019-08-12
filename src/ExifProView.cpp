@@ -535,8 +535,9 @@ void ExifView::InitialUpdate()
 	LOGFONT lf;
 	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	::GetObject(hfont, sizeof(lf), &lf);
-	lf.lfQuality = ANTIALIASED_QUALITY;
-	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
+	//lf.lfQuality = ANTIALIASED_QUALITY;
+	lf.lfHeight += 1;
+	_tcscpy(lf.lfFaceName, _T("Tahoma"));
 	hfont = CreateFontIndirectW(&lf);
 	SendMessage(WM_SETFONT, WPARAM(hfont));
 	//SendMessage(WM_SETFONT, WPARAM(::GetStockObject(DEFAULT_GUI_FONT)));
