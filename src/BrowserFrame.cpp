@@ -279,7 +279,7 @@ void BrowserFrame::PlaceToolbar()
 				int y= wp.rcNormalPosition.bottom;
 				int w= wp.rcNormalPosition.right - wp.rcNormalPosition.left;
 				CSize size(w, toolbar_size_.cy);
-				toolbar_.SetWindowPos(nullptr, 2, y + 3, size.cx, size.cy, SWP_NOZORDER | SWP_NOACTIVATE);
+				toolbar_.SetWindowPos(nullptr, 2, y + 2, size.cx, size.cy, SWP_NOZORDER | SWP_NOACTIVATE);
 			}
 			else
 			{
@@ -287,7 +287,7 @@ void BrowserFrame::PlaceToolbar()
 				int y= wp.rcNormalPosition.top;
 				int h= wp.rcNormalPosition.bottom - wp.rcNormalPosition.top;
 				CSize size(toolbar_size_.cx, h);
-				toolbar_.SetWindowPos(nullptr, x + 3, y, size.cx, size.cy, SWP_NOZORDER | SWP_NOACTIVATE);
+				toolbar_.SetWindowPos(nullptr, x + 2, y, size.cx, size.cy, SWP_NOZORDER | SWP_NOACTIVATE);
 			}
 		}
 	}
@@ -1833,7 +1833,6 @@ void BrowserFrame::OnUpdateDefineCustomColumns(CCmdUI* cmd_ui)
 {
 	cmd_ui->Enable(exif_view_wnd_.CurrentItem() != 0);
 }
-
 
 void BrowserFrame::DrawSeparator(CDC& dc, const CRect& client)
 {
