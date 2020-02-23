@@ -77,7 +77,7 @@ void cmsSignalError(int ErrorCode, const char *ErrorText, ...)
                 }
          }
 
-#if defined( __CONSOLE__ ) || defined( NON_WINDOWS )
+#if defined( __CONSOLE__ ) || defined( NON_WINDOWS ) || defined(UNICODE)
 
               fprintf(stderr, "lcms: Error #%d; ", ErrorCode);
               vfprintf(stderr, ErrorText, args);

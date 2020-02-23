@@ -37,7 +37,7 @@ extern void ModifyHueSaturation(Dib& dib, float saturation, float lightness)
 	}
 }
 
-extern COLORREF CalcNewColorDeltaCtr(COLORREF rgb_color, float saturation_delta, float lightness_delta, float contrast);
+//extern COLORREF CalcNewColorDeltaCtr(COLORREF rgb_color, float saturation_delta, float lightness_delta, float contrast);
 
 extern void ModifyHueSaturation(Dib& dib, const CRect& rect, float saturation, float lightness, float contrast)
 {
@@ -55,11 +55,11 @@ extern void ModifyHueSaturation(Dib& dib, const CRect& rect, float saturation, f
 
 		for (int x= dest.left; x < dest.right; ++x)
 		{
-			COLORREF rgb= CalcNewColorDeltaCtr(RGB(p[2], p[1], p[0]), saturation, lightness, contrast);
+			//COLORREF rgb= CalcNewColorDeltaCtr(RGB(p[2], p[1], p[0]), saturation, lightness, contrast);
 
-			p[0] = static_cast<BYTE>(GetBValue(rgb));
-			p[1] = static_cast<BYTE>(GetGValue(rgb));
-			p[2] = static_cast<BYTE>(GetRValue(rgb));
+			p[0] = 15;//static_cast<BYTE>(GetBValue(rgb));
+			p[1] = 15;//static_cast<BYTE>(GetGValue(rgb));
+			p[2] = 20;//static_cast<BYTE>(GetRValue(rgb));
 			p += 4;
 		}
 	}

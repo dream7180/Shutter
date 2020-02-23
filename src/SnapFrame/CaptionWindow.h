@@ -32,7 +32,7 @@ public:
 public:
 	static int GetHeight();
 
-	static bool IsCaptionBig()	{ return big_; }
+	//static bool IsCaptionBig()	{ return big_; }
 
 	void ModifyToolbar(bool wnd_maximized);
 
@@ -72,10 +72,10 @@ public:
 	void HideMaximizeButton();
 
 	// set large caption bitmap
-	static void SetLargeCaption(bool large)		{ big_ = large; }
+	//static void SetLargeCaption(bool large)		{ big_ = large; }
 
 	// set proper bmp for toolbar (close, maximize, restore buttons)
-	void ChangeHeight(bool big);
+	//void ChangeHeight(bool big);
 
 	// erase background
 	void EraseBackground(CDC& dc, const CRect& rect);
@@ -87,7 +87,7 @@ public:
 
 // Implementation
 public:
-	virtual ~CaptionWindow();
+	//virtual ~CaptionWindow();
 
 	// Generated message map functions
 protected:
@@ -104,8 +104,8 @@ protected:
 	afx_msg void OnRButtonUp(UINT flags, CPoint point);
 	afx_msg void OnChevron();
 	//}}AFX_MSG
-	void OnSmallIcons();
-	void OnLargeIcons();
+//	void OnSmallIcons();
+//	void OnLargeIcons();
 	DECLARE_MESSAGE_MAP()
 private:
 	static CString wnd_class_;
@@ -145,13 +145,13 @@ private:
 	void	SetChevronPos();
 	void	Resize();
 	CRect	GetTextRect(CDC* dc, const CRect& rect, const TCHAR* title, CSize& text_size);
-	void	OnInitMenuPopup(CMenu* popup_menu, UINT index, BOOL sys_menu);
+	//void	OnInitMenuPopup(CMenu* popup_menu, UINT index, BOOL sys_menu);
 	void	OnContextMenu(CWnd* wnd, CPoint point);
 	void	CreateToolbar();
 	void	SetCursor();
 	void	DrawCaptionGradient(CDC* dc, const CRect& rect);
 
-	static bool big_;		// big caption or normal one
+	//static bool big_;		// big caption or normal one
 
 	//CImageList& GetTabImg();
 	//CImageList& GetTabEnd();

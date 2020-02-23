@@ -1,6 +1,9 @@
 
- New in ver 1.18
+ New in ver 1.19
  ===============
+
+
+Fixed copyright notice in some files
   
 Changes in API
 ----------------------
@@ -8,16 +11,12 @@ Changes in API
 
 Implementation
 ----------------------
-All errors moved to fatal, since there is no easy recovery strategy
-Vulnerability fixes on cmsio1.c 
-Status check, many functions now check the status when calling other functions. Improved robustness against ill-formed profiles.
-_cmsSaveProfile didn't copy tags from a file based profile, fixed.
+fixed minor vulnerabilities
+removed cosmetic comparation with zero in floating point
 
 
 Utilities
 ----------
-icctrans: CMYKcm support wrongly implemented, fixed.
-icclink: linking 3 to 7 channels didn't work in some cases, fixed.
     
 
 

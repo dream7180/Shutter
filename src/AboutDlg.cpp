@@ -59,9 +59,11 @@ END_MESSAGE_MAP()
 
 // an area in a bitmap to print extra text info
 namespace {
-	const CPoint LEFTTOP(323, 194);
-	const CSize AREA_SIZE(180, 200);
-	const COLORREF TEXT_COLOR= RGB(211,221,255);
+	const CPoint LEFTTOP(60, 120);
+	const CSize AREA_SIZE(650, 80);
+	const CPoint LINK_TOP(250, 200);
+	const COLORREF TEXT_COLOR= RGB(255,255,255);
+	const COLORREF LINK_COLOR= RGB(70,170,255);
 	const CPoint LEFTTOP2(30, 228);
 }
 
@@ -81,7 +83,7 @@ extern CString ReadAppVersion(bool including_build)
 		if (ver->dwSignature == 0xfeef04bd)
 		{
 			if (including_build)
-				version.Format(_T("Version %d.%u.%u Build %u\n%s Build"),
+				version.Format(_T("Version %d.%u.%u Build %u %s"),
 					(int)HIWORD(ver->dwProductVersionMS), (int)LOWORD(ver->dwProductVersionMS),
 					(int)HIWORD(ver->dwProductVersionLS), (int)LOWORD(ver->dwProductVersionLS),
 					sizeof(TCHAR) == 1 ? _T("ASCII") : _T("Unicode"));
@@ -103,13 +105,13 @@ BOOL AboutDlg::OnInitDialog()
 	try
 	{
 		version_ = ReadAppVersion(true);
-		about_ = version_ + _T("\n\nRelease Version ")
+		about_ = version_ + _T("\n")
 #ifdef _WIN64
 			_T("x64")
 #else
 			_T("x86")
 #endif
-			_T("\n\n");
+			_T(" Release\n");
 
 		about_ += _T("Free software released under the terms of the GNU Public License.");
 
@@ -120,7 +122,7 @@ BOOL AboutDlg::OnInitDialog()
 		lf.lfWidth = 0;
 		lf.lfEscapement = 0;
 		lf.lfOrientation = 0;
-		lf.lfWeight = FW_BOLD;
+		lf.lfWeight = FW_NORMAL;
 		lf.lfItalic = false;
 		lf.lfUnderline = false;
 		lf.lfStrikeOut = false;
@@ -140,34 +142,43 @@ BOOL AboutDlg::OnInitDialog()
 		::AdjustWindowRectEx(rect, GetStyle(), false, GetExStyle());
 		SetWindowPos(0, 0, 0, rect.Width(), rect.Height(), SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
 
-		CPoint pos= CPoint(Pixels(LEFTTOP.x), Pixels(LEFTTOP.y));
-		pos.y += Pixels(AREA_SIZE.cy - 14);
-		link_wnd_.Create(this, pos, _T("ExifPro Web Site"), _T("http://www.exifpro.com/"), &small_fnt_);
-		link_wnd_.rgb_text_color_ = TEXT_COLOR;
-		CPoint pos2= CPoint(Pixels(LEFTTOP2.x), Pixels(LEFTTOP2.y));
-		link2_wnd_.Create(this, pos2, _T("Project Home at GitHub"), _T("https://github.com/dream7180/ExifPro-mod"), &small_fnt_);
-		link2_wnd_.rgb_text_color_ = TEXT_COLOR;
-		CPoint pos4= CPoint(pos2.x, pos2.y + 50);
-		link4_wnd_.Create(this, pos4, _T("dreamawake's Blog"), _T("http://blog.sina.com.cn/dream7180"), &small_fnt_);
-		link4_wnd_.rgb_text_color_ = TEXT_COLOR;
-		CPoint pos3= CPoint(pos2.x, pos2.y + 160);
-		link3_wnd_.Create(this, pos3, _T("ExifPro V2.3 at GitHub"), _T("https://github.com/mikekov/ExifPro"), &small_fnt_);
-		link3_wnd_.rgb_text_color_ = TEXT_COLOR;
+		//CPoint pos= CPoint(Pixels(LEFTTOP.x), );
+		//pos.y += Pixels(AREA_SIZE.cy);
+		link_wnd_.Create(this, CPoint(Pixels(LINK_TOP.x), Pixels(LINK_TOP.y)), _T("https://github.com/dream7180/ExifPro-mod"), _T("https://github.com/dream7180/ExifPro-mod"), &small_fnt_);
+		link_wnd_.rgb_text_color_ = LINK_COLOR;
+		link2_wnd_.Create(this, CPoint(Pixels(LINK_TOP.x), Pixels(LINK_TOP.y) + 25), _T("https://www.cnblogs.com/foobox/"), _T("https://www.cnblogs.com/foobox/"), &small_fnt_);
+		link2_wnd_.rgb_text_color_ = LINK_COLOR;
+		link4_wnd_.Create(this, CPoint(Pixels(LINK_TOP.x), Pixels(LINK_TOP.y) + 50), _T("https://github.com/mikekov/ExifPro"), _T("https://github.com/mikekov/ExifPro"), &small_fnt_);
+		link4_wnd_.rgb_text_color_ = LINK_COLOR;
+		link3_wnd_.Create(this, CPoint(Pixels(LINK_TOP.x), Pixels(LINK_TOP.y) + 75), _T("http://www.exifpro.com/"), _T("http://www.exifpro.com/"), &small_fnt_);
+		link3_wnd_.rgb_text_color_ = LINK_COLOR;
+		
+		about_2 = _T("***Image decoder libraries***\n");
+		about_2 += _T("Libjpeg-turbo: 2.0.4\n");
+		about_2 += _T("LibTIFF: 4.1.0\n");
+		about_2 += _T("LibPNG: 1.6.37\n");
+		about_2 += _T("GIFlib: 4.2.3\n");
+		about_2 += _T("Little CMS: 1.19");
+		
+		link_txt_1 = _T("Mod by dreamawake:");
+		link_txt_2 = _T("dreamawake's Blog:");
+		link_txt_3 = _T("Mod from ExifPro V2.3:");
+		link_txt_4 = _T("ExifPro V2.1 Website:");
 
 		libs_ =
 			_T("\n")
-			_T("ExifPro is based in part on the work of the Independent JPEG Group\nCopyright © 1991-1996, Thomas G. Lane\n")
+			_T("ExifPro is based in part on the work of the Independent JPEG Group\nCopyright (c) 1991-1996, Thomas G. Lane\n")
 			_T("TIFF library is copyright as follows:\n")
-			_T("Copyright © 1988-1997 Sam Leffler\nCopyright © 1991-1997 Silicon Graphics, Inc.\n")
+			_T("Copyright (c) 1988-1997 Sam Leffler\nCopyright (c) 1991-1997 Silicon Graphics, Inc.\n")
 			_T("PNG library is copyright as follows:\n")
-			_T("Copyright © 1998-2002 Glenn Randers-Pehrson\nCopyright © 1996-1997 Andreas Dilger\nCopyright © 1995-1996 Guy Eric Schalnat, Group 42, Inc.\n")
+			_T("Copyright (c) 1998-2002 Glenn Randers-Pehrson\nCopyright (c) 1996-1997 Andreas Dilger\nCopyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.\n")
 			_T("ZLib library is copyright as follows:\n")
-			_T("© 1995-2002 Jean-loup Gailly and Mark Adler\n")
+			_T("(c) 1995-2002 Jean-loup Gailly and Mark Adler\n")
 			_T("Boost libraries: www.boost.org\n")
-			_T("CoolSB library: © J. Brown 2001\n")
+			_T("CoolSB library: (c) J. Brown 2001\n")
 			_T("LCMS library: www.littlecms.com\n")
 			_T("Lua interpreter: www.lua.org\n")
-			_T("XMP library: Copyright © 1999-2012, Adobe Systems Incorporated\n")
+			_T("XMP library: Copyright (c) 1999-2012, Adobe Systems Incorporated\n")
 			_T("Scintilla: Copyright 1998-2003 by Neil Hodgson\n")
 			_T("LibJPEG-Turbo: www.libjpeg-turbo.org\n")
 			_T("\n");
@@ -201,7 +212,11 @@ BOOL AboutDlg::OnEraseBkgnd(CDC* dc)
 	dc->SetTextColor(TEXT_COLOR);
 	dc->SetBkMode(TRANSPARENT);
 	dc->DrawText(about_, CRect(CPoint(Pixels(LEFTTOP.x), Pixels(LEFTTOP.y)), CSize(Pixels(AREA_SIZE.cx), Pixels(AREA_SIZE.cy))), DT_LEFT | DT_TOP | DT_NOPREFIX | DT_WORDBREAK | DT_END_ELLIPSIS);
-
+	dc->DrawText(about_2, CRect(CPoint(Pixels(LEFTTOP.x), Pixels(LINK_TOP.y) + 120), CSize(Pixels(AREA_SIZE.cx), Pixels(AREA_SIZE.cy) + 40)), DT_LEFT | DT_TOP | DT_NOPREFIX | DT_WORDBREAK | DT_END_ELLIPSIS);
+	dc->DrawText(link_txt_1, CRect(CPoint(Pixels(LEFTTOP.x), Pixels(LINK_TOP.y)), CSize(180, 20)), DT_LEFT | DT_TOP | DT_NOPREFIX | DT_WORDBREAK | DT_END_ELLIPSIS);
+	dc->DrawText(link_txt_2, CRect(CPoint(Pixels(LEFTTOP.x), Pixels(LINK_TOP.y) + 25), CSize(180, 20)), DT_LEFT | DT_TOP | DT_NOPREFIX | DT_WORDBREAK | DT_END_ELLIPSIS);
+	dc->DrawText(link_txt_3, CRect(CPoint(Pixels(LEFTTOP.x), Pixels(LINK_TOP.y) + 50), CSize(180, 20)), DT_LEFT | DT_TOP | DT_NOPREFIX | DT_WORDBREAK | DT_END_ELLIPSIS);
+	dc->DrawText(link_txt_4, CRect(CPoint(Pixels(LEFTTOP.x), Pixels(LINK_TOP.y) + 75), CSize(180, 20)), DT_LEFT | DT_TOP | DT_NOPREFIX | DT_WORDBREAK | DT_END_ELLIPSIS);
 	dc->SelectObject(old);
 
 	return true;

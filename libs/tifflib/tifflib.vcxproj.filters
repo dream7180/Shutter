@@ -59,10 +59,19 @@
     <ClCompile Include="libtiff\tif_getimage.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+	<ClCompile Include="libtiff\tif_jbig.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="libtiff\tif_jpeg.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+	<ClCompile Include="libtiff\tif_jpeg_12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="libtiff\tif_luv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+	<ClCompile Include="libtiff\tif_lzma.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="libtiff\tif_lzw.c">
@@ -110,6 +119,9 @@
     <ClCompile Include="libtiff\tif_warning.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+	<ClCompile Include="libtiff\tif_webp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="libtiff\tif_win32.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -117,6 +129,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="libtiff\tif_zip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+	<ClCompile Include="libtiff\tif_zstd.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="libtiff\tif_color.c">

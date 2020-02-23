@@ -46,7 +46,7 @@ public:
 	virtual BOOL IsFrameWnd() const;
 
 	virtual void CurrentChanged(PhotoInfoPtr photo);
-	virtual void CaptionHeightChanged(bool big);
+	//virtual void CaptionHeightChanged(bool big);
 	virtual void CurrentModified(PhotoInfoPtr photo);
 
 	// Generated message map functions

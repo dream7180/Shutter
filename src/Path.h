@@ -85,7 +85,7 @@ public:
 
 
 extern Path GetDocumentsFolder(const TCHAR* fallback_dir);
-extern Path GetApplicationDataFolder(const TCHAR* fallback_dir);
+//extern Path GetApplicationDataFolder(const TCHAR* fallback_dir);
 
 
 #endif // !defined(AFX_PATH_H__F5546635_CC6A_11D3_B61E_000000000000__INCLUDED_)

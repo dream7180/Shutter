@@ -43,7 +43,7 @@ protected:
 	//AutoPtr<Dib> dib_about_;
 	Dib dib_about_;
 	CFont small_fnt_;
-	CString about_;
+	CString about_, about_2, link_txt_1, link_txt_2, link_txt_3, link_txt_4;
 	CString libs_;
 	CLinkWnd link_wnd_;
 	CLinkWnd link2_wnd_;

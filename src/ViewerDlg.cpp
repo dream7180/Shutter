@@ -818,7 +818,7 @@ ViewerDlg::Impl::Impl(PhotoInfoStorage& storage, PhotoCache* cache, VectPhotoInf
 	profileUseScrollBars_.Register(REGISTRY_ENTRY_VIEWER, _T("UseScrollBars"), true);
 	profileHorzPreviewBar_.Register(REGISTRY_ENTRY_VIEWER, _T("HorzPreviewBar"), false);
 	profileTagsInPreviewBar_.Register(REGISTRY_ENTRY_VIEWER, _T("TagsInPreviewBar"), true);
-	profileSmoothScroll_.Register(REGISTRY_ENTRY_VIEWER, _T("SmoothScroll"), true);
+	profileSmoothScroll_.Register(REGISTRY_ENTRY_VIEWER, _T("SmoothScroll"), false);
 	profileMultiViewEnabled_.Register(REGISTRY_ENTRY_VIEWER, _T("MultiView"), false);
 	//profileHorzView_.Register(REGISTRY_ENTRY_VIEWER, _T("MultiViewHorz"), horz_views_);
 	profileViewLayout_.Register(REGISTRY_ENTRY_VIEWER, _T("MultiViewLayout"), view_layout_);
@@ -1190,9 +1190,12 @@ void ViewerDlg::OnUpdateViewerBar(CCmdUI* cmd_ui)
 // light table storage place
 static String GetLightTableStorageFilePath()
 {
-	Path dir= GetApplicationDataFolder(_T("c:\\"));
-	if (!dir.CreateFolders())
-		return _T("");
+	TCHAR prog_path[_MAX_PATH];
+	VERIFY(::GetModuleFileName(AfxGetInstanceHandle(), prog_path, _MAX_PATH));
+	Path dir= Path(prog_path).GetDir();
+	//Path dir= GetApplicationDataFolder(_T("c:\\"));
+	//if (!dir.CreateFolders())
+	//	return _T("");
 
 #ifdef _UNICODE
 	dir.AppendDir(_T("LightTableContents.txt"), false);
@@ -1359,7 +1362,7 @@ void ViewerDlg::Impl::Create(CWnd* wnd, Logger& log)
 void ViewerDlg::Impl::LoadBitmaps(double gamma)
 {
 	VERIFY(rebar_bgnd_.Load(IDB_VIEWER_REBAR_BACK));
-	VERIFY(infbar_.Load(IDB_INFOBAR));
+	//VERIFY(infbar_.Load(IDB_INFOBAR));
 
 	if (gamma != 1.0)
 	{

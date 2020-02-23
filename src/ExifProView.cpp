@@ -3712,7 +3712,7 @@ int ExifView::OnCreate(LPCREATESTRUCT create_struct)
 	// halftone drawing effects photo ctrl too
 	GetListCtrl().SetHalftoneDrawing(g_Settings.display_method_ == 2);
 
-	if (!tool_bar_wnd_.Create(this, array_count(thumb_size_levels), IsCaptionBig()))
+	if (!tool_bar_wnd_.Create(this, array_count(thumb_size_levels), -1))//, IsCaptionBig()))
 		return -1;
 
 	img_size_index_ = clamp<int>(profile_thumb_size_, 0, array_count(thumb_size_levels) - 1);

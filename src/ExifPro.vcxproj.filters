@@ -2604,9 +2604,9 @@
     <Image Include="res\close_bar.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\close_bar_hot.bmp">
+    <!--Image Include="res\close_bar_hot.bmp">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\close_tb.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2652,12 +2652,12 @@
     <Image Include="res\error_icon.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\ExifPro.ico">
+    <!--Image Include="res\ExifPro.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\ExifProDoc.ico">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\ExifProVista.ico">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2823,9 +2823,9 @@
     <Image Include="res\light-bulb.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\light_table_bgnd.bmp">
+    <!--Image Include="res\light_table_bgnd.bmp">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\light_table_sep.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2901,13 +2901,13 @@
     <Image Include="res\pane_toolbar.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\pane_toolbar_big.bmp">
+    <!--Image Include="res\pane_toolbar_big.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\pane_toolbar_big_hot.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <!--Image Include="res\pane_toolbar_hot.png">
+    <Image Include="res\pane_toolbar_hot.png">
       <Filter>Resource Files</Filter>
     </Image-->
     <Image Include="res\pattern.bmp">
@@ -2943,7 +2943,7 @@
     <Image Include="res\photo_8.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\photos_dis_tb.bmp">
+    <!--Image Include="res\photos_dis_tb.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\photos_dis_tb.png">
@@ -2951,7 +2951,7 @@
     </Image>
     <Image Include="res\photos_tb.bmp">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\photos_tb.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2985,9 +2985,9 @@
     <Image Include="res\preview_backgnd_vert_right.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\preview_backgnd_vert_top.bmp">
+    <!--Image Include="res\preview_backgnd_vert_top.bmp">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\preview_scrollbar.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -3081,12 +3081,12 @@
     <Image Include="res\tags_checkboxes_dis.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\tags_edit.ico">
+    <!--Image Include="res\tags_edit.ico">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\tags_no_edit.ico">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\tags_ok.bmp">
       <Filter>Resource Files</Filter>
     </Image>

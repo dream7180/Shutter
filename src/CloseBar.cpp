@@ -29,10 +29,11 @@ bool CloseBar::Create(CWnd* parent, bool close_and_restore/*= true*/)
 	{
 		SC_RESTORE, SC_CLOSE
 	};
-	if (!ToolBarWnd::Create(close_and_restore ? "pp" : ".p", commands, IDR_CLOSEBAR, 0, parent))
+	//if (!ToolBarWnd::Create(close_and_restore ? "pp" : ".p", commands, IDR_CLOSEBAR, 0, parent))
+	if (!ToolBarWnd::Create(close_and_restore ? "pp" : ".p", commands, IDB_CLOSE_TB, 0, parent))
 		return false;
 
-	SetHotImageList(IDB_CLOSE_BAR_HOT);
+	//SetHotImageList(IDB_CLOSE_BAR_HOT);
 
 	return true;
 }

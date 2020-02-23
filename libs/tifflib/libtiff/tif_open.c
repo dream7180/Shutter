@@ -1,5 +1,3 @@
-/* $Id: tif_open.c,v 1.46 2010-12-06 16:54:54 faxguy Exp $ */
-
 /*
  * Copyright (c) 1988-1997 Sam Leffler
  * Copyright (c) 1991-1997 Silicon Graphics, Inc.
@@ -133,6 +131,7 @@ TIFFClientOpen(
 	if (!readproc || !writeproc || !seekproc || !closeproc || !sizeproc) {
 		TIFFErrorExt(clientdata, module,
 		    "One of the client procedures is NULL pointer.");
+		_TIFFfree(tif);
 		goto bad2;
 	}
 	tif->tif_readproc = readproc;
@@ -168,7 +167,7 @@ TIFFClientOpen(
 	 * The following flags may be used to control intrinsic library
 	 * behaviour that may or may not be desirable (usually for
 	 * compatibility with some application that claims to support
-	 * TIFF but only supports some braindead idea of what the
+	 * TIFF but only supports some brain dead idea of what the
 	 * vendor thinks TIFF is):
 	 *
 	 * 'l' use little-endian byte order for creating a file
@@ -183,6 +182,8 @@ TIFFClientOpen(
 	 * 'h' read TIFF header only, do not load the first IFD
 	 * '4' ClassicTIFF for creating a file (default)
 	 * '8' BigTIFF for creating a file
+         * 'D' enable use of deferred strip/tile offset/bytecount array loading.
+         * 'O' on-demand loading of values instead of whole array loading (implies D)
 	 *
 	 * The use of the 'l' and 'b' flags is strongly discouraged.
 	 * These flags are provided solely because numerous vendors,
@@ -198,8 +199,8 @@ TIFFClientOpen(
 	 * The 'L', 'B', and 'H' flags are intended for applications
 	 * that can optimize operations on data by using a particular
 	 * bit order.  By default the library returns data in MSB2LSB
-	 * bit order for compatibiltiy with older versions of this
-	 * library.  Returning data in the bit order of the native cpu
+	 * bit order for compatibility with older versions of this
+	 * library.  Returning data in the bit order of the native CPU
 	 * makes the most sense but also requires applications to check
 	 * the value of the FillOrder tag; something they probably do
 	 * not do right now.
@@ -264,7 +265,22 @@ TIFFClientOpen(
 				if (m&O_CREAT)
 					tif->tif_flags |= TIFF_BIGTIFF;
 				break;
+			case 'D':
+			        tif->tif_flags |= TIFF_DEFERSTRILELOAD;
+				break;
+			case 'O':
+				if( m == O_RDONLY )
+					tif->tif_flags |= (TIFF_LAZYSTRILELOAD | TIFF_DEFERSTRILELOAD);
+				break;
 		}
+
+#ifdef DEFER_STRILE_LOAD
+        /* Compatibility with old DEFER_STRILE_LOAD compilation flag */
+        /* Probably unneeded, since to the best of my knowledge (E. Rouault) */
+        /* GDAL was the only user of this, and will now use the new 'D' flag */
+        tif->tif_flags |= TIFF_DEFERSTRILELOAD;
+#endif
+
 	/*
 	 * Read in TIFF header.
 	 */
@@ -279,10 +295,10 @@ TIFFClientOpen(
 		 * Setup header and write.
 		 */
 		#ifdef WORDS_BIGENDIAN
-		tif->tif_header.common.tiff_magic = tif->tif_flags & TIFF_SWAB
+		tif->tif_header.common.tiff_magic = (tif->tif_flags & TIFF_SWAB)
 		    ? TIFF_LITTLEENDIAN : TIFF_BIGENDIAN;
 		#else
-		tif->tif_header.common.tiff_magic = tif->tif_flags & TIFF_SWAB
+		tif->tif_header.common.tiff_magic = (tif->tif_flags & TIFF_SWAB)
 		    ? TIFF_BIGENDIAN : TIFF_LITTLEENDIAN;
 		#endif
 		if (!(tif->tif_flags&TIFF_BIGTIFF))

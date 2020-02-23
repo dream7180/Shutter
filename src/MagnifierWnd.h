@@ -62,7 +62,7 @@ protected:
 	bool popup_menu_;
 	CWnd* display_;
 	CRect limit_rect_;	// limit magnifying glass to this area
-	enum { SMALL= 300+2, MEDIUM= 450+2, BIG= 600+2 };	// size (including border line)
+	enum { SMALL= 400+2, MEDIUM= 600+2, BIG= 800+2 };	// size (including border line)
 	Profile<int> profile_window_size_;
 	Profile<int> profile_magnification_factor_;
 

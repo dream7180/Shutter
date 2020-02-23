@@ -38,6 +38,7 @@
     <ProjectGuid>{83399A46-1776-4216-8B8F-ACF66DC52AB1}</ProjectGuid>
     <RootNamespace>ExifPro</RootNamespace>
     <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseANSI|Win32'" Label="Configuration">
@@ -345,7 +346,7 @@
     <ClCompile>
       <AdditionalOptions>/Zm1000 /MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MinSpace</Optimization>
-      <AdditionalIncludeDirectories>$(Libraries);D:\Softwares\DevTools\boost_1_70_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Libraries);D:\Develop\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_SECURE_SCL=0;WIN64;USE_GDI_PLUS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -367,7 +368,7 @@
       <AdditionalDependencies>UAFXCW.LIB;LIBCMT.LIB;vfw32.lib;UxTheme.lib;gdiplus.lib;d2d1.lib;Imm32.lib;DbgHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(Bin)$(ProjectName).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>$(LibsRel);%(AdditionalLibraryDirectories);D:\Softwares\DevTools\boost_1_70_0\stage\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(LibsRel);%(AdditionalLibraryDirectories);D:\Develop\boost\stage\lib</AdditionalLibraryDirectories>
       <EnableUAC>false</EnableUAC>
       <IgnoreSpecificDefaultLibraries>UAFXCW.LIB LIBCMT.LIB %(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <DelayLoadDLLs>d2d1.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
@@ -1439,7 +1440,7 @@
     <Image Include="res\chevron_big_hot.bmp" />
     <Image Include="res\chevron_hot.bmp" />
     <Image Include="res\close_bar.bmp" />
-    <Image Include="res\close_bar_hot.bmp" />
+    <!--Image Include="res\close_bar_hot.bmp" /-->
     <Image Include="res\close_tb.png" />
     <Image Include="res\closebar.bmp" />
     <Image Include="res\closebar.png" />
@@ -1455,8 +1456,8 @@
     <Image Include="res\enter_tb.png" />
     <Image Include="res\Envelope.bmp" />
     <Image Include="res\error_icon.bmp" />
-    <Image Include="res\ExifPro.ico" />
-    <Image Include="res\ExifProDoc.ico" />
+    <!--Image Include="res\ExifPro.ico" />
+    <Image Include="res\ExifProDoc.ico" /-->
     <Image Include="res\ExifProVista.ico" />
     <Image Include="res\eye_drop.bmp" />
     <Image Include="res\file1.ico" />
@@ -1512,7 +1513,7 @@
     <Image Include="res\layouts.png" />
     <Image Include="res\layouts_thumbs.bmp" />
     <Image Include="res\light-bulb.png" />
-    <Image Include="res\light_table_bgnd.bmp" />
+    <!--Image Include="res\light_table_bgnd.bmp" /-->
     <Image Include="res\light_table_sep.bmp" />
     <Image Include="res\light_table_tb.bmp" />
     <Image Include="res\light_table_tb.png" />
@@ -1538,9 +1539,9 @@
     <Image Include="res\pane_too.bmp" />
     <Image Include="res\pane_toolbar.bmp" />
     <Image Include="res\pane_toolbar.png" />
-    <Image Include="res\pane_toolbar_big.bmp" />
+    <!--Image Include="res\pane_toolbar_big.bmp" />
     <Image Include="res\pane_toolbar_big_hot.bmp" />
-    <!--Image Include="res\pane_toolbar_hot.png" /-->
+    <Image Include="res\pane_toolbar_hot.png" /-->
     <Image Include="res\pattern.bmp" />
     <Image Include="res\photo.bmp" />
     <Image Include="res\photo.ico" />
@@ -1552,9 +1553,9 @@
     <Image Include="res\photo_6.bmp" />
     <Image Include="res\photo_7.bmp" />
     <Image Include="res\photo_8.bmp" />
-    <Image Include="res\photos_dis_tb.bmp" />
-    <Image Include="res\photos_dis_tb.png" />
-    <Image Include="res\photos_tb.bmp" />
+    <!--Image Include="res\photos_dis_tb.bmp" />
+    <Image Include="res\photos_dis_tb.png" />-->
+    <!--Image Include="res\photos_tb.bmp" /-->
     <Image Include="res\photos_tb.png" />
     <!--<Image Include="res\PhotosToolbarBig.png" />-->
     <Image Include="res\placeholder.bmp" />
@@ -1566,7 +1567,7 @@
     <Image Include="res\preview_backgnd_top.bmp" />
     <Image Include="res\preview_backgnd_vert.bmp" />
     <Image Include="res\preview_backgnd_vert_right.bmp" />
-    <Image Include="res\preview_backgnd_vert_top.bmp" />
+    <!--Image Include="res\preview_backgnd_vert_top.bmp" /-->
     <Image Include="res\preview_scrollbar.bmp" />
     <Image Include="res\preview_scrollbar_v.bmp" />
     <Image Include="res\preview_version.jpg" />
@@ -1598,8 +1599,8 @@
     <Image Include="res\TaggedSingleDir.bmp" />
     <Image Include="res\tags_checkboxes.bmp" />
     <Image Include="res\tags_checkboxes_dis.bmp" />
-    <Image Include="res\tags_edit.ico" />
-    <Image Include="res\tags_no_edit.ico" />
+    <!--Image Include="res\tags_edit.ico" />
+    <Image Include="res\tags_no_edit.ico" /-->
     <Image Include="res\tags_ok.bmp" />
     <Image Include="res\tags_ok_dis.bmp" />
     <Image Include="res\tags_toolbar.bmp" />

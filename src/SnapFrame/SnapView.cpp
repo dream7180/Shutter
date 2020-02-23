@@ -831,7 +831,7 @@ bool SnapView::IsPaneOpen()
 	return false;
 }
 
-
+/*
 void SnapView::ChangeCaptionHeight(bool big)
 {
 	caption_wnd_.ChangeHeight(big);
@@ -842,7 +842,7 @@ void SnapView::ChangeCaptionHeight(bool big)
 		Resize();
 	}
 }
-
+*/
 
 void SnapView::InvalidateCaption()
 {

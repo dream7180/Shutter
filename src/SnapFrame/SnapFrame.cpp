@@ -3378,7 +3378,7 @@ void SnapFrame::UpdateAllViews(CView* sender, LPARAM hint, CObject* hint_ptr)
 void SnapFrame::PostNcDestroy()
 {}
 
-
+/*
 void SnapFrame::ChangeCaptionHeight(bool big)
 {
 	const size_t count= pane_windows_.size();
@@ -3388,7 +3388,7 @@ void SnapFrame::ChangeCaptionHeight(bool big)
 
 //	Resize();
 }
-
+*/
 
 void SnapFrame::ResetColors(const ColorConfiguration& colors)
 {

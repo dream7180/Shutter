@@ -54,7 +54,7 @@ AdvancedOptions::AdvancedOptions() : RPropertyPage(AdvancedOptions::IDD)
 	allow_zoom_to_fill_ = false;
 	percent_of_image_to_hide_ = 30;
 	close_app_ = true;
-	smooth_scroll_ = 15;
+	smooth_scroll_ = 10;
 	sharpening_ = 0;
 }
 
@@ -75,7 +75,7 @@ void AdvancedOptions::OnRestoreDefaults()
 	image_blending_ = 1;
 	generate_thumbs_int_ = GEN_THUMB_EXCEPT_REMOVABLE_DRV;
 //	delete_cache_file_ = false;
-	smooth_scroll_ = 15;
+	smooth_scroll_ = 10;
 	smooth_scroll_slider_.SetPos(smooth_scroll_);
 	sharpening_ = 30;
 	sharpening_slider_.SetPos(sharpening_);

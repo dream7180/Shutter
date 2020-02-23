@@ -410,11 +410,23 @@
 				>
 			</File>
 			<File
+				RelativePath="libtiff\tif_jbig.c"
+				>
+			</File>
+			<File
 				RelativePath="libtiff\tif_jpeg.c"
 				>
 			</File>
 			<File
+				RelativePath="libtiff\tif_jpeg_12.c"
+				>
+			</File>
+			<File
 				RelativePath="libtiff\tif_luv.c"
+				>
+			</File>
+			<File
+				RelativePath="libtiff\tif_lzma.c"
 				>
 			</File>
 			<File
@@ -478,6 +490,10 @@
 				>
 			</File>
 			<File
+				RelativePath="libtiff\tif_webp.c"
+				>
+			</File>
+			<File
 				RelativePath="libtiff\tif_win32.c"
 				>
 			</File>
@@ -487,6 +503,10 @@
 			</File>
 			<File
 				RelativePath="libtiff\tif_zip.c"
+				>
+			</File>
+			<File
+				RelativePath="libtiff\tif_zstd.c"
 				>
 			</File>
 		</Filter>

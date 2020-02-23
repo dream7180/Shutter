@@ -1,5 +1,3 @@
-/* $Id: tif_thunder.c,v 1.12 2011-04-02 20:54:09 bfriesen Exp $ */
-
 /*
  * Copyright (c) 1988-1997 Sam Leffler
  * Copyright (c) 1991-1997 Silicon Graphics, Inc.
@@ -100,7 +98,8 @@ ThunderDecode(TIFF* tif, uint8* op, tmsize_t maxpixels)
 	while (cc > 0 && npixels < maxpixels) {
 		int n, delta;
 
-		n = *bp++, cc--;
+		n = *bp++;
+		cc--;
 		switch (n & THUNDER_CODE) {
 		case THUNDER_RUN:		/* pixel run */
 			/*
@@ -123,17 +122,17 @@ ThunderDecode(TIFF* tif, uint8* op, tmsize_t maxpixels)
 			break;
 		case THUNDER_2BITDELTAS:	/* 2-bit deltas */
 			if ((delta = ((n >> 4) & 3)) != DELTA2_SKIP)
-				SETPIXEL(op, lastpixel + twobitdeltas[delta]);
+				SETPIXEL(op, (unsigned)((int)lastpixel + twobitdeltas[delta]));
 			if ((delta = ((n >> 2) & 3)) != DELTA2_SKIP)
-				SETPIXEL(op, lastpixel + twobitdeltas[delta]);
+				SETPIXEL(op, (unsigned)((int)lastpixel + twobitdeltas[delta]));
 			if ((delta = (n & 3)) != DELTA2_SKIP)
-				SETPIXEL(op, lastpixel + twobitdeltas[delta]);
+				SETPIXEL(op, (unsigned)((int)lastpixel + twobitdeltas[delta]));
 			break;
 		case THUNDER_3BITDELTAS:	/* 3-bit deltas */
 			if ((delta = ((n >> 3) & 7)) != DELTA3_SKIP)
-				SETPIXEL(op, lastpixel + threebitdeltas[delta]);
+				SETPIXEL(op, (unsigned)((int)lastpixel + threebitdeltas[delta]));
 			if ((delta = (n & 7)) != DELTA3_SKIP)
-				SETPIXEL(op, lastpixel + threebitdeltas[delta]);
+				SETPIXEL(op, (unsigned)((int)lastpixel + threebitdeltas[delta]));
 			break;
 		case THUNDER_RAW:		/* raw data */
 			SETPIXEL(op, n);

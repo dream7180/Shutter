@@ -122,7 +122,7 @@ OptionsDlg::OptionsDlg(CWnd* parent_wnd, std::vector<uint16>& columns_idx, std::
 
 //	dx_.Add(page_appearance_.main_default_colors_	, g_Settings.list_ctrl_sys_colors_);
 	dx_.Add(page_appearance_.main_wnd_colors_		, g_Settings.main_wnd_colors_);
-	dx_.Add(page_appearance_.pane_caption_colors_	, g_Settings.pane_caption_colors_);
+	//dx_.Add(page_appearance_.pane_caption_colors_	, g_Settings.pane_caption_colors_);
 //	dx_.Add(page_appearance_.viewer_default_colors_	, g_Settings.viewer_default_colors_);
 	dx_.Add(page_appearance_.ui_gamma_correction_	, g_Settings.viewer_ui_gamma_correction_);
 	dx_.Add(page_appearance_.viewer_wnd_colors_		, g_Settings.viewer_wnd_colors_);

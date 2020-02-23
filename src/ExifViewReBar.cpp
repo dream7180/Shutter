@@ -60,8 +60,8 @@ static const int g_cmd[]=
 	ID_VIEW_THUMBNAILS, ID_VIEW_DETAILS, ID_VIEW_TILES, ID_VIEW_PICTURES, ID_SHOW_OPTIONS,
 	ID_VIEW_THUMB_SMALLER, IDOK, ID_VIEW_THUMB_BIGGER,
 	ID_VIEW_SORT, ID_SORT_BY_SIMILARITY, ID_CANCEL_SORT_BY_SIMILARITY,
-	ID_GROUP_STARS, ID_GROUP_TAGS, ID_GROUP_FOLDER, ID_GROUP_DATE,
-	ID_FIND //filter/search
+	ID_GROUP_STARS, ID_GROUP_TAGS, ID_GROUP_FOLDER, ID_GROUP_DATE//,
+	//ID_FIND //filter/search
 };
 
 
@@ -79,7 +79,7 @@ tool_bar_sort_wnd_.SetOnIdleUpdateState(false);*/
 	tool_bar_thumb_wnd_.SetOwnerDraw(true);
 	tool_bar_group_wnd_.SetOwnerDraw(true);
 	tool_bar_sort_wnd_.SetOwnerDraw(true);
-	toolbar_filter_.SetOwnerDraw(true);
+	//toolbar_filter_.SetOwnerDraw(true);
 
 //	if (!CHorzReBar::Create(parent, false, RBS_FIXEDORDER/*RBS_VARHEIGHT | RBS_AUTOSIZE | RBS_DBLCLKTOGGLE | RBS_BANDBORDERS*/, AFX_IDW_REBAR))
 //		return false;
@@ -94,7 +94,7 @@ tool_bar_sort_wnd_.SetOnIdleUpdateState(false);*/
 
 	if (WhistlerLook::IsAvailable())
 		toolbar_first_.SetPadding(-1, -1);	// btn with down arrow section inflates total buttons height
-	toolbar_first_.Create("m|xpp................", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST);
+	toolbar_first_.Create("m|xpp...............", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST);
 	toolbar_first_.CreateDisabledImageList(bmp_id);
 	toolbar_first_.DeleteButton(ID_MARK_ALL);
 	toolbar_first_.DeleteButton(ID_MARK_NONE);
@@ -103,14 +103,14 @@ tool_bar_sort_wnd_.SetOnIdleUpdateState(false);*/
 	toolbar_first_.CWnd::SetOwner(parent);
 	tool_bar_pos_.push_back(PositionBar(toolbar_first_, 0));
 
-	tool_bar_view_wnd_.Create("....gggg|v...........", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 1);
+	tool_bar_view_wnd_.Create("....gggg|v..........", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 1);
 	tool_bar_view_wnd_.CreateDisabledImageList(bmp_id);
 	tool_bar_view_wnd_.SetOwner(parent);
 	tool_bar_view_wnd_.CWnd::SetOwner(parent);
 	tool_bar_pos_.push_back(PositionBar(tool_bar_view_wnd_, _T("View")));
 
 	tool_bar_thumb_wnd_.SetPadding(0, 7);
-	tool_bar_thumb_wnd_.Create(".........ppp........", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 2);
+	tool_bar_thumb_wnd_.Create(".........ppp.......", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 2);
 	tool_bar_thumb_wnd_.CreateDisabledImageList(bmp_id);
 	tool_bar_thumb_wnd_.SetScrollInfoReceiver(parent);
 	tool_bar_thumb_wnd_.SetOwner(parent);
@@ -137,7 +137,7 @@ tool_bar_sort_wnd_.SetOnIdleUpdateState(false);*/
 
 	tool_bar_pos_.push_back(PositionBar(tool_bar_thumb_wnd_, _T("Thumbnails")));
 
-	tool_bar_group_wnd_.Create("...............xxxx.", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 4);
+	tool_bar_group_wnd_.Create("...............xxxx", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 4);
 	tool_bar_group_wnd_.CreateDisabledImageList(bmp_id);
 	tool_bar_group_wnd_.SetOwner(parent);
 	tool_bar_group_wnd_.CWnd::SetOwner(parent);
@@ -145,7 +145,7 @@ tool_bar_sort_wnd_.SetOnIdleUpdateState(false);*/
 
 	if (WhistlerLook::IsAvailable())
 		tool_bar_sort_wnd_.SetPadding(-1, -1);	// btn with down arrow section inflates total buttons height
-	tool_bar_sort_wnd_.Create("............vmp.....", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 3);
+	tool_bar_sort_wnd_.Create("............vmp....", g_cmd, bmp_id, 0, this, AFX_IDW_CONTROLBAR_LAST - 3);
 	tool_bar_sort_wnd_.HideButton(ID_CANCEL_SORT_BY_SIMILARITY);
 	tool_bar_sort_wnd_.CreateDisabledImageList(bmp_id);
 	tool_bar_sort_wnd_.SetOwner(parent);
@@ -159,9 +159,9 @@ tool_bar_sort_wnd_.SetOnIdleUpdateState(false);*/
 	thumb_size_wnd_.SetPageSize(2);
 	thumb_size_wnd_.SetTipSide(TBTS_BOTTOM);
 
-	toolbar_filter_.Create("...................X", g_cmd, bmp_id, IDS_FILTER, this, AFX_IDW_CONTROLBAR_LAST - 5);
-	toolbar_filter_.CWnd::SetOwner(parent);
-	tool_bar_pos_.push_back(PositionBar(toolbar_filter_, 0));
+	//toolbar_filter_.Create("...................X", g_cmd, bmp_id, IDS_FILTER, this, AFX_IDW_CONTROLBAR_LAST - 5);
+	//toolbar_filter_.CWnd::SetOwner(parent);
+	//tool_bar_pos_.push_back(PositionBar(toolbar_filter_, 0));
 
 	CRect rect;
 	toolbar_first_.GetWindowRect(rect);
@@ -288,7 +288,7 @@ LRESULT ExifViewReBar::OnTbClicked(WPARAM hwnd, LPARAM code)
 void ExifViewReBar::OnSize(UINT type, int cx, int cy)
 {
 	if (cx > 0 && toolbar_first_.m_hWnd && tool_bar_view_wnd_.m_hWnd && tool_bar_thumb_wnd_.m_hWnd &&
-		tool_bar_group_wnd_.m_hWnd && tool_bar_sort_wnd_.m_hWnd && toolbar_filter_.m_hWnd)
+		tool_bar_group_wnd_.m_hWnd && tool_bar_sort_wnd_.m_hWnd)// && toolbar_filter_.m_hWnd)
 	{
 		Resize();
 	}
@@ -304,7 +304,7 @@ void ExifViewReBar::Resize()
 
 	CWnd* wnd[]=
 	{
-		&toolbar_first_, &tool_bar_view_wnd_, &tool_bar_thumb_wnd_, &tool_bar_group_wnd_, &tool_bar_sort_wnd_, &toolbar_filter_
+		&toolbar_first_, &tool_bar_view_wnd_, &tool_bar_thumb_wnd_, &tool_bar_group_wnd_, &tool_bar_sort_wnd_//, &toolbar_filter_
 	};
 
 	ASSERT(array_count(wnd) == tool_bar_pos_.size());

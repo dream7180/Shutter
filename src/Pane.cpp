@@ -41,7 +41,7 @@ BEGIN_MESSAGE_MAP(PaneWnd, CWnd)
 	//}}AFX_MSG_MAP
 	ON_MESSAGE(SNAP_WND_MSG_SHOW, OnShowPane)
 	ON_MESSAGE(SNAP_WND_MSG_ACTIVATE, OnActivatePane)
-	ON_MESSAGE(SNAP_WND_MSG_CAPTION_HEIGHT_CHANGED, OnCaptionHeightChanged)
+	//ON_MESSAGE(SNAP_WND_MSG_CAPTION_HEIGHT_CHANGED, OnCaptionHeightChanged)
 	ON_WM_KEYDOWN()
 END_MESSAGE_MAP()
 
@@ -214,7 +214,7 @@ void PaneWnd::UpdateSortOrderPopup(CMenu& popup)
 void PaneWnd::ChangeSortOrder(UINT cmd_id)
 {}
 
-
+/*
 LRESULT PaneWnd::OnCaptionHeightChanged(WPARAM big, LPARAM)
 {
 	CaptionHeightChanged(!!big);
@@ -230,7 +230,7 @@ bool PaneWnd::IsCaptionBig() const
 {
 	return CaptionWindow::IsCaptionBig();
 }
-
+*/
 
 void PaneWnd::AssignTag(int index)
 {}

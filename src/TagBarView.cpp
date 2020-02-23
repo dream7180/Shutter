@@ -83,7 +83,7 @@ bool TagBarView::Create(CWnd* parent)
 
 	tags_ctrl_.reset(new TagsBarCommon(Tags::GetTagCollection(), L"TagBarPane"));
 	tags_ctrl_->tool_bar_at_top_ = false;
-	tags_ctrl_->Create(this, IsCaptionBig());
+	tags_ctrl_->Create(this, -1);//, IsCaptionBig());
 	tags_ctrl_->SetTagCallback(&::ApplyTagToPhotos);
 	tags_ctrl_->SetRatingCallback(&::ApplyRatingToPhotos);
 

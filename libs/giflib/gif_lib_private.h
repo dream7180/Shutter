@@ -2,17 +2,7 @@
 #define _GIF_LIB_PRIVATE_H
 
 #include "gif_lib.h"
-
-#define PROGRAM_NAME "LIBUNGIF"
-
-#ifdef SYSV
-#define VersionStr "Gif library module,\t\tEric S. Raymond\n\
-                    (C) Copyright 1997 Eric S. Raymond\n"
-#else
-#define VersionStr PROGRAM_NAME "    IBMPC " GIF_LIB_VERSION \
-                    "    Eric S. Raymond,    " __DATE__ ",   " \
-                    __TIME__ "\n" "(C) Copyright 1997 Eric S. Raymond\n"
-#endif /* SYSV */
+#include "gif_hash.h"
 
 #define LZ_MAX_CODE         4095    /* Biggest code possible in 12 bits. */
 #define LZ_BITS             12
@@ -50,6 +40,8 @@ typedef struct GifFilePrivateType {
     GifByteType Stack[LZ_MAX_CODE]; /* Decoded pixels are stacked here. */
     GifByteType Suffix[LZ_MAX_CODE + 1];    /* So we can trace the codes. */
     GifPrefixType Prefix[LZ_MAX_CODE + 1];
+    GifHashTableType *HashTable;
+    bool gif89;
 } GifFilePrivateType;
 
 extern int _GifError;

@@ -70,8 +70,8 @@ IDR_MAINFRAME           ICON                    "res\\ExifProVista.ico"
 IDI_CATALOG             ICON                    "res\\catalog.ico"
 IDI_VIEWER              ICON                    "res\\viewer.ico"
 IDI_MONITOR             ICON                    "res\\monitor.ico"
-IDI_TAGS_EDIT           ICON                    "res\\tags_edit.ico"
-IDI_TAGS_NO_EDIT        ICON                    "res\\tags_no_edit.ico"
+//IDI_TAGS_EDIT           ICON                    "res\\tags_edit.ico"
+//IDI_TAGS_NO_EDIT        ICON                    "res\\tags_no_edit.ico"
 IDI_RAINBOW             ICON                    "res\\rainbow.ico"
 IDI_WARNING_            ICON                    "res\\warning.ico"
 IDI_WARNING_2           ICON                    "res\\warning_2.ico"
@@ -84,7 +84,7 @@ IDI_WARNING_2           ICON                    "res\\warning_2.ico"
 IDB_CHARACTERS          BITMAP                  "res\\character.bmp"
 IDB_ASCENDING           BITMAP                  "res\\ascending.bmp"
 IDB_DESCENDING          BITMAP                  "res\\descending.bmp"
-IDR_CLOSEBAR            BITMAP                  "res\\closebar.bmp"
+//IDR_CLOSEBAR            BITMAP                  "res\\closebar.bmp"
 IDB_MARKED              BITMAP                  "res\\marked.bmp"
 IDB_ENVELOPE            BITMAP                  "res\\Envelope.bmp"
 IDB_RUN_SLIDESHOW       BITMAP                  "res\\RunSlideShow.bmp"
@@ -111,7 +111,7 @@ IDB_IMAGE_ERROR         BITMAP                  "res\\img_error.bmp"
 IDB_EMPTY2              BITMAP                  "res\\empty2.bmp"
 IDB_SHADOW              BITMAP                  "res\\Shadow.bmp"
 IDB_SHORTCUTS           BITMAP                  "res\\shortcuts.bmp"
-IDB_CLOSE_BAR_HOT       BITMAP                  "res\\close_bar_hot.bmp"
+//IDB_CLOSE_BAR_HOT       BITMAP                  "res\\close_bar_hot.bmp"
 IDB_CTRL_DRAW_IMAGES    BITMAP                  "res\\ctrl_draw_images.bmp"
 IDB_ICM_ICONS           BITMAP                  "res\\icm_icons.bmp"
 IDB_ICM_TOOLBAR         BITMAP                  "res\\icm_toolbar.bmp"
@@ -119,8 +119,8 @@ IDB_IMG_MANIP           BITMAP                  "res\\img_manip_icons.bmp"
 IDB_EYE_DROP            BITMAP                  "res\\eye_drop.bmp"
 IDB_IMG_EFFECTS         BITMAP                  "res\\img_effects.bmp"
 IDB_EMPTY_BMP           BITMAP                  "res\\empty_bmp.bmp"
-IDB_PANE_TOOLBAR_BIG    BITMAP                  "res\\pane_toolbar_big.bmp"
-IDB_PANE_TOOLBAR_BIG_HOT BITMAP                  "res\\pane_toolbar_big_hot.bmp"
+//IDB_PANE_TOOLBAR_BIG    BITMAP                  "res\\pane_toolbar_big.bmp"
+//IDB_PANE_TOOLBAR_BIG_HOT BITMAP                  "res\\pane_toolbar_big_hot.bmp"
 IDB_CHEVRON_BIG         BITMAP                  "res\\chevron_big.bmp"
 IDB_CHEVRON_BIG_HOT     BITMAP                  "res\\chevron_big_hot.bmp"
 IDB_HELP_BTN            BITMAP                  "res\\HelpBtn.bmp"
@@ -131,14 +131,14 @@ IDB_PREVIEW_BACKGND     BITMAP                  "res\\preview_backgnd.bmp"
 IDB_PREVIEW_BACKGND_TOP BITMAP                  "res\\preview_backgnd_top.bmp"
 IDB_PREVIEW_BACKGND_BTM BITMAP                  "res\\preview_backgnd_btm.bmp"
 IDB_PREVIEW_BACKGND_VERT BITMAP                  "res\\preview_backgnd_vert.bmp"
-IDB_PREVIEW_BACKGND_VERT_TOP BITMAP                  "res\\preview_backgnd_vert_top.bmp"
+//IDB_PREVIEW_BACKGND_VERT_TOP BITMAP                  "res\\preview_backgnd_vert_top.bmp"
 IDB_PREVIEW_BACKGND_VERT_R BITMAP                  "res\\preview_backgnd_vert_right.bmp"
 IDB_PREVIEW_SCRL_BAR    BITMAP                  "res\\preview_scrollbar.bmp"
 IDB_PREVIEW_SCRL_BAR_V  BITMAP                  "res\\preview_scrollbar_v.bmp"
 IDB_VIEWER_REBAR_BACK   BITMAP                  "res\\viewer_rebar_backgnd.bmp"
-IDB_INFOBAR             BITMAP                  "res\\infobar.bmp"
+//IDB_INFOBAR             BITMAP                  "res\\infobar.bmp"
 IDR_CLOSE_BAR           BITMAP                  "res\\close_bar.bmp"
-IDB_LIGHT_TABLE         BITMAP                  "res\\light_table_bgnd.bmp"
+//IDB_LIGHT_TABLE         BITMAP                  "res\\light_table_bgnd.bmp"
 IDB_LIGHT_TABLE_SEP     BITMAP                  "res\\light_table_sep.bmp"
 IDB_FOLDER_POPUP        BITMAP                  "res\\folder_popup.bmp"
 IDB_TEMPLATES           BITMAP                  "res\\templates.bmp"
@@ -265,7 +265,7 @@ BEGIN
             MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
             MENUITEM "&Filter Bar",                 ID_VIEW_FILTERBAR
             MENUITEM "&Address Bar",                ID_VIEW_ADDRESSBAR
-            MENUITEM "T&ools",                      ID_VIEW_TOOLS
+            MENUITEM "T&ool Pane",                      ID_VIEW_TOOLS
         END
         MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
         MENUITEM SEPARATOR
@@ -462,7 +462,7 @@ BEGIN
             MENUITEM "&Horizontal Layout",          ID_VIEWER_BAR_HORZ
             MENUITEM "&Vertical Layout",            ID_VIEWER_BAR_VERT
         END
-        MENUITEM "List of Photos\tL",           ID_PHOTO_LIST
+        MENUITEM "Browser Home\tL",           ID_PHOTO_LIST
         MENUITEM "&Toggle Toolbar\tT",          ID_VIEWER_TOOLBAR
         MENUITEM "Toggle Photo Description\tD", ID_TOGGLE_DESCRIPTION
         MENUITEM "Toggle Multiple View Panes\tC", ID_COMPARE_MULTIPLE
@@ -674,7 +674,7 @@ BEGIN
         MENUITEM "&Match",                      4
     END
 END
-
+/*
 IDR_CAPTION_CONTEXT MENU
 BEGIN
     POPUP "- popup -"
@@ -683,7 +683,7 @@ BEGIN
         MENUITEM "&Large Icons",                ID_LARGE_ICONS
     END
 END
-
+*/
 IDR_TAG_BAR_POPUP_MENU MENU
 BEGIN
     POPUP "-popup-"
@@ -1187,7 +1187,7 @@ CAPTION "About ExifPro"
 FONT 8, "Tahoma"
 BEGIN
 END
-
+/*
 IDD_EVALUATION DIALOGEX 0, 0, 210, 159
 STYLE DS_SETFONT | DS_MODALFRAME | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
@@ -1202,7 +1202,7 @@ BEGIN
     CONTROL         "This preview version has expired.\nPlease visit <a>www.exifpro.com</a> for updates.",IDC_LINK,
                     "SysLink",NOT WS_VISIBLE | WS_TABSTOP,10,135,133,17
 END
-
+*/
 IDR_MAINFRAME DIALOG 0, 0, 330, 16
 STYLE DS_SETFONT | WS_CHILD
 FONT 8, "Tahoma"
@@ -1714,10 +1714,10 @@ STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Appearance"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
-    LTEXT           "Customize Appearance of:",IDC_STATIC,6,7,100,8
+    LTEXT           "Customize Appearance of:",IDC_STATIC,6,7,104,8
     CONTROL         "&Main Window",IDC_ELEMENT,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,102,6,59,10
     CONTROL         "&Viewer Window",IDC_VIEWER,"Button",BS_AUTORADIOBUTTON,169,6,65,10
-    CONTROL         "C&aptions",IDC_CAPTIONS,"Button",BS_AUTORADIOBUTTON,241,6,43,10
+    //CONTROL         "C&aptions",IDC_CAPTIONS,"Button",BS_AUTORADIOBUTTON,241,6,43,10
     CONTROL         "",IDC_EXAMPLE,"Static",SS_BLACKFRAME | WS_GROUP,4,19,282,156
     LTEXT           "&Color and Font Settings",IDC_STATIC,6,177,90,8
     CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,187,282,85
@@ -1823,33 +1823,33 @@ BEGIN
     LTEXT           "Sharpen &thumbnails",IDC_STATIC,13,50,80,8
     CONTROL         "",IDC_SHARPENING,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,94,47,158,16
     LTEXT           "none",IDC_STATIC,92,62,17,8
-    LTEXT           "sharp",IDC_STATIC,161,62,18,8
-    LTEXT           "very sharp",IDC_STATIC,224,62,34,8
-    CONTROL         "&Save applied tags in photographs",IDC_SAVE_TAGS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,79,121,10
+    LTEXT           "sharp",IDC_STATIC,161,62,24,8
+    LTEXT           "very sharp",IDC_STATIC,224,62,44,8
+    CONTROL         "&Save applied tags in photographs",IDC_SAVE_TAGS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,79,130,10
     CONTROL         "S&how warning when broken thumbnail image is encountered",IDC_SHOW_MSG,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,93,205,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,93,215,10
     CONTROL         "Close ExifPro when exiting Viewer started from command line with an image path",IDC_CLOSE_APP,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,107,274,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,107,285,10
     GROUPBOX        "Visual Settings",IDC_FRAME_3,4,124,274,112
     LTEXT           "&Display method",IDC_STATIC,13,138,66,8
     COMBOBOX        IDC_DISPLAY,92,136,180,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     CONTROL         "&Preload next/previous photo in viewer window to speed up browsing",IDC_PRELOAD,
                     "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,153,241,10
     CONTROL         "'Best Fit' may magnify small images above 100% of their size",IDC_ALLOW_100,
-                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,167,203,10
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,167,223,10
     CONTROL         "'Best Fit' should fill entire viewer area hiding up to",IDC_ALLOW_FILL,
-                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,181,173,10
-    EDITTEXT        IDC_IMG_PERCENT,187,180,28,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,181,178,10
+    EDITTEXT        IDC_IMG_PERCENT,190,185,28,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_IMG_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,181,8,11
-    LTEXT           "% of the image",IDC_STATIC,218,182,60,8
+    LTEXT           "% of the image",IDC_STATIC,222,185,60,8
     LTEXT           "&Image fading in viewer window",IDC_STATIC,13,197,118,8
     COMBOBOX        IDC_BLENDING,127,195,89,64,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     LTEXT           "Smooth scrolling speed in viewer preview bar",IDC_STATIC,13,212,152,8
     CONTROL         "",IDC_SCROLL_SPEED,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,167,209,100,16
-    LTEXT           "fast",IDC_STATIC,168,225,16,8
-    LTEXT           "normal",IDC_STATIC,205,225,22,8
-    LTEXT           "slow",IDC_STATIC,254,225,16,8
-    LTEXT           "&Memory cache size",IDC_STATIC,4,246,62,8
+    LTEXT           "fast",IDC_STATIC,168,225,20,8
+    LTEXT           "normal",IDC_STATIC,205,225,26,8
+    LTEXT           "slow",IDC_STATIC,254,225,18,8
+    LTEXT           "&Memory cache size",IDC_STATIC,4,246,80,8
     CONTROL         "Slider1",IDC_CACHE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,88,241,133,17
     LTEXT           "0%",IDC_STATIC,92,259,10,8
     LTEXT           "50%",IDC_STATIC,150,259,14,8
@@ -1861,7 +1861,7 @@ BEGIN
     LTEXT           "Location",IDC_STATIC,13,298,28,8
     EDITTEXT        IDC_DB_PATH,93,296,154,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
     PUSHBUTTON      "&...",IDC_SET_PATH,249,295,23,14,NOT WS_TABSTOP
-    LTEXT           "&Limit size to",IDC_STATIC,13,315,37,8
+    LTEXT           "&Limit size to",IDC_STATIC,13,315,50,8
     CONTROL         "Slider1",IDC_DB_SIZE_LIMIT,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,89,312,133,16
     LTEXT           "= 0000 MB",IDC_CACHE_LABEL,226,313,60,8
     PUSHBUTTON      "&Reset to Defaults",IDC_RESET,4,339,65,14,WS_GROUP | NOT WS_TABSTOP
@@ -1872,7 +1872,7 @@ STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "File Types"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
-    LTEXT           "&Select file types ExifPro can load:",IDC_STATIC,4,6,106,8
+    LTEXT           "&Select file types ExifPro can load:",IDC_STATIC,4,6,136,8
     CONTROL         "List1",IDC_TYPES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,18,282,142
     LTEXT           "Example:",IDC_LABEL,4,163,30,8
     CONTROL         "",IDC_EXAMPLE,"Static",SS_BLACKFRAME,4,173,282,98
@@ -2138,7 +2138,7 @@ BEGIN
     LTEXT           "Add File Suffix",IDC_LABEL_2,243,72,46,8
     EDITTEXT        IDC_SUFFIX,295,70,63,12,ES_AUTOHSCROLL
 END
-
+/*
 IDD_SERIAL DIALOGEX 0, 0, 216, 92
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Enter Serial Number"
@@ -2151,7 +2151,7 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,52,70,50,14
     DEFPUSHBUTTON   "OK",IDOK,113,70,50,14
 END
-
+*/
 IDD_IMG_CROP DIALOGEX 0, 0, 265, 117
 STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_CONTROLPARENT
@@ -2175,7 +2175,7 @@ BEGIN
     EDITTEXT        IDC_EDIT_4,218,77,38,13,ES_RIGHT | ES_AUTOHSCROLL | NOT WS_VISIBLE
     CONTROL         "",IDC_SPIN_4,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | NOT WS_VISIBLE,245,77,11,12
 END
-
+/*
 IDD_THANKS DIALOGEX 0, 0, 388, 276
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Thank you for using ExifPro"
@@ -2184,7 +2184,7 @@ BEGIN
     PUSHBUTTON      "OK",ID_OK,168,254,50,14
     LTEXT           "Thank you for downloading ExifPro. This is fully functional version of ExifPro that will let you try out all available functions.",IDC_STATIC,8,26,372,218
 END
-
+*/
 IDD_RESIZE_OPTIONS DIALOGEX 0, 0, 350, 37
 STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_CONTROLPARENT
@@ -2373,7 +2373,7 @@ STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Send Images by E-Mail"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
-    LTEXT           "Images will be reduced in size before sending by e-mail.",IDC_STATIC,7,6,174,8
+    LTEXT           "Images will be reduced in size before sending by e-mail.",IDC_STATIC,7,6,220,8
     GROUPBOX        "Reduce Image Size",IDC_STATIC,6,24,162,82
     CONTROL         "",IDC_SIZE_SLD,"msctls_trackbar32",TBS_AUTOTICKS | TBS_VERT | WS_TABSTOP,12,37,20,64
     LTEXT           "Custom",IDC_STATIC,36,41,24,8
@@ -2381,7 +2381,7 @@ BEGIN
     LTEXT           "Normal",IDC_STATIC,36,64,23,8
     LTEXT           "Medium",IDC_STATIC,36,76,26,8
     LTEXT           "Small",IDC_STATIC,36,88,18,8
-    LTEXT           "Fit this size:",IDC_STATIC,103,44,37,8
+    LTEXT           "Fit this size:",IDC_STATIC,103,44,57,8
     LTEXT           "&Width:",IDC_WIDTH_1_LABEL,76,59,22,8
     EDITTEXT        IDC_WIDTH_PX,102,57,38,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
     LTEXT           "pixels",IDC_WIDTH_2_LABEL,142,60,18,8
@@ -2972,7 +2972,7 @@ END
 
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION 1,0,0,0
- PRODUCTVERSION 2,4,0,1000
+ PRODUCTVERSION 3,0,0,1000
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -2992,9 +2992,9 @@ BEGIN
             VALUE "FileVersion", "1, 0, 0, 0"
             VALUE "InternalName", "ExifPro"
             VALUE "LegalCopyright", "Copyright © 2000-2015 Michael Kowalski"
-            VALUE "OriginalFilename", "ExifPro.EXE"
+            VALUE "OriginalFilename", "ExifPro.exe"
             VALUE "ProductName", "ExifPro Application"
-            VALUE "ProductVersion", "2.4.0.1000"
+            VALUE "ProductVersion", "3.0.0.1000"
         END
     END
     BLOCK "VarFileInfo"
@@ -3019,12 +3019,12 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 208
     END
-
+/*
     IDD_EVALUATION, DIALOG
     BEGIN
         BOTTOMMARGIN, 153
     END
-
+*/
     IDD_VIEWER, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -3368,7 +3368,7 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 80
     END
-
+/*
     IDD_SERIAL, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -3376,7 +3376,7 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 85
     END
-
+*/
     IDD_IMG_CROP, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -3384,7 +3384,7 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 110
     END
-
+/*
     IDD_THANKS, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -3392,7 +3392,7 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 269
     END
-
+*/
     IDD_RESIZE_OPTIONS, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -3943,7 +3943,7 @@ IDB_ZOOMBAR             PNG                     "res\\ZoomBar.png"
 IDB_BROWSER_TBAR        PNG                     "res\\BrowserToolBar.png"
 IDB_GROUP_HEADER_ICONS  PNG                     "res\\GroupHeaderIcons.png"
 IDB_INFO_TOOLBAR        PNG                     "res\\InfoToolbar.png"
-IDB_INFO_TOOLBAR_BIG    PNG                     "res\\InfoToolbarBig.png"
+//IDB_INFO_TOOLBAR_BIG    PNG                     "res\\InfoToolbarBig.png"
 IDB_TASK_BAR            PNG                     "res\\task_bar.png"
 //IDB_HEADER_IMAGES       PNG                     "res\\HeaderImages.png"
 IDB_PHOTOS_TB           PNG                     "res\\photos_tb.png"
@@ -4028,7 +4028,7 @@ BEGIN
     IDS_EDIT_TAGS           "Edit tags"
     IDS_CUSTOM_FILTERS      "Remember Filter\nDelete\nUpdate Name"
     IDS_INSERT_TEXT2        "Image Attribute\nMetadata Field\nFile\n"
-    IDS_BROWSER_TOOLS       "Viewer\nTransfer\nCopy\nMove\nRename\nCopy Tagged\nResize\nRotate\nFile Info\nSlide Show\nHTML Album\nCatalog\nPrint\nExport\nHistogram\nAdjust\nE-mail\nDate Time\nExtract JPEG\nDelete"
+    //IDS_BROWSER_TOOLS       "Viewer\nTransfer\nCopy\nMove\nRename\nCopy Tagged\nResize\nRotate\nFile Info\nSlide Show\nHTML Album\nCatalog\nPrint\nExport\nHistogram\nAdjust\nE-mail\nDate Time\nExtract JPEG\nDelete"
     IDS_INSERT_TEXT3        "File Name\nImage Attribute\nMetadata Field\n"
     ID_RELOAD               "Reload images (F5)"
     ID_STOP_SCAN            "Stop directory scan (Esc)"
@@ -4188,7 +4188,8 @@ END
 STRINGTABLE
 BEGIN
     IDS_MAIN_TOOLBAR        "&Browser\nC&amera\nFavo&rites\nX"
-    IDS_BROWSER_TOOLBAR     "Transfer\nTagging\nInfo\n"
+    //IDS_BROWSER_TOOLBAR     "Transfer\nTagging\nInfo\n"
+	IDS_BROWSER_TOOLBAR     "Info\n"
     IDS_INFO_TOOLBAR        "Copy\n"
     IDS_VIEWER_TOOLBAR      "X\nX\n"
     ID_IMAGES_PANE          "Scanning... (9999) MMMMMMMMMXXX"
@@ -4328,7 +4329,7 @@ BEGIN
     ID_VIEW                 "Open viewer (Enter)"
     ID_PHOTO_FIRST          "Go to first photograph (Home)"
     ID_PHOTO_LAST           "Go to last photograph (End)"
-    ID_PHOTO_LIST           "List of photographs (L)"
+    ID_PHOTO_LIST           "Browser home (L)"
     ID_ZOOM_OUT             "Zoom out (Num '-')"
     ID_ZOOM_IN              "Zoom in (Num '+')"
     ID_ZOOM_FIT             "Best fit (Num '*')"

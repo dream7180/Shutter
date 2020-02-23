@@ -34,7 +34,7 @@ public:
 	bool IsPaneVisible() const					{ return visible_; }
 
 	// big or small toolbar in a caption area?
-	bool IsCaptionBig() const;
+	//bool IsCaptionBig() const;
 
 // Operations
 	void SyncVisibilityFlag();
@@ -76,7 +76,7 @@ public:
 	virtual void ChangeSortOrder(UINT cmd_id);
 
 	// caption's height has changed
-	virtual void CaptionHeightChanged(bool big);
+	//virtual void CaptionHeightChanged(bool big);
 
 	// request to assign tag to selected photos
 	virtual void AssignTag(int index);
@@ -159,7 +159,7 @@ private:
 
 	LRESULT OnShowPane(WPARAM visible, LPARAM notification);
 	LRESULT OnActivatePane(WPARAM active, LPARAM);
-	LRESULT OnCaptionHeightChanged(WPARAM big, LPARAM);
+	//LRESULT OnCaptionHeightChanged(WPARAM big, LPARAM);
 };
 
 /////////////////////////////////////////////////////////////////////////////

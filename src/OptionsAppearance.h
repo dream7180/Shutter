@@ -30,7 +30,7 @@ public:
 	enum { IDD = IDD_OPTIONS_APPEARANCE };
 	ColorConfiguration main_wnd_colors_;
 	ColorConfiguration viewer_wnd_colors_;
-	ColorConfiguration pane_caption_colors_;
+	//ColorConfiguration pane_caption_colors_;
 	double ui_gamma_correction_;
 	LOGFONT description_font_;
 	LOGFONT tag_font_;
@@ -49,7 +49,7 @@ private:
 	void UpdateDescFont();
 	void UpdateColorsViewer();
 	void UpdateColorsWnd();
-	void UpdateCaptionColors();
+	//void UpdateCaptionColors();
 	void UpdateTagFont();
 	void ChangeActiveElement();
 	void OnReset();

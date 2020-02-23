@@ -252,10 +252,10 @@ bool App::InitializeInstance()
 
 	Scintilla_RegisterClasses(AfxGetInstanceHandle());
 
-	SetRegistryKey(_T("MKowalski"));	// Registry key under which settings are stored.
+	SetRegistryKey(_T("ExifPro"));	// Registry key under which settings are stored.
 	BOOL enable= AfxEnableMemoryTracking(FALSE);
 	free(const_cast<TCHAR*>(m_pszProfileName));
-	m_pszProfileName = _tcsdup(_T("ExifPro\\2.4"));
+	m_pszProfileName = _tcsdup(_T("3.x"));
 	AfxEnableMemoryTracking(enable);
 
 #ifdef USE_GDI_PLUS

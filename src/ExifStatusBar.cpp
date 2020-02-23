@@ -207,9 +207,11 @@ int ExifStatusBar::OnCreate(LPCREATESTRUCT create_struct)
 	VERIFY(dc.GetTextMetrics(&tm));
 	dc.SelectObject(old);
 	// extra height
-	m_nMinHeight = tm.tmHeight + tm.tmInternalLeading;
-	m_cyBottomBorder = tm.tmInternalLeading / 2;
-
+	m_nMinHeight = tm.tmHeight * 2 + tm.tmInternalLeading;
+	m_cyBottomBorder = tm.tmInternalLeading;// / 2;
+	
+	//CWnd* pParentWnd;
+	//pParentWnd->ModifyStyle(WS_THICKFRAME, 0, 0);
 	if (CStatusBar::OnCreate(create_struct) == -1)
 		return -1;
 

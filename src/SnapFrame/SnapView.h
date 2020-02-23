@@ -63,7 +63,7 @@ public:
 
 	bool IsPaneOpen();
 
-	void ChangeCaptionHeight(bool big);
+	//void ChangeCaptionHeight(bool big);
 
 	// color of separator between pane windows
 	void SetSeparatorBaseColor(COLORREF color);

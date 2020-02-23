@@ -276,7 +276,8 @@ BOOL FilterPanelDlg::OnEraseBkgnd(CDC* dc)
 
 	DialogBase::OnEraseBkgnd(dc);
 	//dc->FillSolidRect(rect.left, rect.top, rect.Width() - 1, rect.Height(), ::GetSysColor(COLOR_3DFACE));
-	dc->FillSolidRect(rect.right - 1, rect.top, 1, rect.Height(), ::GetSysColor(COLOR_3DSHADOW));
+	//dc->FillSolidRect(rect.right - 1, rect.top, 1, rect.Height(), ::GetSysColor(COLOR_3DFACE));
+	dc->FillSolidRect(rect.left, rect.top, rect.Width(), rect.Height(), ::GetSysColor(COLOR_3DFACE));
 
 	return true;
 }

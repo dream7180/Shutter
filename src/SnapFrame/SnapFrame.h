@@ -219,7 +219,7 @@ public:
 	void RestorePaneLayout(UINT index);
 
 	// method invoked by caption window
-	void ChangeCaptionHeight(bool big);
+	//void ChangeCaptionHeight(bool big);
 
 	// update caption and separator colors after color configuration change
 	void ResetColors(const ColorConfiguration& colors);

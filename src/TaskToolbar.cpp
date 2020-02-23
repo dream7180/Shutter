@@ -97,13 +97,20 @@ bool TaskToolbar::Create(CWnd* parent, UINT id, bool vertical)
 {
 	static const int commands[]=
 	{
-		ID_VIEW,
+		/*ID_VIEW,
 		ID_TASK_TRANSFER, ID_TASK_COPY, ID_TASK_MOVE, ID_TASK_RENAME, ID_TASK_COPY_TAGGED,
 		ID_TASK_RESIZE, ID_TASK_ROTATE, ID_TASK_EDIT_IPTC,
 		ID_TASK_GEN_SLIDE_SHOW, ID_TASK_GEN_HTML_ALBUM, ID_BUILD_CATALOG,
 		ID_TASK_PRINT, ID_TASK_EXPORT, ID_TASK_HISTOGRAM,
 		ID_TASK_TOUCH_UP, ID_SEND_EMAIL, ID_DATE_TIME_ADJ,
-		ID_TASK_EXTRACT_JPEG, ID_TASK_DELETE
+		ID_TASK_EXTRACT_JPEG, ID_TASK_DELETE*/
+		ID_VIEW,
+		ID_TASK_TRANSFER, ID_TASK_COPY, ID_TASK_MOVE, ID_TASK_RENAME, ID_TASK_COPY_TAGGED,
+		ID_TASK_RESIZE, ID_TASK_ROTATE, ID_TASK_TOUCH_UP, ID_TASK_HISTOGRAM, ID_TASK_EXTRACT_JPEG, ID_TASK_EDIT_IPTC,
+		ID_TASK_GEN_SLIDE_SHOW, ID_TASK_GEN_HTML_ALBUM, ID_BUILD_CATALOG,
+		ID_TASK_PRINT, ID_TASK_EXPORT,
+		ID_SEND_EMAIL, ID_DATE_TIME_ADJ,
+		ID_TASK_DELETE
 	};
 
 	if (vertical)
@@ -141,7 +148,7 @@ bool TaskToolbar::Create(CWnd* parent, UINT id, bool vertical)
 		_font.CreateFontIndirect(&lf);
 		dc.SelectObject(&_font);
 		//dc.SelectStockObject(DEFAULT_GUI_FONT);
-		w = dc.GetTextExtent(_T("NNNNNNa"), 7).cx;
+		w = dc.GetTextExtent(_T("NNNNNNNa"), 8).cx;
 	}
 	// limit button width to make labels wrap
 	if (vertical)
@@ -151,7 +158,7 @@ bool TaskToolbar::Create(CWnd* parent, UINT id, bool vertical)
 	SendMessage(TB_SETDRAWTEXTFLAGS, DT_SINGLELINE, 0);
 	SendMessage(TB_SETMAXTEXTROWS, vertical ? 1 : 2, 0);
 
-	AddButtons("P|PPPPP|PPPPPPPPPPPPPP", commands, bmp_id, IDS_BROWSER_TOOLS, vertical);
+	AddButtons("P|PPPPP|PPPPPPPPPPPPPP", commands, bmp_id, /*IDS_BROWSER_TOOLS*/false, vertical);
 
 	CreateDisabledImageList(bmp_id, saturation, lightness, alpha);
 
@@ -181,7 +188,9 @@ void TaskToolbar::DeleteButtons()
 	DeleteButton(ID_TASK_COPY_TAGGED);
 	DeleteButton(ID_TASK_GEN_SLIDE_SHOW);
 	DeleteButton(ID_TASK_EXPORT);
-	DeleteButton(ID_TASK_EXTRACT_JPEG);
+	DeleteButton(ID_SEND_EMAIL);
+	DeleteButton(ID_DATE_TIME_ADJ);
+	//DeleteButton(ID_TASK_EXTRACT_JPEG);
 	DeleteButton(ID_TASK_DELETE);
 }
 

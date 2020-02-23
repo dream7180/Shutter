@@ -1695,7 +1695,7 @@ int LCMSEXPORT cmsReadICCTextEx(cmsHPROFILE hProfile, icTagSignature sig, char *
       
     if (ReadEmbeddedTextTag(Icc, size, Name, size_max) < 0) return -1;
 
-	return size;
+	return (int) size;
 }
 
 // Keep compatibility with older versions
@@ -3142,6 +3142,7 @@ LCMSBOOL SaveLUT(const LUT* NewLUT, LPLCMSICCPROFILE Icc)
        LUT16.clutPoints = (icUInt8Number) NewLUT -> cLutPoints;
        LUT16.inputChan  = (icUInt8Number) NewLUT -> InputChan;
        LUT16.outputChan = (icUInt8Number) NewLUT -> OutputChan;
+       LUT16.pad = 0;
 
        LUT16.inputEnt   = TransportValue16((WORD) ((NewLUT -> wFlags & LUT_HASTL1) ? NewLUT -> InputEntries  : 2));
        LUT16.outputEnt  = TransportValue16((WORD) ((NewLUT -> wFlags & LUT_HASTL2) ? NewLUT -> OutputEntries : 2));

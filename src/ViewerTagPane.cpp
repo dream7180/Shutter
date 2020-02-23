@@ -260,8 +260,8 @@ BOOL ViewerTagPane::OnEraseBkgnd(CDC* dc)
 		dc->TextOut(rect.left + 5, rect.top + 4, str);
 		dc->SelectObject(old);
 
-		COLORREF light= CalcNewColor(RGB(78,81,96), impl_.ui_gamma_correction_);
-		COLORREF dark= CalcNewColor(RGB(57,59,74), impl_.ui_gamma_correction_);
+		//COLORREF light= CalcNewColor(RGB(78,81,96), impl_.ui_gamma_correction_);
+		//COLORREF dark= CalcNewColor(RGB(57,59,74), impl_.ui_gamma_correction_);
 
 		//TODO: alpha transp. needed here
 		//dc->FillSolidRect(rect.left + 9, rect.top + 21, rect.Width() - 18, 1, light);

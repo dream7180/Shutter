@@ -47,7 +47,7 @@ extern void DrawSeparatorBar(Dib& dest, int x, int y, int height, float black_op
 	}
 }
 
-
+/*
 extern void DrawHorzSeparatorBar(Dib& dest, int x, int y, int width, float black_opacity, float white_opacity)
 {
 	ASSERT(black_opacity >= 0.0f && black_opacity <= 1.0f);
@@ -88,3 +88,4 @@ extern void DrawHorzSeparatorBar(Dib& dest, int x, int y, int width, float black
 		++q;
 	}
 }
+*/

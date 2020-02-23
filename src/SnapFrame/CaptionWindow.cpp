@@ -32,14 +32,14 @@ static char THIS_FILE[] = __FILE__;
 // CaptionWindow
 
 namespace {
-	const int TBAR_WIDTH= 43;		// toolbar width (including right margin)
-	const int TBARBIG_WIDTH= 52;	// toolbar width (including right margin)
-	const int CHEVRON= 18;			// chevron toolbar width
-	const int CHEVRONBIG= 20;		// chevron toolbar width
+	//const int TBAR_WIDTH= 46;		// toolbar width (including right margin)
+	const int TBAR_WIDTH= 52;	// toolbar width (including right margin)
+	const int CHEVRON= 20;			// chevron toolbar width
+	//const int CHEVRONBIG= 20;		// chevron toolbar width
 	const int CHEVRONSPACE= CHEVRON + 12;
-	const int CHEVRONBIGSPACE= CHEVRONBIG + 12;
-	const TCHAR* REG_KEY= _T("Caption");
-	const TCHAR* REG_ENTRY= _T("Large");
+	//const int CHEVRONBIGSPACE= CHEVRONBIG + 12;
+	//const TCHAR* REG_KEY= _T("Caption");
+	//const TCHAR* REG_ENTRY= _T("Large");
 }
 
 //CImageList CaptionWindow::img_list_tab_;
@@ -54,7 +54,7 @@ namespace {
 //int CaptionWindow::min_caption_width_big_= 0;
 //const int CaptionWindow::tab_part_divider_= 6;
 int CaptionWindow::initialized_= 0;
-bool CaptionWindow::big_= false;
+//bool CaptionWindow::big_= true;
 //COLORREF CaptionWindow::static_active_caption_color= 0;
 //COLORREF CaptionWindow::static_inactive_caption_color= 0;
 const int LEFT_MARGIN= Pixels(4);	// space before caption's text
@@ -199,15 +199,15 @@ CaptionWindow::CaptionWindow()
 	}
 }
 
-
+/*
 CaptionWindow::~CaptionWindow()
 {
-	if (--initialized_ == 0)
+	//if (--initialized_ == 0)
 	{
 //		AfxGetApp()->WriteProfileInt(REG_KEY, REG_ENTRY, big_);
 	}
 }
-
+*/
 
 //CImageList& CaptionWindow::GetTabImg()
 //{
@@ -290,8 +290,8 @@ BEGIN_MESSAGE_MAP(CaptionWindow, CWnd)
 	ON_WM_RBUTTONUP()
 	ON_COMMAND(ID_CHEVRON, OnChevron)
 	ON_MESSAGE(WM_PRINT, OnPrint)
-	ON_COMMAND(ID_SMALL_ICONS, OnSmallIcons)
-	ON_COMMAND(ID_LARGE_ICONS, OnLargeIcons)
+//	ON_COMMAND(ID_SMALL_ICONS, OnSmallIcons)
+//	ON_COMMAND(ID_LARGE_ICONS, OnLargeIcons)
 	ON_WM_INITMENUPOPUP()
 	ON_WM_CONTEXTMENU()
 END_MESSAGE_MAP()
@@ -322,7 +322,7 @@ bool CaptionWindow::Create(CWnd* parent, const TCHAR* title)
 	static const int commands[]= { ID_PANE_MAXIMIZE, ID_PANE_RESTORE, ID_PANE_CLOSE };
 	tool_bar_wnd_.SetPadding(1, 1);
 	tool_bar_wnd_.SetOnIdleUpdateState(false);
-	tool_bar_wnd_.Create("ppp", commands, big_ ? IDB_PANE_TOOLBAR_BIG : IDB_PANE_TOOLBAR, 0, this);
+	tool_bar_wnd_.Create("ppp", commands, /*big_ ? IDB_PANE_TOOLBAR_BIG : */IDB_PANE_TOOLBAR, 0, this);
 	//tool_bar_wnd_.SetHotImageList(big_ ? IDB_PANE_TOOLBAR_BIG_HOT : IDB_PANE_TOOLBAR_HOT);
 	tool_bar_wnd_.HideButton(ID_PANE_RESTORE);
 	tool_bar_wnd_.SetOwner(parent);
@@ -502,7 +502,7 @@ void CaptionWindow::DrawCaptionGradient(CDC* dc, const CRect& rect)
 
 int CaptionWindow::GetTollBarWidth()
 {
-	int width= big_ ? TBARBIG_WIDTH : TBAR_WIDTH;
+	int width= /*big_ ? TBARBIG_WIDTH : */TBAR_WIDTH;
 
 	if (maximized_wnd_toolbar_)
 		return Pixels(width / 2 + 4);
@@ -524,7 +524,7 @@ CRect CaptionWindow::GetTextRect(CDC* dc, const CRect& rect, const TCHAR* title,
 		rect.bottom);
 
 	if (chevron_wnd_.m_hWnd)
-		text_rect.right -= big_ ? CHEVRONBIGSPACE : CHEVRONSPACE;
+		text_rect.right -= /*big_ ? CHEVRONBIGSPACE : */CHEVRONSPACE;
 
 	if (text_rect.right < rect.left)
 		text_rect.right = rect.left;
@@ -682,7 +682,7 @@ void CaptionWindow::Resize()
 
 	if (tool_bar_wnd_.m_hWnd)
 	{
-		int y= big_ ? 7 : 3;
+		int y= 5;//big_ ? 7 : 3;
 		//y=0;
 		tool_bar_wnd_.SetWindowPos(0, rect.Width() - GetTollBarWidth() - 1, y, GetTollBarWidth(), GetHeight() - 1, SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE);
 	}
@@ -700,7 +700,7 @@ void CaptionWindow::SetChevronPos()
 	{
 		CRect rect;
 		GetClientRect(rect);
-		int width= big_ ? CHEVRONBIG : CHEVRON;
+		int width= /*big_ ? CHEVRONBIG : */CHEVRON;
 		chevron_wnd_.SetWindowPos(0, rect.Width() - GetTollBarWidth() - width, 0, width, GetHeight(), SWP_NOZORDER | SWP_NOACTIVATE);
 	}
 }
@@ -963,7 +963,7 @@ void CaptionWindow::PositionHostedBar()
 					SetChevronPos();
 					Invalidate();
 				}
-				rect.right -= (big_ ? CHEVRONBIG : CHEVRON) + 2;	// place for chevron
+				rect.right -= CHEVRON + 2;//(big_ ? CHEVRONBIG : CHEVRON) + 2;	// place for chevron
 			}
 		}
 
@@ -989,10 +989,10 @@ void CaptionWindow::CreateChevron()
 	chevron_wnd_.SetOnIdleUpdateState(false);
 	chevron_wnd_.SetPadding(0, 8);
 
-	int bmp= big_ ? IDB_CHEVRON_BIG : IDB_CHEVRON;
+	int bmp= /*big_ ? IDB_CHEVRON_BIG : */IDB_CHEVRON;
 	chevron_wnd_.Create("p", &chevron_cmd, bmp, 0, this);
 
-	int hot= big_ ? IDB_CHEVRON_BIG_HOT : IDB_CHEVRON_HOT;
+	int hot= /*big_ ? IDB_CHEVRON_BIG_HOT : */IDB_CHEVRON_HOT;
 	chevron_wnd_.SetHotImageList(hot);
 }
 
@@ -1068,7 +1068,7 @@ void CaptionWindow::HideMaximizeButton()
 	Resize();
 }
 
-
+/*
 void CaptionWindow::OnSmallIcons()
 {
 	if (big_)
@@ -1089,14 +1089,14 @@ void CaptionWindow::OnLargeIcons()
 			frame_->ChangeCaptionHeight(big_);
 		}
 }
-
-
+*/
+/*
 void CaptionWindow::OnInitMenuPopup(CMenu* popup_menu, UINT index, BOOL sys_menu)
 {
 	popup_menu->CheckMenuRadioItem(ID_SMALL_ICONS, ID_LARGE_ICONS, !big_ ? ID_SMALL_ICONS : ID_LARGE_ICONS, MF_BYCOMMAND);
 }
-
-
+*/
+/*
 void CaptionWindow::ChangeHeight(bool big)
 {
 	tool_bar_wnd_.ReplaceImageList(big ? IDB_PANE_TOOLBAR_BIG : IDB_PANE_TOOLBAR);
@@ -1108,7 +1108,7 @@ void CaptionWindow::ChangeHeight(bool big)
 //	chevron_wnd_.ReplaceImageList(big ? IDB_CHEVRON_BIG : IDB_CHEVRON);
 //	chevron_wnd_.ReplaceImageList(big ? IDB_CHEVRON_BIG_HOT : IDB_CHEVRON_HOT, 0, ToolBarWnd::HOT);
 }
-
+*/
 
 void CaptionWindow::SetBottomEdge(bool faint)
 {
@@ -1127,7 +1127,7 @@ int CaptionWindow::GetHeight()
 	//CDC dc;
 	//dc.CreateIC(_T("DISPLAY"), 0, 0, 0);
 	//auto dpi = dc.GetDeviceCaps(LOGPIXELSY);
-	auto h = big_ ? 38 : 28;
+	auto h = 32;//big_ ? 38 : 28;
 	// caption window height
 	return Pixels(h);
 //	return h * dpi / 96;

@@ -38,7 +38,7 @@ String GetDefaultDbFolder()
 		dir.assign(folder.GetPath());
 	}
 
-	dir.AppendDir(_T("MiK\\ExifPro"), false);
+	dir.AppendDir(_T("ExifPro"), false);
 	if (!dir.CreateFolders())
 		return _T("");
 

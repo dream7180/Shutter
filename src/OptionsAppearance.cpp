@@ -20,7 +20,7 @@ ____________________________________________________________________________*/
 #include <boost/function.hpp>
 #include "ViewerExampleWnd.h"
 #include "PhotoCtrl.h"
-#include "SnapFrame/CaptionWindow.h"
+//#include "SnapFrame/CaptionWindow.h"
 #include "SnapFrame/SnapView.h"
 #include "SnapFrame/SnapFrame.h"
 #include "UIElements.h"
@@ -144,32 +144,32 @@ struct OptionsAppearance::Impl : GridCtrlNotification, PhotoCtrlNotification
 		// main window color/font settings
 		// those labels correspond to PhotoCtrl::Colors apart from 'font' item...
 		{
-			const size_t count= wnd->main_wnd_colors_.size() + 1;
+			const size_t count= 4;//wnd->main_wnd_colors_.size() + 1;
 			main_wnd_.reserve(count);
 
 			static const TCHAR* names[]=
 			{
-				_T("Background"),
-				_T("Text"),
+				//_T("Background"),
+				//_T("Text"),
 				_T("Selection"),
-				_T("Selected Text"),
-				_T("Disabled Text"),
+				//_T("Selected Text"),
+				//_T("Disabled Text"),
 				_T("Tag Background"),
 				_T("Tag Text"),
-				_T("Tag Font"),
-				_T("Sorting Column"),
-				_T("Group Separator"),
-				_T("Tile Dim Text"),
-				0
+				_T("Tag Font")//,
+				//_T("Sorting Column"),
+				//_T("Group Separator"),
+				//_T("Tile Dim Text"),
+				//0
 			};
 
 			for (size_t idx= 0, i= 0; idx < count; ++idx)
 			{
-				if (idx == 7)	// tag font?
+				if (idx == 3)	// tag font?
 					main_wnd_.push_back(UIElem(names[idx], &wnd->tag_font_, &default_tag_font_, boost::bind(&OptionsAppearance::UpdateTagFont, wnd)));
-				else
+				else// if(idx < 3)
 				{
-					main_wnd_.push_back(UIElem(names[idx], wnd->main_wnd_colors_[i], boost::bind(&OptionsAppearance::UpdateColorsWnd, wnd)));
+					main_wnd_.push_back(UIElem(names[idx], wnd->main_wnd_colors_[(i+1)*(5-i)-3], boost::bind(&OptionsAppearance::UpdateColorsWnd, wnd)));
 					++i;
 				}
 			}
@@ -209,7 +209,7 @@ struct OptionsAppearance::Impl : GridCtrlNotification, PhotoCtrlNotification
 			}
 		}
 
-		// pane caption colors
+		/*/ pane caption colors
 		{
 			const size_t count= wnd->pane_caption_colors_.size();
 			pane_captions_.reserve(count);
@@ -236,7 +236,7 @@ struct OptionsAppearance::Impl : GridCtrlNotification, PhotoCtrlNotification
 					++i;
 				}
 			}
-		}
+		}*/
 
 		cur_wnd_ = &main_wnd_;
 
@@ -268,15 +268,15 @@ struct OptionsAppearance::Impl : GridCtrlNotification, PhotoCtrlNotification
 	CListCtrl border_wnd_;
 	PhotoInfoStorage photos_1_;
 	ViewerExampleWnd example_viewer_;
-	CaptionWindow active_caption_;
-	CaptionWindow inactive_caption_;
+	//CaptionWindow active_caption_;
+	//CaptionWindow inactive_caption_;
 	Separator separator1_wnd_;
-	Separator separator2_wnd_;
+	//Separator separator2_wnd_;
 	VectPhotoInfo photos_2_;
 	int cur_element_;
 	std::vector<UIElem> main_wnd_;
 	std::vector<UIElem> viewer_wnd_;
-	std::vector<UIElem> pane_captions_;
+	//std::vector<UIElem> pane_captions_;
 	std::vector<UIElem>* cur_wnd_;
 	CLinkWnd reset_to_defaults_;
 	GridCtrl ui_items_;
@@ -310,7 +310,7 @@ void OptionsAppearance::DoDataExchange(CDataExchange* DX)
 BEGIN_MESSAGE_MAP(OptionsAppearance, RPropertyPage)
 	ON_BN_CLICKED(IDC_ELEMENT, ChangeActiveElement)
 	ON_BN_CLICKED(IDC_VIEWER, ChangeActiveElement)
-	ON_BN_CLICKED(IDC_CAPTIONS, ChangeActiveElement)
+	//ON_BN_CLICKED(IDC_CAPTIONS, ChangeActiveElement)
 	ON_BN_CLICKED(IDC_RESET, OnReset)
 	ON_WM_SIZE()
 END_MESSAGE_MAP()
@@ -419,7 +419,7 @@ AfxMessageBox(sz, MB_OK);
 		int y= rect.top;
 		const int h= SnapView::GetSeparatorThickness().cy;
 		impl_->separator1_wnd_.Create(&impl_->border_wnd_, CRect(CPoint(rect.left, y), CSize(rect.Width(), h)));
-
+/*
 		impl_->active_caption_.Create(&impl_->border_wnd_, _T("Active Pane"));
 		impl_->active_caption_.SetWindowPos(0, 0, y + h, rect.Width(), CaptionWindow::GetHeight(), SWP_NOZORDER | SWP_NOACTIVATE);
 		impl_->active_caption_.EnableWindow(false);
@@ -433,7 +433,7 @@ AfxMessageBox(sz, MB_OK);
 		impl_->inactive_caption_.EnableWindow(false);
 		impl_->inactive_caption_.Activate(false);
 
-		UpdateCaptionColors();
+		UpdateCaptionColors();*/
 	}
 	else
 	{ ASSERT(false); }
@@ -476,14 +476,14 @@ Dib* OptionsAppearance::Impl::RequestThumbnail(PhotoInfoPtr photo, CSize image_s
 
 void OptionsAppearance::ChangeActiveElement()
 {
-	if (impl_->example_viewer_.m_hWnd && impl_->example_wnd_.m_hWnd && impl_->active_caption_.m_hWnd && UpdateData())
+	if (impl_->example_viewer_.m_hWnd && impl_->example_wnd_.m_hWnd/* && impl_->active_caption_.m_hWnd */&& UpdateData())
 	{
 		impl_->example_viewer_.ShowWindow(SW_HIDE);
-		impl_->active_caption_.ShowWindow(SW_HIDE);
-		impl_->inactive_caption_.ShowWindow(SW_HIDE);
+		//impl_->active_caption_.ShowWindow(SW_HIDE);
+		//impl_->inactive_caption_.ShowWindow(SW_HIDE);
 		impl_->example_wnd_.ShowWindow(SW_HIDE);
 		impl_->separator1_wnd_.ShowWindow(SW_HIDE);
-		impl_->separator2_wnd_.ShowWindow(SW_HIDE);
+		//impl_->separator2_wnd_.ShowWindow(SW_HIDE);
 
 		switch (impl_->cur_element_)
 		{
@@ -497,13 +497,13 @@ void OptionsAppearance::ChangeActiveElement()
 			impl_->example_viewer_.ShowWindow(SW_SHOWNA);
 			break;
 
-		case 2:
+		/*case 2:
 			impl_->cur_wnd_ = &impl_->pane_captions_;
 			impl_->active_caption_.ShowWindow(SW_SHOWNA);
 			impl_->inactive_caption_.ShowWindow(SW_SHOWNA);
 			impl_->separator1_wnd_.ShowWindow(SW_SHOWNA);
 			impl_->separator2_wnd_.ShowWindow(SW_SHOWNA);
-			break;
+			break;*/
 		}
 
 		impl_->ui_items_.SetItemCount(impl_->cur_wnd_->size());
@@ -770,7 +770,7 @@ void OptionsAppearance::UpdateDescFont()
 	impl_->example_viewer_.SetDescriptionFont(description_font_);
 }
 
-
+/*
 void OptionsAppearance::UpdateCaptionColors()
 {
 //	vector<COLORREF> colors= pane_caption_colors_.Colors();
@@ -780,7 +780,7 @@ void OptionsAppearance::UpdateCaptionColors()
 	impl_->separator1_wnd_.SetColor(pane_caption_colors_[SnapFrame::C_SEPARATOR].SelectedColor());
 	impl_->separator2_wnd_.SetColor(pane_caption_colors_[SnapFrame::C_SEPARATOR].SelectedColor());
 }
-
+*/
 
 void SetWidth(CWnd& wnd, int width)
 {
@@ -801,9 +801,9 @@ void OptionsAppearance::OnSize(UINT type, int cx, int cy)
 		impl_->example_wnd_.MoveWindow(rect);
 		impl_->example_viewer_.MoveWindow(rect);
 
-		SetWidth(impl_->active_caption_, rect.Width());
-		SetWidth(impl_->inactive_caption_, rect.Width());
+		//SetWidth(impl_->active_caption_, rect.Width());
+		//SetWidth(impl_->inactive_caption_, rect.Width());
 		SetWidth(impl_->separator1_wnd_, rect.Width());
-		SetWidth(impl_->separator2_wnd_, rect.Width());
+		//SetWidth(impl_->separator2_wnd_, rect.Width());
 	}
 }

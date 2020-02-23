@@ -20,7 +20,7 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-// Version 1.18
+// Version 1.19
 
 #ifndef __cms_H
 
@@ -33,8 +33,8 @@
 // virtually any machine.
 
 //#define USE_FLOAT        1
-#define USE_C            1
-//#define USE_ASSEMBLER    1
+// #define USE_C            1
+#define USE_ASSEMBLER    1
 
 // Define this if you are using this package as a DLL (windows only)
 
@@ -43,7 +43,7 @@
 
 // Uncomment if you are trying the engine in a non-windows environment
 // like linux, SGI, VAX, FreeBSD, BeOS, etc. 
-//#define NON_WINDOWS  1
+#define NON_WINDOWS  1
 
 // Uncomment this one if you are using big endian machines (only meaningful
 // when NON_WINDOWS is used)
@@ -73,7 +73,7 @@
 
 // ********** End of configuration toggles ******************************
 
-#define LCMS_VERSION        118
+#define LCMS_VERSION        119
 
 // Microsoft VisualC++
 

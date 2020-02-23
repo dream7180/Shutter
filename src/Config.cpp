@@ -172,8 +172,8 @@ namespace {
 	const TCHAR* const REG_CLOSE_APP=			_T("CloseAppWhenExitingViewer");
 	const TCHAR* const REG_SMOOTH_SPEED_VAL=	_T("SmoothSpeedValue");
 	const TCHAR* const REG_TAG_FONT=			_T("ImgTagFont");
-	const TCHAR* const REG_PANE_CAPTION_COLORS=	_T("PaneCaptionColors");
-	const TCHAR* const REG_USE_PANE_CAPTION_COLORS=	_T("PaneCaptionColorsCustom");
+	//const TCHAR* const REG_PANE_CAPTION_COLORS=	_T("PaneCaptionColors");
+	//const TCHAR* const REG_USE_PANE_CAPTION_COLORS=	_T("PaneCaptionColorsCustom");
 	const TCHAR REG_DB_PATH[]=				_T("ImageCacheDbPath");
 	const TCHAR REG_THUMB_SHARPENING[]=		_T("ThumbnailSharpening");
 }
@@ -198,8 +198,8 @@ void Config::Store()
 	WriteProfileVector(REGISTRY_ENTRY_CONFIG, REG_USE_VIEWER_COLORS, viewer_wnd_colors_.UseCustomFlags());
 	app->WriteProfileInt(REGISTRY_ENTRY_CONFIG, REG_VIEWER_UI_GAMMA, static_cast<int>(viewer_ui_gamma_correction_ * 100));
 
-	WriteProfileVector(REGISTRY_ENTRY_CONFIG, REG_PANE_CAPTION_COLORS, pane_caption_colors_.CustomColors());
-	WriteProfileVector(REGISTRY_ENTRY_CONFIG, REG_USE_PANE_CAPTION_COLORS, pane_caption_colors_.UseCustomFlags());
+	//WriteProfileVector(REGISTRY_ENTRY_CONFIG, REG_PANE_CAPTION_COLORS, pane_caption_colors_.CustomColors());
+	//WriteProfileVector(REGISTRY_ENTRY_CONFIG, REG_USE_PANE_CAPTION_COLORS, pane_caption_colors_.UseCustomFlags());
 
 	app->WriteProfileInt(REGISTRY_ENTRY_CONFIG, REG_HORZ_RESOLUTION, static_cast<int>(horz_resolution_ * 100));
 	app->WriteProfileInt(REGISTRY_ENTRY_CONFIG, REG_VERT_RESOLUTION, static_cast<int>(vert_resolution_ * 100));
@@ -600,8 +600,8 @@ void Config::Restore()
 		std::vector<COLORREF> colors;
 		std::vector<char> use_custom;
 
-		GetProfileVector(REGISTRY_ENTRY_CONFIG, REG_PANE_CAPTION_COLORS, colors);
-		GetProfileVector(REGISTRY_ENTRY_CONFIG, REG_USE_PANE_CAPTION_COLORS, use_custom);
+		//GetProfileVector(REGISTRY_ENTRY_CONFIG, REG_PANE_CAPTION_COLORS, colors);
+		//GetProfileVector(REGISTRY_ENTRY_CONFIG, REG_USE_PANE_CAPTION_COLORS, use_custom);
 
 		pane_caption_colors_.Create(colors, use_custom, def_colors);
 	}
@@ -787,7 +787,7 @@ void Config::UpdateAppColors()
 	std::vector<std::pair<::AppColors, ColorCfg>> colors;
 	colors.reserve(20);
 
-	auto bkgnd = RGB(85, 85, 85);	// gray background
+	auto bkgnd = RGB(45, 45, 45);	// gray background
 	auto text = RGB(230, 230, 230);	// light text
 
 	colors.push_back(std::make_pair(AppColors::Background, bkgnd));
@@ -796,16 +796,15 @@ void Config::UpdateAppColors()
 	colors.push_back(std::make_pair(AppColors::DisabledText, CalcNewColor(bkgnd, text, 0.40f)));
 	colors.push_back(std::make_pair(AppColors::ActiveText, RGB(255, 255, 255)));
 	colors.push_back(std::make_pair(AppColors::SelectedText, RGB(255, 255, 255)));
-	auto sep = CalcShade(bkgnd, -36.0f);
+	auto sep = CalcShade(bkgnd, -30.0f);
 	colors.push_back(std::make_pair(AppColors::Separator, sep));
 	colors.push_back(std::make_pair(AppColors::SecondarySeparator, CalcNewColor(sep, bkgnd, 0.50f)));
-	colors.push_back(std::make_pair(AppColors::EditBox, CalcShade(bkgnd, -13.0f)));
-	colors.push_back(std::make_pair(AppColors::Selection, RGB(25, 125, 225))); //::GetSysColor(COLOR_HIGHLIGHT)
+	colors.push_back(std::make_pair(AppColors::EditBox, CalcShade(bkgnd, -20.0f)));
+	colors.push_back(std::make_pair(AppColors::Selection, RGB(41, 138, 190)));//RGB(25, 125, 225))); //::GetSysColor(COLOR_HIGHLIGHT)
 	colors.push_back(std::make_pair(AppColors::AccentBackground, CalcShade(bkgnd, +12.0f)));
 
 	app_colors_.SetColors(colors);
 }
-
 
 CGdiObject* Config::SelectDefaultFont(CDC& dc, bool bold)
 {

@@ -509,7 +509,7 @@ extern Path GetDocumentsFolder(const TCHAR* fallback_dir)
 	return docs;
 }
 
-
+/*
 extern Path GetApplicationDataFolder(const TCHAR* fallback_dir)
 {
 	Path dir;
@@ -532,3 +532,4 @@ extern Path GetApplicationDataFolder(const TCHAR* fallback_dir)
 
 	return dir;
 }
+*/

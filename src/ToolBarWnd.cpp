@@ -627,9 +627,9 @@ void ToolBarWnd::OnCustomDraw(NMHDR* nm_hdr, LRESULT* result)
 	//NM_custom_draw->hbrLines = (HBRUSH)::GetStockObject(GRAY_BRUSH);
 	//NM_custom_draw->hpenLines = (HPEN)::GetStockObject(WHITE_PEN);
 	//NM_custom_draw->clrBtnFace = RGB(0, 0, 255);
-	NM_custom_draw->clrBtnHighlight = colors[AppColors::Selection];	// checked button
+	NM_custom_draw->clrBtnHighlight = RGB(80, 80, 80);//colors[AppColors::Selection];	// checked button
 	//NM_custom_draw->clrMark = RGB(0, 255, 0);
-	NM_custom_draw->clrHighlightHotTrack = CalcNewColor(colors[AppColors::Background], colors[AppColors::Selection], 0.3f);
+	NM_custom_draw->clrHighlightHotTrack = RGB(80, 80, 80);//CalcNewColor(colors[AppColors::Background], colors[AppColors::Selection], 0.3f);
 
 	switch (NM_custom_draw->nmcd.dwDrawStage)
 	{

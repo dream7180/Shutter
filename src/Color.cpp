@@ -109,15 +109,15 @@ extern COLORREF CalcNewColor(COLORREF rgb_color, float saturation, float lightne
 	return RGB(uint8(r * 255), uint8(g * 255), uint8(b * 255));
 }
 
-
+/*
 extern COLORREF CalcNewColorDeltaCtr(COLORREF rgb_color, float saturation_delta, float lightness_delta, float contrast)
 {
 	float h, s, l;
 	rgb_to_hsl(GetRValue(rgb_color) / 255.0f, GetGValue(rgb_color) / 255.0f, GetBValue(rgb_color) / 255.0f, &h, &s, &l);
 
-	l += lightness_delta;
+	//l += lightness_delta;
 
-	l = l * contrast - (contrast / 2.0f - 0.5f);
+	l = l * contrast * 0.5 + lightness_delta;//l * contrast - (contrast / 2.0f - 0.5f);
 
 	if (l < 0.0f)
 		l = 0.0f;
@@ -134,8 +134,10 @@ extern COLORREF CalcNewColorDeltaCtr(COLORREF rgb_color, float saturation_delta,
 	hsl_to_rgb(h, s, l, &r, &g, &b);
 
 	return RGB(uint8(r * 255), uint8(g * 255), uint8(b * 255));
+	
+	return RGB(0, 0, 0);
 }
-
+*/
 
 void rgb_to_hsl(float r, float g, float b, float* h, float* s, float* l)
 {

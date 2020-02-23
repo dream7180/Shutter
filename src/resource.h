@@ -10,7 +10,7 @@ ____________________________________________________________________________*/
 // Used by ExifPro.rc
 //
 #define IDD_ABOUTBOX                    100
-#define IDD_EVALUATION                  101
+//#define IDD_EVALUATION                  101
 #define IDR_MAINFRAME                   128
 #define IDI_CATALOG                     129
 #define IDS_CANCEL                      129
@@ -30,7 +30,7 @@ ____________________________________________________________________________*/
 #define IDR_VIEW_POPUP_MENU             137
 #define IDD_COPYMOVE                    137
 #define IDS_BROWSER_TOOL                137
-#define IDS_BROWSER_TOOLS               137
+//#define IDS_BROWSER_TOOLS               137
 #define IDI_FILE2                       138
 #define IDS_INSERT_TEXT3                138
 #define IDR_CAMERA_POPUP_MENU           139
@@ -53,7 +53,7 @@ ____________________________________________________________________________*/
 #define IDD_OPTIONS_GENERAL             154
 #define IDR_PNG1                        155
 #define IDD_OPTIONS_VIEWER              155
-#define IDR_CLOSEBAR                    156
+//#define IDR_CLOSEBAR                    156
 #define IDD_OPTIONS_COLUMNS             156
 #define IDB_PATTERN                     157
 #define IDR_VIEWER_CONTEXT              158
@@ -153,7 +153,7 @@ ____________________________________________________________________________*/
 #define IDB_SHORTCUTS                   281
 #define IDD_OPTIONS_SHORTCUTS           282
 #define IDB_BITMAP1                     283
-#define IDB_CLOSE_BAR_HOT               283
+//#define IDB_CLOSE_BAR_HOT               283
 #define IDB_CTRL_DRAW_IMAGES            284
 #define IDD_ICC_SETUP                   285
 #define IDD_ICM_SETUP                   285
@@ -173,17 +173,17 @@ ____________________________________________________________________________*/
 #define IDB_IMG_EFFECTS                 293
 #define IDR_PNG2                        294
 #define IDB_INFO_TOOLBAR                294
-#define IDB_INFO_TOOLBAR_BIG            295
+//#define IDB_INFO_TOOLBAR_BIG            295
 #define IDR_PNG3                        296
 #define IDB_HEADER_IMAGES               296
-#define IDD_SERIAL                      298
+//#define IDD_SERIAL                      298
 #define IDD_IMG_CROP                    299
 #define IDC_CROSS_CURSOR                300
 #define IDB_EMPTY_BMP                   301
-#define IDB_PANE_TOOLBAR_BIG            302
+//#define IDB_PANE_TOOLBAR_BIG            302
 #define IDD_DIALOG1                     302
-#define IDD_THANKS                      302
-#define IDB_PANE_TOOLBAR_BIG_HOT        303
+//#define IDD_THANKS                      302
+//#define IDB_PANE_TOOLBAR_BIG_HOT        303
 #define IDD_RESIZE_OPTIONS              303
 #define IDB_CHEVRON_BIG                 304
 #define IDD_GEN_HTML_OPTIONS            304
@@ -203,7 +203,7 @@ ____________________________________________________________________________*/
 #define IDB_PREVIEW_BACKGND_TOP         314
 #define IDB_PREVIEW_BACKGND_BTM         315
 #define IDB_PREVIEW_BACKGND_VERT        316
-#define IDB_PREVIEW_BACKGND_VERT_TOP    317
+//#define IDB_PREVIEW_BACKGND_VERT_TOP    317
 #define IDB_PREVIEW_BACKGND_VERT_R      318
 #define IDB_PREVIEW_SCRL_BAR            319
 #define IDB_PREVIEW_SCRL_BAR_V          320
@@ -216,7 +216,7 @@ ____________________________________________________________________________*/
 #define IDB_INFO_BAND_OPT               329
 #define IDB_INFO_BAND_OPT_HOT           330
 #define IDB_VIEWER_REBAR_BACK           331
-#define IDB_INFOBAR                     332
+//#define IDB_INFOBAR                     332
 #define IDB_BITMAP4                     333
 #define IDR_CLOSE_BAR                   333
 #define IDB_LIGHT_TABLE                 334
@@ -668,7 +668,7 @@ ____________________________________________________________________________*/
 #define IDC_PRINTING_ICM                1167
 #define IDC_BUTTON1                     1167
 #define ID_OK                           1167
-#define IDC_BUTTON_1                    1167
+//#define IDC_BUTTON_1                    1167
 #define IDC_SAVE_AS                     1167
 #define IDC_ALL                         1167
 #define IDC_PREVIOUS                    1167
@@ -693,13 +693,13 @@ ____________________________________________________________________________*/
 #define IDC_COMBO5                      1169
 #define IDC_CHECK5                      1169
 #define IDC_DEL_FILTER                  1169
-#define IDC_BUTTON_2                    1170
+//#define IDC_BUTTON_2                    1170
 #define IDC_FRAME                       1170
 #define IDC_UPDATE_FILTER               1170
-#define IDC_BUTTON_3                    1171
+//#define IDC_BUTTON_3                    1171
 #define IDC_THUMB_ACCESS                1171
 #define IDC_THUMB_MEM                   1172
-#define IDC_BUTTON_4                    1172
+//#define IDC_BUTTON_4                    1172
 #define IDC_DATETIMEPICKER1             1174
 #define IDC_DATE                        1174
 #define IDC_DATETIMEPICKER2             1175
@@ -781,7 +781,7 @@ ____________________________________________________________________________*/
 #define IDC_VIRT                        1233
 #define IDC_CREATOR10                   1234
 #define IDC_LABEL3                      1234
-#define IDC_CAPTIONS                    1235
+//#define IDC_CAPTIONS                    1235
 #define IDC_LABEL4                      1235
 #define IDC_DIVIDER_1                   1236
 #define IDC_LABEL5                      1236
@@ -851,8 +851,8 @@ ____________________________________________________________________________*/
 #define IDC_IMG_SPIN                    1286
 #define IDC_RATE                        1287
 #define IDC_                            1288
-#define IDI_TAGS_EDIT                   30000
-#define IDI_TAGS_NO_EDIT                30001
+//#define IDI_TAGS_EDIT                   30000
+//#define IDI_TAGS_NO_EDIT                30001
 #define IDI_WARNING_2                   30002
 #define ID_BROWSER                      32771
 #define ID_FOLDERS                      32773

@@ -30,7 +30,10 @@ namespace Tags {
 
 String GetTagsPathName()
 {
-	Path path= GetApplicationDataFolder(L"C:\\");
+	TCHAR prog_path[_MAX_PATH];
+	VERIFY(::GetModuleFileName(AfxGetInstanceHandle(), prog_path, _MAX_PATH));
+	Path path= Path(prog_path).GetDir();
+	//Path path= GetApplicationDataFolder(L"C:\\");
 	path.AppendDir(_T("PhotoTags.dat"), false);
 	return path;
 }

@@ -10,13 +10,10 @@
  * 15 Sep 92 - Version 1.0 by Eric Raymond.                     
  ****************************************************************************/
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
 #include "gif_lib.h"
 
 #define MAX(x, y)    (((x) > (y)) ? (x) : (y))
@@ -64,6 +61,7 @@ MakeMapObject(int ColorCount,
 
     Object->Colors = (GifColorType *)calloc(ColorCount, sizeof(GifColorType));
     if (Object->Colors == (GifColorType *) NULL) {
+	free(Object);
         return ((ColorMapObject *) NULL);
     }
 

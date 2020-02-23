@@ -96,26 +96,28 @@ bool BrowserToolbar::Create(CWnd* parent, UINT id1, UINT id2, UINT rebar_band_id
 
 	static const int commands[]=
 	{
-		ID_TASK_TRANSFER, ID_TASK_PRINT, ID_TAGS_BAR, ID_FULL_SCREEN, ID_FOLDER_LIST,
+		/*ID_TASK_TRANSFER, ID_TASK_PRINT, ID_TAGS_BAR, ID_FULL_SCREEN, ID_FOLDER_LIST,
 		ID_RECURSIVE, ID_READ_ONLY_EXIF, ID_FILE_MASK,
-		ID_PANE_MENU, ID_FOLDERS, ID_PREVIEW, ID_INFO_BAR
+		ID_PANE_MENU, ID_FOLDERS, ID_PREVIEW, ID_INFO_BAR*/
+		ID_TASK_PRINT, ID_FOLDER_LIST, ID_RECURSIVE, ID_FILE_MASK, ID_PANE_MENU, ID_PREVIEW, ID_INFO_BAR
 	};
 
 	main_bar_.SetOwnerDraw(true);
-	main_bar_.SetPadding(10, 8);
+	main_bar_.SetPadding(8, 8);
 
 //	small_icons_ = AfxGetApp()->GetProfileInt(REGISTRY_SECTION_TOOLBAR, REG_ICONS, 0) == 0;
 
 	int bmp_id= IDB_BROWSER_TBAR;
 
-	if (!main_bar_.Create("PpPp|vxxv....", commands, bmp_id, IDS_BROWSER_TOOLBAR, this, id1))
+	//if (!main_bar_.Create("PpPp|vxxv....", commands, bmp_id, IDS_BROWSER_TOOLBAR, this, id1))
+	if (!main_bar_.Create("pvxv...", commands, bmp_id, IDS_BROWSER_TOOLBAR, this, id1))
 		return false;
 
 	main_bar_.CreateDisabledImageList(bmp_id, saturation, lightness);
 
-	main_bar_.DeleteButton(ID_TAGS_BAR);
-	main_bar_.DeleteButton(ID_FULL_SCREEN);
-	main_bar_.DeleteButton(ID_READ_ONLY_EXIF);
+	//main_bar_.DeleteButton(ID_TAGS_BAR);
+	//main_bar_.DeleteButton(ID_FULL_SCREEN);
+	//main_bar_.DeleteButton(ID_READ_ONLY_EXIF);
 
 	main_bar_.RestoreState(REGISTRY_SECTION_TOOLBAR, REG_STATE);
 
@@ -123,12 +125,13 @@ bool BrowserToolbar::Create(CWnd* parent, UINT id1, UINT id2, UINT rebar_band_id
 	main_bar_.SetOwner(parent);
 
 	panels_.SetOwnerDraw(true);
-	panels_.SetPadding(10, 8);
+	panels_.SetPadding(8, 8);
 
-	if (!panels_.Create(":.:.....vxxX", commands, bmp_id, IDS_BROWSER_TOOLBAR, this, id2))
+	//if (!panels_.Create(":.:.....vxxX", commands, bmp_id, IDS_BROWSER_TOOLBAR, this, id2))
+	if (!panels_.Create("....vxX", commands, bmp_id, IDS_BROWSER_TOOLBAR, this, id2))
 		return false;
 
-	panels_.DeleteButton(ID_FOLDERS);
+	//panels_.DeleteButton(ID_FOLDERS);
 
 	panels_.AutoResize();
 	panels_.SetOwner(parent);
@@ -143,9 +146,9 @@ void BrowserToolbar::ResetToolBar(bool resize_to_fit)
 {
 	main_bar_.ResetToolBar(resize_to_fit);
 
-	main_bar_.DeleteButton(ID_TAGS_BAR);
-	main_bar_.DeleteButton(ID_FULL_SCREEN);
-	main_bar_.DeleteButton(ID_READ_ONLY_EXIF);
+	//main_bar_.DeleteButton(ID_TAGS_BAR);
+	//main_bar_.DeleteButton(ID_FULL_SCREEN);
+	//main_bar_.DeleteButton(ID_READ_ONLY_EXIF);
 }
 
 //todo:

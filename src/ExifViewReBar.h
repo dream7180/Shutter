@@ -59,7 +59,7 @@ private:
 	ToolBarWnd tool_bar_thumb_wnd_;
 	ToolBarWnd tool_bar_group_wnd_;
 	ToolBarWnd tool_bar_sort_wnd_;
-	ToolBarWnd toolbar_filter_;
+	//ToolBarWnd toolbar_filter_;
 	SliderCtrlEx thumb_size_wnd_;
 	CWnd* owner_;
 	struct Part

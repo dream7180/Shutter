@@ -105,7 +105,7 @@ bool InfoPane::Create(CWnd* parent)
 	tool_bar_wnd_.SetOwnerDraw(true);
 	tool_bar_wnd_.SetPadding(8, 10);
 
-	if (!tool_bar_wnd_.Create("Pxpx", commands, IsCaptionBig() ? IDB_INFO_TOOLBAR_BIG : IDB_INFO_TOOLBAR, IDS_INFO_TOOLBAR, this, -1))
+	if (!tool_bar_wnd_.Create("Pxpx", commands, /*IsCaptionBig() ? IDB_INFO_TOOLBAR_BIG : */IDB_INFO_TOOLBAR, IDS_INFO_TOOLBAR, this, -1))
 		return false;
 
 	tool_bar_wnd_.CWnd::SetOwner(this);
@@ -569,13 +569,13 @@ void InfoPane::OnGetDispInfo(NMHDR* nmhdr, LRESULT* result)
 	}
 }
 */
-
+/*
 void InfoPane::CaptionHeightChanged(bool big)
 {
 	tool_bar_wnd_.ReplaceImageList(big ? IDB_INFO_TOOLBAR_BIG : IDB_INFO_TOOLBAR);
 	ResetBandsWidth();
 }
-
+*/
 
 void InfoPane::SetColors()
 {

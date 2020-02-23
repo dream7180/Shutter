@@ -26,8 +26,8 @@ BOOL DialogBase::OnEraseBkgnd(CDC* dc)
 	GetClientRect(rect);
 	if (!rect.IsRectEmpty())
 	{
-		COLORREF background = GetAppColors()[AppColors::Background];
-		dc->FillSolidRect(rect, background);
+		//COLORREF background = GetAppColors()[AppColors::Background];
+		dc->FillSolidRect(rect, ::GetSysColor(COLOR_3DFACE));
 	}
 
 	return true;
@@ -38,8 +38,8 @@ HBRUSH DialogBase::OnCtlColor(CDC* dc, CWnd* wnd, UINT ctl_color)
 {
 	HBRUSH hbr = CDialog::OnCtlColor(dc, wnd, ctl_color);
 
-	COLORREF background = GetAppColors()[AppColors::Background];
-	COLORREF text = GetAppColors()[AppColors::Text];
+	COLORREF background = ::GetSysColor(COLOR_3DFACE);//GetAppColors()[AppColors::Background];
+	COLORREF text = ::GetSysColor(COLOR_BTNTEXT);
 
 	//	if (wnd && wnd->GetDlgCtrlID() == IDC_EXAMPLE)
 	{

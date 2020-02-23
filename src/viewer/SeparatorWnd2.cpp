@@ -98,19 +98,19 @@ BOOL ViewerSeparatorWnd::OnEraseBkgnd(CDC* dc)
 
 	int y= rect.top;
 	int x= rect.left;
-	dc->FillSolidRect(x, y, w, h, RGB(18,18,20));
+	dc->FillSolidRect(x, y, w, h, RGB(10,10,10));
 	x += incx; y += incy;
-	dc->FillSolidRect(x, y, w, h, RGB(18,18,20));
+	dc->FillSolidRect(x, y, w, h, RGB(10,10,10));
 	x += incx; y += incy;
-	dc->FillSolidRect(x, y, w, h, RGB(18,18,20));
+	dc->FillSolidRect(x, y, w, h, RGB(10,10,10));
 	x += incx; y += incy;
-	dc->FillSolidRect(x, y, w, h, RGB(18,18,20));
+	dc->FillSolidRect(x, y, w, h, RGB(10,10,10));
 	x += incx; y += incy;
-	dc->FillSolidRect(x, y, w, h, RGB(18,18,20));
+	dc->FillSolidRect(x, y, w, h, RGB(10,10,10));
 	x += incx; y += incy;
-	dc->FillSolidRect(x, y, w, h, RGB(18,18,20));
+	dc->FillSolidRect(x, y, w, h, RGB(10,10,10));
 	x += incx; y += incy;
-	dc->FillSolidRect(x, y, w, h, RGB(18,18,20));
+	dc->FillSolidRect(x, y, w, h, RGB(10,10,10));
 /*
 	dc->FillSolidRect(0, y++, rect.Width(), 1, rgb_gray);
 	dc->FillSolidRect(0, y++, rect.Width(), 1, whistler ? rgb_light : rgb_gray);

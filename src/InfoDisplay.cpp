@@ -88,7 +88,7 @@ bool InfoDisplay::Create(CWnd* parent, const GetTextFn& get_text, COLORREF rgb_b
 	if (!CListCtrl::Create(WS_CHILD | WS_VISIBLE | LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | LVS_OWNERDATA,
 		CRect(0,0,0,0), parent, IDC_LIST))
 		return false;
-
+	
 	SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_DOUBLEBUFFER | LVS_EX_LABELTIP);
 	SetFont(&::GetDefaultGuiFont());
 	SetBkColor(rgb_back);
@@ -125,7 +125,6 @@ bool InfoDisplay::Create(CWnd* parent, const GetTextFn& get_text, COLORREF rgb_b
 
 	return true;
 }
-
 
 //const int g_LEFT_MARGIN= 1;
 
@@ -381,7 +380,6 @@ void ResizeLastColumn(CListCtrl& list_wnd)
 
 	CRect cl_rect;
 	list_wnd.GetClientRect(cl_rect);
-
 	/*if ((list_wnd.GetStyle() & WS_VSCROLL) == 0)
 		cl_rect.right -= ::GetSystemMetrics(SM_CXVSCROLL);
 	int right= cl_rect.right - 2;
@@ -397,10 +395,11 @@ void ResizeLastColumn(CListCtrl& list_wnd)
 	}*/
 
 	rect.right = cl_rect.right;
-	if (rect.Width() > 20)
+	if (rect.Width() > 10)
 	{
 		//list_wnd.SetColumnWidth(last, rect.Width());
-		list_wnd.SetColumnWidth(last, rect.Width());	// stupid, but works; forces horz scrollbar to disappear
+		list_wnd.SetColumnWidth(last, rect.Width() - 1);	// stupid, but works; forces horz scrollbar to disappear
+		list_wnd.SetColumnWidth(last, rect.Width());
 	}
 }
 

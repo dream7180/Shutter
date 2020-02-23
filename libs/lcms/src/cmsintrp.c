@@ -456,13 +456,10 @@ WORD cmsLinearInterpLUT16(WORD Value, WORD LutTable[], LPL16PARAMS p)
               add       eax, 0x8000                    // Rounding
               sar       eax, 16
               add       eax, ebx                       // Done!
-              }
-
-              RET((WORD) _EAX);
+              jmp       end
 
        IsNegative:
 
-              ASM {
               neg       eax
               mul       edx                            // EAX = EAX * rest
               shld      edx, eax, 16                   // Pass it to fixed
@@ -473,6 +470,7 @@ WORD cmsLinearInterpLUT16(WORD Value, WORD LutTable[], LPL16PARAMS p)
               neg       eax
               sar       eax, 16
               add       eax, ebx                       // Done!
+end:
               }
 
               RET((WORD) _EAX);

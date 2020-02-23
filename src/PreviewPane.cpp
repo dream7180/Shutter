@@ -89,7 +89,7 @@ bool PreviewPane::Create(CWnd* parent)
 		return false;
 
 	VERIFY(display_.Create(this));
-	VERIFY(bar_wnd_.Create(this, IsCaptionBig()));
+	VERIFY(bar_wnd_.Create(this, -1));//, IsCaptionBig()));
 
 	display_.CursorStayVisible(true);
 	display_.SetHost(this);
@@ -364,7 +364,7 @@ void PreviewPane::SetColors()
 {
 	ResetColors();
 	std::vector<COLORREF> colors= g_Settings.main_wnd_colors_.Colors();
-	SetBkColor(colors[0]);	// same backgnd as main wnd
+	SetBkColor(RGB(25,25,25));//SetBkColor(colors[0]);	// same backgnd as main wnd
 	COLORREF descr_text= g_Settings.viewer_wnd_colors_[1].SelectedColor();
 	SetTextColor(descr_text);	// description text color
 
