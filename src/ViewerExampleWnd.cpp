@@ -139,13 +139,13 @@ void ViewerExampleWnd::Resize()
 void ViewerExampleWnd::ResetColors()
 {
 	display_wnd_.SetBackgndColor(RGB(0,0,0));
-	display_wnd_.SetTextColor(RGB(200,220,255));
+	display_wnd_.SetTextColor(RGB(255,138,22));
 	display_wnd_.SetDescriptionText(&example_str);
 	display_wnd_.Invalidate();
 
 	rgb_tag_text_ = RGB(255,255,255);
-	rgb_tag_bkgnd_ = RGB(25, 125, 225);
-	preview_.SetSelectionColor(::GetSysColor(COLOR_HIGHLIGHT));
+	rgb_tag_bkgnd_ = RGB(247, 123, 0);
+	preview_.SetSelectionColor(RGB(247, 123, 0));//(::GetSysColor(COLOR_HIGHLIGHT));
 	//list_bar_wnd_.ResetColors();
 	//list_bar_wnd_.Invalidate();
 }

@@ -122,7 +122,7 @@ void SnapView::Dump(CDumpContext& dc) const
 /////////////////////////////////////////////////////////////////////////////
 // SnapView message handlers
 
-static const COLORREF g_rgb_mark= ::GetSysColor(COLOR_HIGHLIGHT);
+static const COLORREF g_rgb_mark= RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 static const COLORREF g_rgb_back= ::GetSysColor(COLOR_3DFACE);
 //static const COLORREF g_rgb_caption= ::GetSysColor(COLOR_INACTIVECAPTION);
 

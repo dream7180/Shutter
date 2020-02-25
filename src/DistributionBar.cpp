@@ -1021,7 +1021,7 @@ DistributionBar::Impl::Precision DistributionBar::Impl::DrawTimeHistogram(CDC& d
 	const COLORREF rgb_bar = base_color;// CalcShade(base_color, 40.0f);
 	const COLORREF rgb_selection= CalcShade(base_color, -35.0f);
 	const COLORREF rgb_outline= CalcShade(base_color, 30.0f);
-	const COLORREF selected_range_color = ::GetSysColor(COLOR_HIGHLIGHT);
+	const COLORREF selected_range_color = RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 	const COLORREF label_color = g_Settings.AppColors()[AppColors::DimText];
 
 	const Date from_date= hist.StartingDate();

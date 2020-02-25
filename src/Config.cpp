@@ -800,7 +800,7 @@ void Config::UpdateAppColors()
 	colors.push_back(std::make_pair(AppColors::Separator, sep));
 	colors.push_back(std::make_pair(AppColors::SecondarySeparator, CalcNewColor(sep, bkgnd, 0.50f)));
 	colors.push_back(std::make_pair(AppColors::EditBox, CalcShade(bkgnd, -20.0f)));
-	colors.push_back(std::make_pair(AppColors::Selection, RGB(41, 138, 190)));//RGB(25, 125, 225))); //::GetSysColor(COLOR_HIGHLIGHT)
+	colors.push_back(std::make_pair(AppColors::Selection, RGB(247, 123, 0)));//RGB(41, 138, 190))); //::GetSysColor(COLOR_HIGHLIGHT)
 	colors.push_back(std::make_pair(AppColors::AccentBackground, CalcShade(bkgnd, +12.0f)));
 
 	app_colors_.SetColors(colors);

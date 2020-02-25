@@ -22,7 +22,7 @@ std::vector<COLORREF> GetPhotoCtrlDefaultColors(const ApplicationColors& app_col
 	colors[PhotoCtrl::C_SELECTION] = app_colors[AppColors::Selection];// ::GetSysColor(COLOR_HIGHLIGHT);
 	colors[PhotoCtrl::C_SEL_TEXT] = app_colors[AppColors::SelectedText];// ::GetSysColor(COLOR_HIGHLIGHTTEXT);
 	colors[PhotoCtrl::C_DISABLED_TEXT] = ::GetSysColor(COLOR_GRAYTEXT);
-	colors[PhotoCtrl::C_TAG_BACKGND] = RGB(25, 125, 225);
+	colors[PhotoCtrl::C_TAG_BACKGND] = RGB(247, 123, 0);//RGB(25, 125, 225);
 	colors[PhotoCtrl::C_TAG_TEXT] = RGB(255, 255, 255);
 	{	// calculate sorting indicator color
 		COLORREF rgb_wnd = background;// ::GetSysColor(COLOR_WINDOW);
@@ -48,10 +48,10 @@ std::vector<COLORREF> GetViewerWndDefaultColors()
 	std::vector<COLORREF> colors(6);
 
 	colors[0] = RGB(0,0,0);		// background
-	colors[1] = RGB(200,220,255);
+	colors[1] = RGB(255, 138, 22);
 	// [2]
-	colors[3] = ::GetSysColor(COLOR_HIGHLIGHT);	// preview selection color
-	colors[4] = RGB(25, 125, 225);	// tag bkgnd
+	colors[3] = RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);	// preview selection color
+	colors[4] = colors[3];//RGB(247, 123, 0);	// tag bkgnd
 	colors[5] = RGB(255,255,255);	// tag text color
 
 	return colors;

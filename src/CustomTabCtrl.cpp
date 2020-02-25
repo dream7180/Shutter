@@ -332,7 +332,7 @@ void CCustomTabCtrlItem::Draw(CDC& dc, CFont& font, bool selected, bool on_top, 
 				if (selection_tinge > 0)
 				{
 					float ratio= float(selection_tinge) / 100.0f;
-					tab_color = CalcColor(::GetSysColor(COLOR_HIGHLIGHT), tab_color, ratio);
+					tab_color = CalcColor(RGB(247, 123, 0)/*::GetSysColor(COLOR_HIGHLIGHT)*/, tab_color, ratio);
 				}
 
 				Gdiplus::SolidBrush tab_brush(c2c(tab_color));

@@ -5324,11 +5324,11 @@ void PhotoCtrl::GetColors(std::vector<COLORREF>& colors) const
 void PhotoCtrl::ResetColors()
 {
 	rgb_bk_color_		= ::GetSysColor(COLOR_WINDOW);
-	rgb_sel_color_		= ::GetSysColor(COLOR_HIGHLIGHT);
+	rgb_sel_color_		= RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 	rgb_text_color_		= ::GetSysColor(COLOR_WINDOWTEXT);
 	rgb_sel_text_color_	= ::GetSysColor(COLOR_HIGHLIGHTTEXT);
-	rgb_separator_		= ::GetSysColor(COLOR_HIGHLIGHT);
-	rgb_tag_bkgnd_		= RGB(25, 125, 225);
+	rgb_separator_		= rgb_sel_color_;//::GetSysColor(COLOR_HIGHLIGHT);
+	rgb_tag_bkgnd_		= rgb_sel_color_;//RGB(247, 123, 0);
 	rgb_tag_text_		= RGB(255, 255, 255);
 	rgb_tile_dim_text_color_ = CalcNewColor(rgb_text_color_, 50.0f);
 

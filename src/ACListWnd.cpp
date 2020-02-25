@@ -110,7 +110,7 @@ void AutoCompletePopup::DrawItem(CDC* dc, long item, long width)
 	if (item == selected_item_)
 	{
 		rcLabel.left = 0;
-		COLORREF highlight= ::GetSysColor(COLOR_HIGHLIGHT);
+		COLORREF highlight= RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 		dc->FillSolidRect(rcLabel, highlight);
 		dc->SetTextColor(::GetSysColor(COLOR_HIGHLIGHTTEXT));
 		dc->SetBkColor(highlight);

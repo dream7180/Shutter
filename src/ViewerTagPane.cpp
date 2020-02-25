@@ -180,7 +180,7 @@ bool ViewerTagPane::Create(CWnd* parent, UINT id, int width)
 	colors.push_back(std::make_pair(AppColors::SelectedText, text));
 	colors.push_back(std::make_pair(AppColors::Separator, CalcShade(bkgnd, -36.0f)));
 	colors.push_back(std::make_pair(AppColors::EditBox, CalcShade(bkgnd, -13.0f)));
-	colors.push_back(std::make_pair(AppColors::Selection, RGB(0x33, 0x99, 0xff))); //::GetSysColor(COLOR_HIGHLIGHT)
+	colors.push_back(std::make_pair(AppColors::Selection, RGB(247, 123, 0)/*RGB(0x33, 0x99, 0xff)*/)); //::GetSysColor(COLOR_HIGHLIGHT)
 
 	impl_.tag_ctrl_.SetColors(ApplicationColors(colors));
 

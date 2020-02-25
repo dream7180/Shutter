@@ -448,9 +448,9 @@ CRect MainFrame::GetScanningWndRect()
 	if (rect.Width() > 0 && rect.Height() > 0)
 	{
 		const int PROGRESS_ANIM_WIDTH= 68;
-		rect.right -= 4;
+		rect.right -= 20;
 		rect.left = rect.right - PROGRESS_ANIM_WIDTH;
-		rect.top += 3;
+		rect.top += rect.Height()/2-5;//3;
 		rect.bottom = rect.top + 9;
 	}
 	return rect;
@@ -497,13 +497,14 @@ void MainFrame::UpdateStatusBar()
 
 BOOL MainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* context)
 {
+	ModifyStyle(WS_THICKFRAME, 0);//remove SBARS_SIZEGRIP
 	if (!status_bar_wnd_.Create(this, WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN | CBRS_BOTTOM) ||
 		!status_bar_wnd_.SetIndicators(indicators, array_count(indicators)))
 	{
 		TRACE0("Failed to create status bar\n");
 		return false;      // fail to create
 	}
-
+	ModifyStyle(0, WS_THICKFRAME);//recover thickframe after removing SBARS_SIZEGRIP
 	status_bar_wnd_.SetPaneStyle(0, SBPS_OWNERDRAW | SBPS_STRETCH | SBPS_NOBORDERS);
 	status_bar_wnd_.SetPaneStyle(1, SBPS_OWNERDRAW | SBPS_NOBORDERS);
 	LOGFONT lf;

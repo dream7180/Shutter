@@ -65,7 +65,7 @@ static const ColDef g_column_definitions[]=
 	{ _T("Camera Make"),				_T("Make"),					_T(""),		LVCFMT_LEFT,	100 },
 	{ _T("Camera Model"),				_T("Model"),				_T(""),		LVCFMT_LEFT,	100 },
 	{ _T("Image Description"),			_T("Description"),			_T(""),		LVCFMT_LEFT,	120 },
-	{ _T("File Extension"),				_T("File Ext."),			_T(""),		LVCFMT_RIGHT,	 40 },
+	{ _T("File Extension"),				_T("File Ext"),			_T(""),		LVCFMT_RIGHT,	 40 },
 	{ _T("File Name"),					_T("File Name"),			_T(""),		LVCFMT_RIGHT,	115 },
 	{ _T("Subject Distance"),			_T("Subject Dist."),		_T(""),		LVCFMT_RIGHT,	 60 },
 	{ _T("Rating (stars)"),				_T("Stars"),				_T(""),		LVCFMT_RIGHT,	 60 },

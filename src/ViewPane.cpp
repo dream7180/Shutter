@@ -2296,7 +2296,7 @@ void ViewPane::ResetColors()
 {
 	// description text
 	SetBackgndColor(RGB(0,0,0));
-	SetTextColor(RGB(200,220,255));
+	SetTextColor(RGB(255, 138, 22));
 }
 
 

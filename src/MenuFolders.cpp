@@ -237,7 +237,7 @@ void CMenuFolders::DrawItem(LPDRAWITEMSTRUCT draw_item_struct)
 	dc.SelectObject(&_font);
 	//dc.SelectStockObject(DEFAULT_GUI_FONT);
 
-	COLORREF rgb_back= !selected ? ::GetSysColor(COLOR_MENU) : ::GetSysColor(COLOR_HIGHLIGHT);
+	COLORREF rgb_back= !selected ? ::GetSysColor(COLOR_MENU) : RGB(247, 123, 0)/*::GetSysColor(COLOR_HIGHLIGHT)*/;
 	COLORREF rgb_text= !selected ? ::GetSysColor(COLOR_MENUTEXT) : ::GetSysColor(COLOR_HIGHLIGHTTEXT);
 
 	dc.FillSolidRect(rect, rgb_back);

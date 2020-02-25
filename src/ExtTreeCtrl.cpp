@@ -327,7 +327,7 @@ void ExtTreeCtrl::OnDrawTree(NMHDR* nmhdr, LRESULT* result)
 		CRect cell= rect;
 
 		int state= tree_wnd_.GetItemState(HTREEITEM(NM_custom_draw->nmcd.dwItemSpec), TVIS_EXPANDED | TVIS_DROPHILITED);
-		bool selected= NM_custom_draw->clrTextBk == ::GetSysColor(COLOR_HIGHLIGHT);
+		bool selected= NM_custom_draw->clrTextBk == RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 
 		ExtTreeRow* item= reinterpret_cast<ExtTreeRow*>(NM_custom_draw->nmcd.lItemlParam);
 		ASSERT(item != 0);

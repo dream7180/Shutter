@@ -55,7 +55,7 @@ struct PreviewBandWnd::Impl
 		in_update_ = false;
 		img_space_ = 0;
 		draw_selection_ = true;
-		selection_color_ = ::GetSysColor(COLOR_HIGHLIGHT);
+		selection_color_ = RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 		smooth_scroll_speed_ = 100;
 		ui_gamma_ = 1.0;
 		click_location_ = CPoint(0, 0);

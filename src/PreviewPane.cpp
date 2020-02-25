@@ -336,7 +336,7 @@ void PreviewPane::OnTimer(UINT_PTR id_event)
 void PreviewPane::ResetColors()
 {
 	// do not touch background
-	display_.SetTextColor(RGB(200,220,255));
+	display_.SetTextColor(RGB(255, 138, 22));
 	display_.SetDescriptionText(0);
 	display_.Invalidate();
 }
@@ -364,7 +364,7 @@ void PreviewPane::SetColors()
 {
 	ResetColors();
 	std::vector<COLORREF> colors= g_Settings.main_wnd_colors_.Colors();
-	SetBkColor(RGB(25,25,25));//SetBkColor(colors[0]);	// same backgnd as main wnd
+	SetBkColor(RGB(25, 25, 25));//SetBkColor(colors[0]);	// same backgnd as main wnd
 	COLORREF descr_text= g_Settings.viewer_wnd_colors_[1].SelectedColor();
 	SetTextColor(descr_text);	// description text color
 

@@ -2382,13 +2382,13 @@ void ExifView::SetColors(CDC* dc, const CRect& img_rect, UINT state, bool frame/
 
 	if (state & LVIS_SELECTED)
 	{
-		rgb_fill = ::GetFocus() == GetListCtrl().m_hWnd ? ::GetSysColor(COLOR_HIGHLIGHT) : ::GetSysColor(COLOR_3DFACE);
+		rgb_fill = ::GetFocus() == GetListCtrl().m_hWnd ? /*::GetSysColor(COLOR_HIGHLIGHT)*/RGB(247, 123, 0) : ::GetSysColor(COLOR_3DFACE);
 		rgb_frame = rgb_fill;
 		rgb_text = ::GetSysColor(COLOR_HIGHLIGHTTEXT);
 	}
 
 	if (frame && (state & LVIS_FOCUSED))
-		rgb_frame = ::GetSysColor(COLOR_HIGHLIGHT);
+		rgb_frame = RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 
 	// fill backgnd
 	CRect rect= img_rect;

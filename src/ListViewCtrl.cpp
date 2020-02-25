@@ -92,7 +92,7 @@ struct ListViewCtrl::Impl
 		rgb_normal_text_ = ::GetSysColor(COLOR_WINDOWTEXT);
 		rgb_disabled_text_ = ::GetSysColor(COLOR_GRAYTEXT);
 		rgb_selected_text_ = ::GetSysColor(COLOR_HIGHLIGHTTEXT);
-		rgb_selection_ = ::GetSysColor(COLOR_HIGHLIGHT);
+		rgb_selection_ = RGB(247, 123, 0);//::GetSysColor(COLOR_HIGHLIGHT);
 		times_text_height_ = 1.2f;
 		menu_like_selection_ = false;
 		intercol_space_ = cell_margin_ = 0;

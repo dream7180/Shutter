@@ -2922,6 +2922,7 @@ void ViewerDlg::OnContextMenu(CWnd* wnd, CPoint pos)
 			ClientToScreen(rect);
 			pos = rect.CenterPoint();
 		}
+		if(pos.y < 41) return;
 		CursorVisible stay(pImpl_->displays_);
 		popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_LEFTBUTTON | TPM_RIGHTBUTTON, pos.x, pos.y, this);
 	}
@@ -2994,7 +2995,7 @@ void ViewerDlg::Impl::ResetColors()
 	displays_.InvalidatePanes();
 
 	tag_text_color_ = RGB(255,255,255);
-	tag_backgnd_color_ = RGB(25, 125, 225);
+	tag_backgnd_color_ = RGB(247, 123, 0);
 
 	preview_.SetSelectionColor(RGB(0x31,0x6a,0xc5));
 //	preview_.Invalidate();
