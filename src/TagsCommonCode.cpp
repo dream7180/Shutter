@@ -54,7 +54,7 @@ bool OpenTags(const TCHAR* filename, PhotoTagsCollection& collection)
 	if (!loaded)
 	{
 		// no tags loaded--add some so tag bar doesn't show up empty
-		collection.FromString(_T("Good\nSharp\nCandidate\nOrder Print\n\nGroup\nVacation\nChristmas\nBirthday\nGraduation"));
+		collection.FromString(_T("Good\nCandidate\n\nPrint\nPrinted\nOrder Print"));
 	}
 
 	return loaded;

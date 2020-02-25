@@ -1417,15 +1417,15 @@
     <Image Include="res\ascending.bmp" />
     <Image Include="res\auto-complete.png" />
     <Image Include="res\bitmap1.bmp" />
-    <Image Include="res\browser.ico" />
+    <!--Image Include="res\browser.ico" /-->
     <Image Include="res\browser_tbar.bmp" />
     <Image Include="res\BrowserToolBar.png" />
     <!--<Image Include="res\BrowserToolBar30.png" />-->
     <Image Include="res\BrowserTools.png" />
-    <Image Include="res\camera.ico" />
+    <!--Image Include="res\camera.ico" /-->
     <Image Include="res\cancel-filter.png" />
     <Image Include="res\cancel.png" />
-    <Image Include="res\catalog.ico" />
+    <!--Image Include="res\catalog.ico" /-->
     <Image Include="res\CatalogHelp_1.png" />
     <Image Include="res\CatalogHelp_2.png" />
     <Image Include="res\CatalogHelp_3.png" />
@@ -1444,7 +1444,7 @@
     <Image Include="res\close_tb.png" />
     <Image Include="res\closebar.bmp" />
     <Image Include="res\closebar.png" />
-    <Image Include="res\copy.ico" />
+    <!--Image Include="res\copy.ico" /-->
     <Image Include="res\ctrl_draw_images.bmp" />
     <Image Include="res\CustomFilters.png" />
     <Image Include="res\descending.bmp" />

@@ -67,7 +67,7 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\ExifProVista.ico"
-IDI_CATALOG             ICON                    "res\\catalog.ico"
+//IDI_CATALOG             ICON                    "res\\catalog.ico"
 IDI_VIEWER              ICON                    "res\\viewer.ico"
 IDI_MONITOR             ICON                    "res\\monitor.ico"
 //IDI_TAGS_EDIT           ICON                    "res\\tags_edit.ico"
@@ -2972,7 +2972,7 @@ END
 
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION 1,0,0,0
- PRODUCTVERSION 3,0,0,1000
+ PRODUCTVERSION 3,0,0,20200301
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -2994,7 +2994,7 @@ BEGIN
             VALUE "LegalCopyright", "Copyright © 2000-2015 Michael Kowalski"
             VALUE "OriginalFilename", "ExifPro.exe"
             VALUE "ProductName", "ExifPro Mod by dreamawake"
-            VALUE "ProductVersion", "3.0.0.1000"
+            VALUE "ProductVersion", "3.0.0.20200301"
         END
     END
     BLOCK "VarFileInfo"

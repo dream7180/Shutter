@@ -941,8 +941,8 @@ void CustomTabCtrl::DrawCtrl(CDC& dc, int selection_tinge)
 
 	// draw divider
 
-	COLORREF gray= ::GetSysColor(COLOR_3DFACE);
-	COLORREF light= ::GetSysColor(COLOR_3DHIGHLIGHT);
+	//COLORREF gray= ::GetSysColor(COLOR_3DFACE);
+	//COLORREF light= ::GetSysColor(COLOR_3DHIGHLIGHT);
 	//COLORREF dark= GetLineColor();
 //	COLORREF dark= CalcColor(::GetSysColor(COLOR_3DSHADOW), gray, 0.5f);
 

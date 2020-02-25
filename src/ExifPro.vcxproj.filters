@@ -2535,9 +2535,9 @@
     <Image Include="res\bitmap1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\browser.ico">
+    <!--Image Include="res\browser.ico">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\browser_tbar.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2550,18 +2550,18 @@
     <Image Include="res\BrowserTools.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\camera.ico">
+    <!--Image Include="res\camera.ico">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\cancel-filter.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\cancel.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\catalog.ico">
+    <!--Image Include="res\catalog.ico">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\CatalogHelp_1.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -2616,9 +2616,9 @@
     <Image Include="res\closebar.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\copy.ico">
+    <!--Image Include="res\copy.ico">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Image-->
     <Image Include="res\ctrl_draw_images.bmp">
       <Filter>Resource Files</Filter>
     </Image>

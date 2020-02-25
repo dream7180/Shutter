@@ -12,7 +12,7 @@ ____________________________________________________________________________*/
 #define IDD_ABOUTBOX                    100
 //#define IDD_EVALUATION                  101
 #define IDR_MAINFRAME                   128
-#define IDI_CATALOG                     129
+//#define IDI_CATALOG                     129
 #define IDS_CANCEL                      129
 #define IDS_FILTER                      130
 #define IDB_BROWSER_TOOLBAR             131
