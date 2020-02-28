@@ -208,7 +208,7 @@ BEGIN
             MENUITEM "&Tiff Images\tTIFF",          ID_MASK_TIFF
             MENUITEM "P&ortable Network Graphics\tPNG", ID_MASK_PNG
             MENUITEM "&Graphics Interchange Format\tGIF", ID_MASK_GIF
-            MENUITEM "Window Bitmap Files\tBMP",    ID_MASK_BMP
+            MENUITEM "Windows Bitmap Files\tBMP",    ID_MASK_BMP
             MENUITEM SEPARATOR
             MENUITEM "&Canon Raw Files\tCRW",       ID_MASK_CRW
             MENUITEM "&Nikon Raw Files\tNEF",       ID_MASK_NEF
@@ -565,7 +565,7 @@ BEGIN
         MENUITEM "&Tiff Images\tTIFF",          ID_MASK_TIFF
         MENUITEM "P&ortable Network Graphics\tPNG", ID_MASK_PNG
         MENUITEM "&Graphics Interchange Format\tGIF", ID_MASK_GIF
-        MENUITEM "&Window Bitmap Files\tBMP",   ID_MASK_BMP
+        MENUITEM "&Windows Bitmap Files\tBMP",   ID_MASK_BMP
         MENUITEM SEPARATOR
         MENUITEM "&Canon Raw Files\tCRW",       ID_MASK_CRW
         MENUITEM "&Nikon Raw Files\tNEF",       ID_MASK_NEF
