@@ -219,7 +219,8 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies><!--jpeglib-mmx.lib;-->vfw32.lib;dbghelp.lib;gdiplus.lib;d2d1.lib;UxTheme.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>
+        <!--jpeglib-mmx.lib;-->vfw32.lib;dbghelp.lib;gdiplus.lib;d2d1.lib;UxTheme.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
       <OutputFile>$(Bin)$(ProjectName).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -346,7 +347,7 @@
     <ClCompile>
       <AdditionalOptions>/Zm1000 /MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MinSpace</Optimization>
-      <AdditionalIncludeDirectories>$(Libraries);D:\Develop\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Libraries);D:\Softwares\DevTools\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_SECURE_SCL=0;WIN64;USE_GDI_PLUS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -368,7 +369,7 @@
       <AdditionalDependencies>UAFXCW.LIB;LIBCMT.LIB;vfw32.lib;UxTheme.lib;gdiplus.lib;d2d1.lib;Imm32.lib;DbgHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(Bin)$(ProjectName).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>$(LibsRel);%(AdditionalLibraryDirectories);D:\Develop\boost\stage\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(LibsRel);%(AdditionalLibraryDirectories);D:\Softwares\DevTools\boost\stage\lib</AdditionalLibraryDirectories>
       <EnableUAC>false</EnableUAC>
       <IgnoreSpecificDefaultLibraries>UAFXCW.LIB LIBCMT.LIB %(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <DelayLoadDLLs>d2d1.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
@@ -418,7 +419,8 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/SECTION:shared,RWS %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies><!--jpeglib-mmxD.lib;-->tifflibD.lib;pnglibD.lib;lua5.1D.lib;vfw32.lib;zlibD.lib;lcmsD.lib;coolsbD.lib;giflibD.lib;libexpatMTd.lib;XMPCoreD.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>
+        <!--jpeglib-mmxD.lib;-->tifflibD.lib;pnglibD.lib;lua5.1D.lib;vfw32.lib;zlibD.lib;lcmsD.lib;coolsbD.lib;giflibD.lib;libexpatMTd.lib;XMPCoreD.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(Bin)$(ProjectName).exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(Libraries);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -464,7 +466,8 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/SECTION:shared,RWS %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies><!--jpeglib-mmxD.lib;-->tifflibD.lib;pnglibD.lib;lua5.1D.lib;vfw32.lib;zlibD.lib;lcmsD.lib;coolsbD.lib;giflibD.lib;libexpatMTd.lib;XMPCoreD.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>
+        <!--jpeglib-mmxD.lib;-->tifflibD.lib;pnglibD.lib;lua5.1D.lib;vfw32.lib;zlibD.lib;lcmsD.lib;coolsbD.lib;giflibD.lib;libexpatMTd.lib;XMPCoreD.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\libs\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1485,7 +1488,7 @@
     <Image Include="res\GroupHeaderIcons.png" />
     <!--Image Include="res\HeaderImages.png" /-->
     <Image Include="res\HelpBtn.bmp" />
-    <Image Include="res\HelpBtn.png" />
+    <!--Image Include="res\HelpBtn.png" /-->
     <Image Include="res\horz_scrollbar.bmp" />
     <Image Include="res\horz_vert_tb.png" />
     <Image Include="res\hot_arr_btn.png" />
