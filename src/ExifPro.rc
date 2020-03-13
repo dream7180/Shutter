@@ -4427,7 +4427,7 @@ BEGIN
     ID_SHOW_PRINT_AREA      "Toggle printable area visibility"
     ID_TOGGLE_LIGHT_TABLE   "Toggle light table (E)"
     ID_ADD_TO_LIGHT_TABLE   "Add photograph to the light table (A)"
-    IDS_LIGHT_TABLE_TOOLBAR "Add\nRemove\nTag\n"
+    //IDS_LIGHT_TABLE_TOOLBAR "Add\nRemove\nTag\n"
     ID_REMOVE_FROM_LIGHT_TABLE "Remove photograph from the light table (R)"
     ID_LIGHT_TABLE_OPTIONS  "Light table operations"
     ID_TAGS_SAVE_IN_PHOTO   "Toggle saving applied tags in photographs"
