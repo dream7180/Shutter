@@ -1398,7 +1398,8 @@ String CanonNote::TagName(uint16 tag)
 {
 	switch (tag)
 	{
-	case 0x06:	return _T("Image Type");
+	//case 0x06:	return _T("Image Type");
+	case 0x06:	return _T("Camera Type");
 	case 0x07:	return _T("Firmware Version");
 	case 0x09:	return _T("Owner Name");
 	case 0x0c:	return _T("Camera Body Number");
@@ -2153,7 +2154,8 @@ void CanonNote::RecordInfo(uint16 tag, const Data& val, OutputStr& output)
 
 	case 0x06:	// img type
 		data_.image_type_ = val.AsString();
-		RecordTag(tag, _T("Image Type"), data_.ImageType().c_str(), output);
+		//RecordTag(tag, _T("Image Type"), data_.ImageType().c_str(), output);
+		RecordTag(tag, _T("Camera Type"), data_.ImageType().c_str(), output);
 		break;
 	case 0x07:	// firmware version
 		data_.firmware_ = val.AsString();

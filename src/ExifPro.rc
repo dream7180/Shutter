@@ -525,7 +525,7 @@ BEGIN
     BEGIN
         //MENUITEM "&Customize...",               ID_TOOLBAR_CUSTOMIZE
         //MENUITEM SEPARATOR
-        MENUITEM "&Small Icons",                ID_SMALL_ICONS
+        MENUITEM "&Standard Icons",                ID_SMALL_ICONS
         MENUITEM "&Large Icons",                ID_LARGE_ICONS
     END
 END
