@@ -1,6 +1,6 @@
 #ExifPro Mod
 
-ExifPro Mod is mod from ExifPro 2.3 at https://github.com/mikekov/ExifPro.
+ExifPro Mod 3.x is mod from ExifPro 2.3 at https://github.com/mikekov/ExifPro.
 
 Since there is no release for ExifPro project and it seems freezed from Feb 2018, this mod version is to make this software usable.
 
