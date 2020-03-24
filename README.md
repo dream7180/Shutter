@@ -15,4 +15,4 @@ ExifPro offers several view modes like thumbnails, previews, or image details. S
 
 Viewer window provides zooming and panning, image color and aspect correction, light table, and a slide show.
 
-![alt text](info/screenshot.png "ExifPro: work in progress")
+![alt text](info/screenshot.jpg "ExifPro: work in progress")
