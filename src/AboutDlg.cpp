@@ -89,16 +89,17 @@ extern CString ReadAppVersion(bool including_build)
 		VS_FIXEDFILEINFO* ver= (VS_FIXEDFILEINFO*)((BYTE*)::LockResource(global) + 0x28);
 		if (ver->dwSignature == 0xfeef04bd)
 		{
-			if (including_build)
-				version.Format(_T("Version %d.%u.%u Build %u %s"),
+			//if (including_build)
+				//version.Format(_T("Version %d.%u.%u Build %u %s"),
+				version.Format(_T("Version %d.%u %s Build"),
 					(int)HIWORD(ver->dwProductVersionMS), (int)LOWORD(ver->dwProductVersionMS),
-					(int)HIWORD(ver->dwProductVersionLS), (int)LOWORD(ver->dwProductVersionLS),
+					//(int)HIWORD(ver->dwProductVersionLS), (int)LOWORD(ver->dwProductVersionLS),
 					sizeof(TCHAR) == 1 ? _T("ASCII") : _T("Unicode"));
-			else
-				version.Format(_T("Version %d.%u.%u\n%s Build"),
-					(int)HIWORD(ver->dwProductVersionMS), (int)LOWORD(ver->dwProductVersionMS),
-					(int)HIWORD(ver->dwProductVersionLS),
-					sizeof(TCHAR) == 1 ? _T("ASCII") : _T("Unicode"));
+			//else
+				//version.Format(_T("Version %d.%u.%u\n%s Build"),
+					//(int)HIWORD(ver->dwProductVersionMS), (int)LOWORD(ver->dwProductVersionMS),
+					//(int)HIWORD(ver->dwProductVersionLS),
+					//sizeof(TCHAR) == 1 ? _T("ASCII") : _T("Unicode"));
 		}
 		::FreeResource(global);
 	}

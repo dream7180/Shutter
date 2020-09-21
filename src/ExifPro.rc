@@ -111,7 +111,7 @@ IDB_PRINT_DLG_TB        BITMAP                  "res\\print_dlg_tb.bmp"
 IDB_IMAGE_ERROR         BITMAP                  "res\\img_error.bmp"
 IDB_EMPTY2              BITMAP                  "res\\empty2.bmp"
 IDB_SHADOW              BITMAP                  "res\\Shadow.bmp"
-IDB_SHORTCUTS           BITMAP                  "res\\shortcuts.bmp"
+//IDB_SHORTCUTS           BITMAP                  "res\\shortcuts.bmp"
 //IDB_CLOSE_BAR_HOT       BITMAP                  "res\\close_bar_hot.bmp"
 IDB_CTRL_DRAW_IMAGES    BITMAP                  "res\\ctrl_draw_images.bmp"
 IDB_ICM_ICONS           BITMAP                  "res\\icm_icons.bmp"
@@ -1217,8 +1217,8 @@ BEGIN
 	LTEXT           "x64 Release",IDC_STATIC,20,56,200,11
 	LTEXT           "Free software released under the terms of the GNU Public License.",IDC_STATIC,20,67,230,11
 	CONTROL         "syslink_1",IDC_LINK,"SysLink",WS_VISIBLE,20,88,230,30
-	LTEXT           "***Image decoder libraries***\nLibjpeg-turbo: 2.0.4\nLibTIFF: 4.1.0\nLibPNG: 1.6.37\nGIFlib: 4.2.3\nLittle CMS: 1.19",IDC_STATIC,20,130,110,60
-	LTEXT           "***Other libraries***\nLua: 5.2\nScintilla: 3.1.0\nXMPCore: 5.4.0\nzlib: 1.2.11\nCoolSB",IDC_STATIC,150,130,110,60
+	LTEXT           "***Image decoder libraries***\nLibjpeg-turbo: 2.0.5\nLibTIFF: 4.1.0\nLibPNG: 1.6.37\nGIFlib: 4.2.3\nLittle CMS: 1.19",IDC_STATIC,20,128,110,60
+	LTEXT           "***Other libraries***\nLua: 5.2\nScintilla: 3.1.0\nXMPCore: 5.4.0\nzlib: 1.2.11\nCoolSB",IDC_STATIC,150,128,110,60
 END
 /*
 IDD_EVALUATION DIALOGEX 0, 0, 210, 159
@@ -1366,13 +1366,13 @@ BEGIN
     PUSHBUTTON      "&Rename",ID_RENAME,42,188,50,14
 END
 
-IDD_OPTIONS_COLUMNS DIALOGEX 0, 0, 291, 276
+IDD_OPTIONS_COLUMNS DIALOGEX 0, 0, 291, 245
 STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Columns"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
     LTEXT           "&Choose columns for the detailed mode and sorting:",IDC_STATIC,4,6,180,9
-    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | WS_BORDER | WS_HSCROLL | WS_TABSTOP,4,18,211,255
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | WS_BORDER | WS_HSCROLL | WS_TABSTOP,4,18,211,217
     GROUPBOX        "Column Presets",IDC_LABEL_1,221,14,65,106
     PUSHBUTTON      "Standard",IDC_RESET,229,27,50,14
     PUSHBUTTON      "Canon",IDC_RESET_CANON,229,45,50,14
@@ -1381,7 +1381,7 @@ BEGIN
     PUSHBUTTON      "Olympus",IDC_RESET_OLYMPUS,229,99,50,14
     LTEXT           "User Columns",IDC_LABEL_2,224,141,60,9
     PUSHBUTTON      "&Define",IDC_CUSTOM_COLUMNS,229,154,50,14
-    LTEXT           "Note: some information may not be present in photos taken with various cameras.",IDC_LABEL_3,223,233,59,42
+    LTEXT           "Note: some information may not be present in photos taken with various cameras.",IDC_LABEL_3,223,180,59,42
 END
 
 #if defined(APSTUDIO_INVOKED) || defined(NEVER)
@@ -1401,7 +1401,7 @@ BEGIN
 END
 #endif
 
-IDD_OPTIONS_GENERAL DIALOGEX 0, 0, 291, 306
+IDD_OPTIONS_GENERAL DIALOGEX 0, 0, 291, 245
 STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "General"
 FONT 8, "Tahoma", 400, 0, 0x0
@@ -1415,15 +1415,15 @@ BEGIN
     CONTROL         "&Correct CRT aspect ratio",IDC_CORRECT_ASPECT_RATIO,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,68,94,10
     LTEXT           "&Field of View Crop:",IDC_STATIC,4,91,64,9
-    CONTROL         "",IDC_FoV_CROP,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,91,89,195,135
+    CONTROL         "",IDC_FoV_CROP,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,91,89,195,145
     LTEXT           "EXIF camera model and FoV Crop to calculate 35 mm focal length equivalent.",IDC_LABEL_1,9,143,70,45
-    GROUPBOX        "Select Image Editor",IDC_FRAME_3,4,227,282,74
-    LTEXT           "Application for &opening images:",IDC_LABEL_2,12,241,150,9
-    EDITTEXT        IDC_OPEN_PHOTO_APP,12,252,240,12,ES_AUTOHSCROLL
-    PUSHBUTTON      "&...",IDC_OPEN_APP,258,251,21,14,NOT WS_TABSTOP
-    LTEXT           "Application for opening raw photographs:",IDC_LABEL_3,12,271,180,9
-    EDITTEXT        IDC_OPEN_RAW_PHOTO_APP,12,282,240,12,ES_AUTOHSCROLL
-    PUSHBUTTON      "...",IDC_OPEN_APP2,258,280,21,14,NOT WS_TABSTOP
+    //GROUPBOX        "Select Image Editor",IDC_FRAME_3,4,227,282,74
+    //LTEXT           "Application for &opening images:",IDC_LABEL_2,12,241,150,9
+   // EDITTEXT        IDC_OPEN_PHOTO_APP,12,252,240,12,ES_AUTOHSCROLL
+    //PUSHBUTTON      "&...",IDC_OPEN_APP,258,251,21,14,NOT WS_TABSTOP
+    //LTEXT           "Application for opening raw photographs:",IDC_LABEL_3,12,271,180,9
+    //EDITTEXT        IDC_OPEN_RAW_PHOTO_APP,12,282,240,12,ES_AUTOHSCROLL
+    //PUSHBUTTON      "...",IDC_OPEN_APP2,258,280,21,14,NOT WS_TABSTOP
 END
 
 #if defined(APSTUDIO_INVOKED) || defined(NEVER)
@@ -1742,7 +1742,7 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,159,39,50,14
 END
 
-IDD_OPTIONS_APPEARANCE DIALOGEX 0, 0, 291, 276
+IDD_OPTIONS_APPEARANCE DIALOGEX 0, 0, 291, 245
 STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Appearance"
 FONT 8, "Tahoma", 400, 0, 0x0
@@ -1751,10 +1751,10 @@ BEGIN
     CONTROL         "&Main Window",IDC_ELEMENT,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,102,6,59,10
     CONTROL         "&Viewer Window",IDC_VIEWER,"Button",BS_AUTORADIOBUTTON,169,6,65,10
     //CONTROL         "C&aptions",IDC_CAPTIONS,"Button",BS_AUTORADIOBUTTON,241,6,43,10
-    CONTROL         "",IDC_EXAMPLE,"Static",SS_BLACKFRAME | WS_GROUP,4,19,282,156
-    LTEXT           "&Color and Font Settings",IDC_STATIC,6,177,90,9
-    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,187,282,85
-    CONTROL         "Reset to Defaults",IDC_RESET,"MKLinkWnd",0x0,227,177,58,9
+    CONTROL         "",IDC_EXAMPLE,"Static",SS_BLACKFRAME | WS_GROUP,4,19,282,126
+    LTEXT           "&Color and Font Settings",IDC_STATIC,6,147,90,9
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_OWNERDATA | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,157,282,80
+    CONTROL         "Reset to Defaults",IDC_RESET,"MKLinkWnd",0x0,227,147,58,9
 END
 
 IDD_PRINT DIALOGEX 0, 0, 426, 275
@@ -1842,12 +1842,12 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,97,74,50,14
 END
 
-IDD_OPTIONS_ADVANCED DIALOGEX 0, 0, 283, 357
+IDD_OPTIONS_ADVANCED DIALOGEX 0, 0, 283, 245
 STYLE DS_SETFONT | DS_CENTER | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION
 CAPTION "Advanced Settings"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
-    GROUPBOX        "Thumbnail Images",IDC_FRAME_1,4,3,274,70
+    GROUPBOX        "Thumbnail Images",IDC_FRAME_1,4,3,274,69
     LTEXT           "&Optimize access for",IDC_STATIC,13,17,80,9
     CONTROL         "Decoding speed",IDC_THUMB_ACCESS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,93,16,66,10
     CONTROL         "Minimal memory usage",IDC_THUMB_MEM,"Button",BS_AUTORADIOBUTTON,172,16,90,10
@@ -1858,57 +1858,87 @@ BEGIN
     LTEXT           "none",IDC_STATIC,92,62,24,9
     LTEXT           "sharp",IDC_STATIC,161,62,24,9
     LTEXT           "very sharp",IDC_STATIC,224,62,44,9
-    CONTROL         "&Save applied tags in photographs",IDC_SAVE_TAGS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,79,130,10
+    CONTROL         "&Save applied tags in photographs",IDC_SAVE_TAGS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,77,130,10
     CONTROL         "S&how warning when broken thumbnail image is encountered",IDC_SHOW_MSG,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,93,215,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,91,215,10
     CONTROL         "Close ExifPro when exiting Viewer started from command line with an image path",IDC_CLOSE_APP,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,107,285,10
-    GROUPBOX        "Visual Settings",IDC_FRAME_3,4,124,274,112
-    LTEXT           "&Display method",IDC_STATIC,13,138,66,9
-    COMBOBOX        IDC_DISPLAY,92,136,180,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,105,285,10
+    GROUPBOX        "Visual Settings",IDC_FRAME_3,4,122,274,108
+    LTEXT           "&Display method",IDC_STATIC,13,134,66,9
+    COMBOBOX        IDC_DISPLAY,92,132,180,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     CONTROL         "&Preload next/previous photo in viewer window to speed up browsing",IDC_PRELOAD,
-                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,153,241,10
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,148,241,10
     CONTROL         "'Best Fit' may magnify small images above 100% of their size",IDC_ALLOW_100,
-                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,167,223,10
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,162,223,10
     CONTROL         "'Best Fit' should fill entire viewer area hiding up to",IDC_ALLOW_FILL,
-                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,181,178,10
-    EDITTEXT        IDC_IMG_PERCENT,192,181,28,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
-    CONTROL         "",IDC_IMG_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,212,181,8,11
-    LTEXT           "% of the image",IDC_STATIC,224,185,60,9
-    LTEXT           "&Image fading in viewer window",IDC_STATIC,13,197,118,9
-    COMBOBOX        IDC_BLENDING,127,195,89,64,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Smooth scrolling speed in viewer preview bar",IDC_STATIC,13,212,152,9
-    CONTROL         "",IDC_SCROLL_SPEED,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,167,209,100,16
-    LTEXT           "fast",IDC_STATIC,168,225,20,9
-    LTEXT           "normal",IDC_STATIC,205,225,26,9
-    LTEXT           "slow",IDC_STATIC,254,225,18,9
-    LTEXT           "&Memory cache size",IDC_STATIC,4,246,80,9
-    CONTROL         "Slider1",IDC_CACHE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,88,241,133,17
-    LTEXT           "0%",IDC_STATIC,92,259,10,9
-    LTEXT           "50%",IDC_STATIC,150,259,14,9
-    LTEXT           "100%",IDC_STATIC,209,259,18,9
-    LTEXT           "= 0000 MB RAM",IDC_RAM,222,244,54,9
-    GROUPBOX        "Image Caching",IDC_FRAME_2,4,267,274,66
-    LTEXT           "Cache file",IDC_STATIC,13,281,32,9
-    PUSHBUTTON      "&Clear",IDC_CLEAR_CACHE,92,278,50,14,NOT WS_TABSTOP
-    LTEXT           "Location",IDC_STATIC,13,298,28,9
-    EDITTEXT        IDC_DB_PATH,93,296,154,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
-    PUSHBUTTON      "&...",IDC_SET_PATH,249,295,23,14,NOT WS_TABSTOP
-    LTEXT           "&Limit size to",IDC_STATIC,13,315,50,9
-    CONTROL         "Slider1",IDC_DB_SIZE_LIMIT,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,89,312,133,16
-    LTEXT           "= 0000 MB",IDC_CACHE_LABEL,226,313,60,9
-    PUSHBUTTON      "&Reset to Defaults",IDC_RESET,4,339,65,14,WS_GROUP | NOT WS_TABSTOP
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,176,167,10
+    EDITTEXT        IDC_IMG_PERCENT,186,175,28,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_IMG_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,180,175,8,11
+    LTEXT           "% of the image",IDC_STATIC,218,177,60,9
+    LTEXT           "&Image fading in viewer window",IDC_STATIC,13,191,118,9
+    COMBOBOX        IDC_BLENDING,140,190,90,64,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Smooth scrolling speed in viewer preview bar",IDC_STATIC,13,207,152,9
+    CONTROL         "",IDC_SCROLL_SPEED,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,128,204,120,16
+    LTEXT           "fast",IDC_STATIC,130,219,20,9
+    LTEXT           "normal",IDC_STATIC,185,219,26,9
+    LTEXT           "slow",IDC_STATIC,240,219,18,9
+   // LTEXT           "&Memory cache size",IDC_STATIC,4,246,80,9
+   // CONTROL         "Slider1",IDC_CACHE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,88,241,133,17
+   // LTEXT           "0%",IDC_STATIC,92,259,10,9
+   // LTEXT           "50%",IDC_STATIC,150,259,14,9
+   // LTEXT           "100%",IDC_STATIC,209,259,18,9
+    ///LTEXT           "= 0000 MB RAM",IDC_RAM,222,244,54,9
+   // GROUPBOX        "Image Caching",IDC_FRAME_2,4,267,274,66
+    //LTEXT           "Cache file",IDC_STATIC,13,281,32,9
+   // PUSHBUTTON      "&Clear",IDC_CLEAR_CACHE,92,278,50,14,NOT WS_TABSTOP
+    //LTEXT           "Location",IDC_STATIC,13,298,28,9
+    //EDITTEXT        IDC_DB_PATH,93,296,154,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    //PUSHBUTTON      "&...",IDC_SET_PATH,249,295,23,14,NOT WS_TABSTOP
+    //LTEXT           "&Limit size to",IDC_STATIC,13,315,50,9
+    //CONTROL         "Slider1",IDC_DB_SIZE_LIMIT,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,89,312,133,16
+    //LTEXT           "= 0000 MB",IDC_CACHE_LABEL,226,313,60,9
+    PUSHBUTTON      "&Reset to Defaults",IDC_RESET,4,231,65,14,WS_GROUP | NOT WS_TABSTOP
 END
 
-IDD_OPTIONS_FILE_TYPES DIALOGEX 0, 0, 291, 276
+IDD_OPTIONS_CACHE DIALOGEX 0, 0, 283, 245
+STYLE DS_SETFONT | DS_CENTER | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION
+CAPTION "Cache/ExtAPP"
+FONT 8, "Tahoma", 400, 0, 0x0
+BEGIN
+    LTEXT           "&Memory cache size",IDC_STATIC,4,12,80,9
+    CONTROL         "Slider1",IDC_CACHE,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,88,7,133,17
+    LTEXT           "0%",IDC_STATIC,92,25,10,9
+    LTEXT           "50%",IDC_STATIC,150,25,14,9
+    LTEXT           "100%",IDC_STATIC,209,25,18,9
+    LTEXT           "= 0000 MB RAM",IDC_RAM,222,10,54,9
+    GROUPBOX        "Image Caching",IDC_FRAME_2,4,33,274,66
+    LTEXT           "Cache file",IDC_STATIC,13,47,32,9
+    PUSHBUTTON      "&Clear",IDC_CLEAR_CACHE,92,44,50,14,NOT WS_TABSTOP
+    LTEXT           "Location",IDC_STATIC,13,64,28,9
+    EDITTEXT        IDC_DB_PATH,93,62,154,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    PUSHBUTTON      "&...",IDC_SET_PATH,249,61,23,14,NOT WS_TABSTOP
+    LTEXT           "&Limit size to",IDC_STATIC,13,81,50,9
+    CONTROL         "Slider1",IDC_DB_SIZE_LIMIT,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,89,78,133,16
+    LTEXT           "= 0000 MB",IDC_CACHE_LABEL,226,79,60,9
+    PUSHBUTTON      "&Reset to Defaults",IDC_RESET,4,100,65,14,WS_GROUP | NOT WS_TABSTOP
+	GROUPBOX        "Select the external Application as Image Editor",IDC_FRAME_3,4,120,282,74
+    LTEXT           "Application for &opening images:",IDC_LABEL_2,12,134,150,9
+    EDITTEXT        IDC_OPEN_PHOTO_APP,12,145,240,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&...",IDC_OPEN_APP,258,144,21,14,NOT WS_TABSTOP
+    LTEXT           "Application for opening raw photographs:",IDC_LABEL_3,12,164,180,9
+    EDITTEXT        IDC_OPEN_RAW_PHOTO_APP,12,175,240,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_OPEN_APP2,258,173,21,14,NOT WS_TABSTOP
+END
+
+IDD_OPTIONS_FILE_TYPES DIALOGEX 0, 0, 291, 245
 STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "File Types"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
     LTEXT           "&Select file types ExifPro can load:",IDC_STATIC,4,6,136,9
-    CONTROL         "List1",IDC_TYPES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,18,282,142
-    LTEXT           "Example:",IDC_LABEL,4,163,30,9
-    CONTROL         "",IDC_EXAMPLE,"Static",SS_BLACKFRAME,4,173,282,98
+    CONTROL         "List1",IDC_TYPES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,18,282,132
+    LTEXT           "Example:",IDC_LABEL,4,153,30,9
+    CONTROL         "",IDC_EXAMPLE,"Static",SS_BLACKFRAME,4,163,282,68
 END
 
 IDD_HEADER_DLG_RESIZABLE DIALOGEX 0, 0, 186, 94
@@ -1946,15 +1976,15 @@ BEGIN
     PUSHBUTTON      "OK",IDCANCEL,232,156,50,14,NOT WS_TABSTOP
 END
 
-IDD_OPTIONS_BALLOONS DIALOGEX 0, 0, 291, 276
+IDD_OPTIONS_BALLOONS DIALOGEX 0, 0, 291, 245
 STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Balloons"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
     LTEXT           "&Select fields displayed inside info balloons:",-1,4,6,160,9
-    CONTROL         "",IDC_BALLOON,"Static",SS_BLACKFRAME | NOT WS_VISIBLE | WS_DISABLED,39,20,208,251
-    CONTROL         "Tree1",IDC_FIELDS,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | WS_HSCROLL | WS_TABSTOP,47,28,188,227
-    LTEXT           "Reset to Defaults",IDC_RESET,166,266,56,9
+    CONTROL         "",IDC_BALLOON,"Static",SS_BLACKFRAME | NOT WS_VISIBLE | WS_DISABLED,39,20,208,210
+    CONTROL         "Tree1",IDC_FIELDS,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | WS_HSCROLL | WS_TABSTOP,47,28,188,190
+    LTEXT           "Reset to Defaults",IDC_RESET,166,231,56,9
 END
 
 IDD_PRN_PAGE_RANGE DIALOGEX 0, 0, 218, 27
@@ -2017,7 +2047,7 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,79,208,50,14
     DEFPUSHBUTTON   "OK",IDOK,135,208,50,14
 END
-
+/*
 IDD_OPTIONS_SHORTCUTS DIALOGEX 0, 0, 291, 276
 STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Shortcuts"
@@ -2033,7 +2063,7 @@ BEGIN
     LTEXT           "",IDC_DESCRIPTION,162,160,82,72
     PUSHBUTTON      "&Assign",IDC_ASSIGN,178,58,50,14
 END
-
+*/
 IDD_ICM_SETUP DIALOGEX 0, 0, 330, 224
 STYLE DS_SETFONT | WS_POPUP | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "Color Management Setup"
@@ -2740,9 +2770,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(NEVER)
 #if defined(APSTUDIO_INVOKED)
-IDD_FILTER_PANEL_EX$(NEVER) DIALOGEX 0, 0, 110, 355
+IDD_FILTER_PANEL_EX$(NEVER) DIALOGEX 0, 0, 120, 355
 #else
-IDD_FILTER_PANEL_EX DIALOGEX 0, 0, 110, 355
+IDD_FILTER_PANEL_EX DIALOGEX 0, 0, 120, 355
 #endif
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
 FONT 8, "Tahoma", 400, 0, 0x1
@@ -2776,23 +2806,23 @@ BEGIN
     CONTROL         "Custom1",IDC_TOOLBAR,"ToolbarWindow32",0x984d,3,238,98,14
 END
 
-IDD_FILTER_1 DIALOGEX 0, 0, 119, 173
+IDD_FILTER_1 DIALOGEX 0, 0, 105, 173
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "Filter by Tags"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
-    CONTROL         "",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | TVS_NOTOOLTIPS | TVS_TRACKSELECT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,4,3,111,127
+    CONTROL         "",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | TVS_NOTOOLTIPS | TVS_TRACKSELECT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,4,3,97,127
     LTEXT           "Match tags:",IDC_LABEL_1,4,135,38,9
-    CONTROL         "All",IDC_ALL,"Button",BS_AUTORADIOBUTTON,48,134,23,10
+    CONTROL         "All",IDC_ALL,"Button",BS_AUTORADIOBUTTON,45,134,28,10
     CONTROL         "Any",IDC_ANY,"Button",BS_AUTORADIOBUTTON,74,134,28,10
-    CONTROL         "Custom1",IDC_EDIT_TAGS,"ToolbarWindow32",0x984d,4,147,62,14
-    CONTROL         "Custom1",IDC_CANCEL,"ToolbarWindow32",0x984d,67,147,50,14
-    CONTROL         "Show tags in use",IDC_TAGS_IN_USE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,4,160,67,10
-    CONTROL         "Custom1",IDC_RESIZE,"SeparatorCtrlMiK",0x0,0,164,119,6
+    CONTROL         "Custom1",IDC_EDIT_TAGS,"ToolbarWindow32",0x984d,4,147,52,14
+    CONTROL         "Custom1",IDC_CANCEL,"ToolbarWindow32",0x984d,57,147,42,14
+    CONTROL         "Show tags in use",IDC_TAGS_IN_USE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,4,160,86,10
+    CONTROL         "Custom1",IDC_RESIZE,"SeparatorCtrlMiK",0x0,0,164,105,6
 END
 
-IDD_FILTER_2 DIALOGEX 0, 0, 104, 75
+IDD_FILTER_2 DIALOGEX 0, 0, 105, 75
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "Filter by Text"
@@ -2818,15 +2848,15 @@ BEGIN
     CONTROL         "Custom1",IDC_RESIZE,"SeparatorCtrlMiK",0x0,0,78,106,6
 END
 
-IDD_FILTER_4 DIALOGEX 0, 0, 120, 33
+IDD_FILTER_4 DIALOGEX 0, 0, 105, 33
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "Filter by Rating"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
-    LTEXT           "Show images with at least 5 stars",IDC_LABEL,6,2,112,9
-    CONTROL         "Custom1",IDC_STARS,"StarCtrlMiK",0x0,5,13,88,15
-    CONTROL         "Custom1",IDC_CANCEL,"ToolbarWindow32",0x884d,97,12,18,16
+    LTEXT           "Show images with at least 5 stars",IDC_LABEL,6,2,92,9
+    CONTROL         "Custom1",IDC_STARS,"StarCtrlMiK",0x0,5,13,80,15
+    CONTROL         "Custom1",IDC_CANCEL,"ToolbarWindow32",0x884d,86,12,18,16
 END
 
 IDD_CUSTOM_FILTER DIALOGEX 0, 0, 307, 260
@@ -2990,7 +3020,7 @@ BEGIN
     CONTROL         IDB_RUN_SLIDESHOW,IDC_RUN_SLIDESHOW,"Static",SS_BITMAP | NOT WS_VISIBLE,76,5,17,13
     CONTROL         IDB_ENVELOPE,IDC_ENVELOPE,"Static",SS_BITMAP | NOT WS_VISIBLE,146,5,18,12
 END
-
+/*
 IDD_UPDATE DIALOGEX 0, 0, 316, 183
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Check for Updates"
@@ -2999,7 +3029,7 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,205,162,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,259,162,50,14
 END
-
+*/
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -3007,8 +3037,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,0
- PRODUCTVERSION 3,0,0,2003
+ FILEVERSION 3,1,2009
+ PRODUCTVERSION 3,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -3030,7 +3060,7 @@ BEGIN
             VALUE "LegalCopyright", "Copyright © 2000-2015 Michael Kowalski"
             VALUE "OriginalFilename", "ExifPro.exe"
             VALUE "ProductName", "ExifPro Mod by dreamawake"
-            VALUE "ProductVersion", "3.0.0.2003"
+            VALUE "ProductVersion", "3.1"
         END
     END
     BLOCK "VarFileInfo"
@@ -3114,7 +3144,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 284
         TOPMARGIN, 7
-        BOTTOMMARGIN, 269
+        BOTTOMMARGIN, 242
     END
 
     "IDD_OPTIONS_DESCRIPTION$(NEVER)", DIALOG
@@ -3130,7 +3160,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 287
         TOPMARGIN, 7
-        BOTTOMMARGIN, 303
+        BOTTOMMARGIN, 242
     END
 
     "IDD_OPTIONS_VIEWER$(NEVER)", DIALOG
@@ -3236,7 +3266,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 284
         TOPMARGIN, 7
-        BOTTOMMARGIN, 269
+        BOTTOMMARGIN, 242
     END
 
     IDD_PRINT, DIALOG
@@ -3277,7 +3307,15 @@ BEGIN
         RIGHTMARGIN, 276
         VERTGUIDE, 93
         TOPMARGIN, 7
-        BOTTOMMARGIN, 351
+        BOTTOMMARGIN, 242
+    END
+	
+	IDD_OPTIONS_CACHE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 242
     END
 
     IDD_OPTIONS_FILE_TYPES, DIALOG
@@ -3285,7 +3323,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 284
         TOPMARGIN, 7
-        BOTTOMMARGIN, 269
+        BOTTOMMARGIN, 242
     END
 
     IDD_HEADER_DLG_RESIZABLE, DIALOG
@@ -3317,7 +3355,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 284
         TOPMARGIN, 7
-        BOTTOMMARGIN, 269
+        BOTTOMMARGIN, 242
     END
 
     IDD_PRN_PAGE_RANGE, DIALOG
@@ -3343,12 +3381,12 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 30
     END
-
+/*
     IDD_OPTIONS_SHORTCUTS, DIALOG
     BEGIN
         BOTTOMMARGIN, 275
     END
-
+*/
     IDD_ICM_SETUP, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -3679,14 +3717,14 @@ BEGIN
     "IDD_FILTER_PANEL_EX$(NEVER)", DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 103
+        RIGHTMARGIN, 93
         TOPMARGIN, 7
         BOTTOMMARGIN, 348
     END
 
     IDD_FILTER_PANEL, DIALOG
     BEGIN
-        RIGHTMARGIN, 96
+        RIGHTMARGIN, 86
         BOTTOMMARGIN, 171
     END
 
@@ -3793,7 +3831,7 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 106
     END
-
+/*
     IDD_UPDATE, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -3801,6 +3839,7 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 176
     END
+*/
 END
 #endif    // APSTUDIO_INVOKED
 
