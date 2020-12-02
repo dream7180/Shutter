@@ -1217,7 +1217,7 @@ BEGIN
 	LTEXT           "x64 Release",IDC_STATIC,20,56,200,11
 	LTEXT           "Free software released under the terms of the GNU Public License.",IDC_STATIC,20,67,230,11
 	CONTROL         "syslink_1",IDC_LINK,"SysLink",WS_VISIBLE,20,88,230,30
-	LTEXT           "***Image decoder libraries***\nLibjpeg-turbo: 2.0.5\nLibTIFF: 4.1.0\nLibPNG: 1.6.37\nGIFlib: 4.2.3\nLittle CMS: 1.19",IDC_STATIC,20,128,110,60
+	LTEXT           "***Image decoder libraries***\nLibjpeg-turbo: 2.0.6\nLibTIFF: 4.1.0\nLibPNG: 1.6.37\nGIFlib: 4.2.3\nLittle CMS: 1.19",IDC_STATIC,20,128,110,60
 	LTEXT           "***Other libraries***\nLua: 5.2\nScintilla: 3.1.0\nXMPCore: 5.4.0\nzlib: 1.2.11\nCoolSB",IDC_STATIC,150,128,110,60
 END
 /*
@@ -3037,8 +3037,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,1,2020,10
- PRODUCTVERSION 3,1
+ FILEVERSION 3,2,2020,12
+ PRODUCTVERSION 3,2
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -3060,7 +3060,7 @@ BEGIN
             VALUE "LegalCopyright", "Copyright © 2000-2015 Michael Kowalski"
             VALUE "OriginalFilename", "ExifPro.exe"
             VALUE "ProductName", "ExifPro Mod by dreamawake"
-            VALUE "ProductVersion", "3.1"
+            VALUE "ProductVersion", "3.2"
         END
     END
     BLOCK "VarFileInfo"
