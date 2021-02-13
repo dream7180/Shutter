@@ -284,6 +284,7 @@ BEGIN
         BEGIN
             MENUITEM "&Show Date and Time",         ID_VIEW_SHOW_DATETIME
             MENUITEM "Show N&ames",                 ID_VIEW_SHOW_LABELS
+			MENUITEM "Show File Name and &Extension", ID_VIEW_SHOW_FILE_NAME_EXT
             MENUITEM "Show C&ustomized Labels",     ID_SHOW_CUST_INFO
             MENUITEM "&No Text Label",              ID_VIEW_SHOW_NO_TEXT_LABEL
             MENUITEM SEPARATOR
@@ -291,6 +292,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "Show &Info Balloons",         ID_VIEW_SHOW_BALLOONS
             MENUITEM "Overlay Image &Tags",         ID_VIEW_SHOW_TAGS
+			MENUITEM "Show NoE&xif Indicators",     ID_VIEW_SHOW_NOEXIF
             MENUITEM "Show Time &Line",             ID_VIEW_SHOW_TIMELINE
             MENUITEM SEPARATOR
             MENUITEM "S&maller Thumbnails\tAlt+Down", ID_VIEW_THUMB_SMALLER
@@ -349,7 +351,7 @@ BEGIN
 		POPUP "Preview Bar"
         BEGIN
             MENUITEM "Toggle &Preview Bar\tB",      ID_VIEWER_BAR
-            MENUITEM "&Overlay Tags",               ID_VIEWER_BAR_OVERLAY_TAGS
+            //MENUITEM "&Overlay Tags",               ID_VIEWER_BAR_OVERLAY_TAGS
             MENUITEM "&Smooth Scrolling",           ID_VIEWER_BAR_SMOOTH_SCROLL
             MENUITEM SEPARATOR
             MENUITEM "&Horizontal Layout",          ID_VIEWER_BAR_HORZ
@@ -467,7 +469,7 @@ BEGIN
         BEGIN
             MENUITEM "Toggle &Preview Bar\tB",      ID_VIEWER_BAR
             MENUITEM "Display Info &Balloons\tShift+I", ID_VIEWER_BALLOONS
-            MENUITEM "&Overlay Tags\tG",            ID_VIEWER_BAR_OVERLAY_TAGS
+            //MENUITEM "&Overlay Tags\tG",            ID_VIEWER_BAR_OVERLAY_TAGS
             MENUITEM "&Keep Current Image Centered", ID_VIEWER_BAR_CENTER
             MENUITEM "&Smooth Scrolling",           ID_VIEWER_BAR_SMOOTH_SCROLL
             MENUITEM SEPARATOR
@@ -674,7 +676,7 @@ BEGIN
     BEGIN
         MENUITEM "&Show Date and Time",         ID_VIEW_SHOW_DATETIME
         MENUITEM "Show N&ames",                 ID_VIEW_SHOW_LABELS
-        MENUITEM "Show File Name and &Extension", 34376
+        MENUITEM "Show File Name and &Extension", ID_VIEW_SHOW_FILE_NAME_EXT
         MENUITEM "Show C&ustomized Labels",     ID_SHOW_CUST_INFO
         MENUITEM "&No Text Label",              ID_VIEW_SHOW_NO_TEXT_LABEL
         MENUITEM SEPARATOR
@@ -682,6 +684,7 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Show &Info Balloons",         ID_VIEW_SHOW_BALLOONS
         MENUITEM "Overlay Image &Tags",         ID_VIEW_SHOW_TAGS
+		MENUITEM "Show NoE&xif Indicators",     ID_VIEW_SHOW_NOEXIF
         MENUITEM "Show Time &Line",             ID_VIEW_SHOW_TIMELINE
     END
 END
@@ -1026,7 +1029,7 @@ BEGIN
     "C",            ID_CLOSE_VIEW,          VIRTKEY, SHIFT, CONTROL, NOINVERT
     "D",            ID_TOGGLE_DESCRIPTION,  VIRTKEY, NOINVERT
     "E",            ID_TOGGLE_LIGHT_TABLE,  VIRTKEY, NOINVERT
-    "G",            ID_VIEWER_BAR_OVERLAY_TAGS, VIRTKEY, NOINVERT
+    //"G",            ID_VIEWER_BAR_OVERLAY_TAGS, VIRTKEY, NOINVERT
     "H",            ID_HORZ_VIEWS,          VIRTKEY, SHIFT, CONTROL, NOINVERT
     "I",            ID_VIEWER_INFOBAR,      VIRTKEY, NOINVERT
     "I",            ID_VIEWER_BALLOONS,     VIRTKEY, SHIFT, NOINVERT
@@ -1217,7 +1220,7 @@ BEGIN
 	LTEXT           "x64 Release",IDC_STATIC,20,56,200,11
 	LTEXT           "Free software released under the terms of the GNU Public License.",IDC_STATIC,20,67,230,11
 	CONTROL         "syslink_1",IDC_LINK,"SysLink",WS_VISIBLE,20,88,230,30
-	LTEXT           "***Image decoder libraries***\nLibjpeg-turbo: 2.0.6\nLibTIFF: 4.1.0\nLibPNG: 1.6.37\nGIFlib: 4.2.3\nLittle CMS: 1.19",IDC_STATIC,20,128,110,60
+	LTEXT           "***Image decoder libraries***\nLibjpeg-turbo: 2.0.6\nLibTIFF: 4.2.0\nLibPNG: 1.6.37\nGIFlib: 4.2.3\nLittle CMS: 1.19",IDC_STATIC,20,128,110,60
 	LTEXT           "***Other libraries***\nLua: 5.2\nScintilla: 3.1.0\nXMPCore: 5.4.0\nzlib: 1.2.11\nCoolSB",IDC_STATIC,150,128,110,60
 END
 /*
@@ -3037,8 +3040,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,2,2020,12
- PRODUCTVERSION 3,2
+ FILEVERSION 3,3,2021,2
+ PRODUCTVERSION 3,3
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -3060,7 +3063,7 @@ BEGIN
             VALUE "LegalCopyright", "Copyright © 2000-2015 Michael Kowalski"
             VALUE "OriginalFilename", "ExifPro.exe"
             VALUE "ProductName", "ExifPro Mod by dreamawake"
-            VALUE "ProductVersion", "3.2"
+            VALUE "ProductVersion", "3.3"
         END
     END
     BLOCK "VarFileInfo"

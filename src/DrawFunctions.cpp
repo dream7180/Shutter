@@ -179,7 +179,25 @@ void DrawNoExifIndicator(CDC& dc, const CRect& rect)
 	noExif.Draw(&dc, 0, pos, ILD_TRANSPARENT);
 }
 
-
+void DrawPaneIndicator(CDC& dc, const CRect& rect, COLORREF text_color, COLORREF back_color, size_t id)
+{
+	dc.SetTextColor(text_color);
+	LOGFONT lf;
+	HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
+	::GetObject(hfont, sizeof(lf), &lf);
+	_tcscpy(lf.lfFaceName, _T("Tahoma"));
+	CFont _font;
+	_font.CreateFontIndirect(&lf);
+	int size= sizeof(&_font)*2 + 4;
+	CRect r(CPoint(rect.right - size, rect.bottom - size), CSize(size, size));
+	dc.FillSolidRect(r,back_color);
+	dc.SetBkMode(TRANSPARENT);
+	TCHAR buf[128];
+	_itot(static_cast<int>(id), buf, 10);
+	dc.DrawText(buf, static_cast<int>(_tcslen(buf)), r, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
+	dc.SelectObject(&_font);
+}
+/*
 void DrawPaneIndicator(CDC& dc, const CRect& rect, COLORREF text_color, COLORREF back_color, size_t id)
 {
 	CFont font;
@@ -212,7 +230,7 @@ void DrawPaneIndicator(CDC& dc, const CRect& rect, COLORREF text_color, COLORREF
 	dc.SelectObject(old_brush);
 	dc.SelectObject(&font);
 }
-
+*/
 
 void DrawLightTableIndicator(CDC& dc, const CRect& rect, COLORREF color)
 {

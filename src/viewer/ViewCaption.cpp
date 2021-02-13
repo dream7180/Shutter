@@ -95,16 +95,18 @@ BOOL ViewCaption::OnEraseBkgnd(CDC* dc)
 		MemoryDC dc(*dc, rect);
 
 		caption_.Draw(&dc, rect);
-
+		dc.FillSolidRect(rect, RGB(35,35,35));
+		CPoint pos(4, 0);
+		pos.y = (rect.Height() - active_marker_.GetHeight()) / 2;
+		rect.left = pos.x + active_marker_.GetWidth();
 		if (active_)
 		{
-			CPoint pos(6, 0);
-			pos.y = (rect.Height() - active_marker_.GetHeight()) / 2;
+			//CPoint pos(3, 0);
+			//pos.y = (rect.Height() - active_marker_.GetHeight()) / 2;
 			active_marker_.Draw(&dc, pos);
-			rect.left = pos.x + active_marker_.GetWidth();
+			//rect.left = pos.x + active_marker_.GetWidth();
 		}
-
-		dc.SetBkMode(TRANSPARENT);
+		//dc.SetBkMode(TRANSPARENT);
 		dc.SetTextColor(::GetSysColor(COLOR_BTNTEXT));
 		dc.SelectObject(&_font);
 		//dc.SelectStockObject(DEFAULT_GUI_FONT);
