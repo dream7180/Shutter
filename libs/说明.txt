@@ -1,0 +1,12 @@
+libjpeg-turbo
+把bin里生成的jconfig.h,jconfigint.h,jversion.h拷贝到libjpeg-turbo根目录
+-----------------------------------------------------------------
+TIFFLib
+用cmake configure生成tiffconf.h, tif_config.h拷进libtiff,
+precomp.c拷入libtiff
+几个tifflib项目文件拷进根目录
+libtiff\tif_fax3sm.c加入#include "tiffiop.h"
+
+---4.3.0不适用了---
+1）libtiff\tiffop.h里注释掉
+#define snprintf _TIFF_snprintf_f
