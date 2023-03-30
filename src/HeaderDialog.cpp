@@ -130,7 +130,7 @@ BOOL HeaderDialog::OnInitDialog()
 
 	// create font
 	font_.CreateFont(-Pixels(14), 0, 0, 0, FW_BOLD, false, false, false, DEFAULT_CHARSET,
-		OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, _T("Tahoma"));
+		OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, _T("Segoe UI"));
 
 	struct xCDialog : public CDialog
 	{

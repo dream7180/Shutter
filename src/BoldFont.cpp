@@ -25,7 +25,7 @@ LOGFONT CreateBoldLogFont(CWnd* parent)
 		::GetObject(font, sizeof(lf), &lf);
 	}
 	//lf.lfHeight += 1; //8pt
-	_tcscpy(lf.lfFaceName, _T("Tahoma"));
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 	lf.lfWeight =  FW_BOLD;
 	return lf;
 }
@@ -60,7 +60,7 @@ void CreateSmallFont(CWnd* parent, CFont& font)
 		HFONT font= static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 		::GetObject(font, sizeof(lf), &lf);
 	}
-	_tcscpy(lf.lfFaceName, _T("Tahoma"));
+	_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 	if (lf.lfHeight < 0)
 		lf.lfHeight += 1;
 	else

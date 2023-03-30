@@ -29,7 +29,7 @@ CFont& GetDefaultGuiFont()
 		lf.lfWeight = FW_MEDIUM;//NORMAL;
 		lf.lfQuality = CLEARTYPE_QUALITY;//CLEARTYPE_NATURAL_QUALITY;
 		//lf.lfHeight += 1;
-		_tcscpy(lf.lfFaceName, _T("Tahoma"));
+		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 		default_font.CreateFontIndirect(&lf);
 	}
 
@@ -50,7 +50,7 @@ CFont& GetDefaultGuiBoldFont()
 		lf.lfWeight = FW_BOLD;
 		lf.lfQuality = CLEARTYPE_QUALITY;
 		//lf.lfHeight += 1;
-		_tcscpy(lf.lfFaceName, _T("Tahoma"));
+		_tcscpy(lf.lfFaceName, _T("Segoe UI"));
 		default_bold_font.CreateFontIndirect(&lf);
 	}
 

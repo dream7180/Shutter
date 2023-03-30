@@ -59,7 +59,7 @@ Config::Config()
 #else
 	db_file_length_limit_mb_ = 3 * 1024;	// 3 GB
 #endif
-	image_blending_ = 0;					// always
+	image_blending_ = 1;					// 0-always, 1-in slide show only
 	read_thumbs_from_db_ = false;			// by default keep jpeg thumbs in memory
 	allow_magnifying_above100_ = false;
 	allow_zoom_to_fill_ = false;
@@ -294,7 +294,7 @@ void Config::Restore()
 	default_description_font_.lfHeight -= 14;
 	default_description_font_.lfWeight = FW_BOLD;
 	//default_description_font_.lfQuality = ANTIALIASED_QUALITY;
-	_tcscpy(default_description_font_.lfFaceName, _T("Tahoma"));
+	_tcscpy(default_description_font_.lfFaceName, _T("Segoe UI"));
 	/*default_description_font_.lfItalic = 0;
 	default_description_font_.lfUnderline = 0;
 	default_description_font_.lfStrikeOut = 0;
@@ -531,7 +531,7 @@ void Config::Restore()
 	//HFONT hfont = static_cast<HFONT>(::GetStockObject(DEFAULT_GUI_FONT));
 	::GetObject(hfont, sizeof(img_default_tag_font_), &img_default_tag_font_);
 	//img_default_tag_font_.lfHeight -= 2;
-	_tcscpy(img_default_tag_font_.lfFaceName, _T("Tahoma"));
+	_tcscpy(img_default_tag_font_.lfFaceName, _T("Segoe UI"));
 	//img_default_tag_font_.lfWeight = FW_BOLD;
 	img_tag_font_ = img_default_tag_font_;
 

@@ -651,9 +651,9 @@ DistributionBar::DistributionBar() : impl_(new Impl)
 	impl_->leftMargin_ = 0;
 	impl_->rightMargin_ = 0;
 	impl_->fontLabels_.CreateFont(-Pixels(10), 0, 0, 0, FW_NORMAL, false, false, false, DEFAULT_CHARSET,
-		OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, _T("Tahoma"));
+		OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, _T("Segoe UI"));
 	impl_->fontBold_.CreateFont(-Pixels(10), 0, 0, 0, FW_BOLD, false, false, false, DEFAULT_CHARSET,
-		OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, _T("Tahoma"));
+		OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, _T("Segoe UI"));
 	impl_->area_valid_ = false;
 	impl_->tracking_cursor_ = false;
 	impl_->hist_area_.SetRectEmpty();
